@@ -35,28 +35,28 @@ No build step. No framework. No dependencies. Plain HTML file deployed to Netlif
 
 **Region**: Berlin and Märkisch-Oderland (Paulina lives in Neuenhagen). Not Havelland.
 
-### Brand (Nov 2026 redesign, branch `feature/brand-redesign`)
+### Brand (round 2, Nov 22 2026, branch `feature/brand-redesign`)
 
-- **Idea**: Paulina labels every dish on her tables with a black chalk card ("Banana Waffeln", "Apfel Kuchen"). Those chalk labels are the page's device: dark `.label` cards in the `Chalk` hand face (Caveat subset), soft rounded photos, Paulina's handwritten greeting, and a live cake that lights one candle per year in the enquiry form.
-- **Mark**: `images/mark.svg`, two flat strawberries: big Laura, small Laia leaning on her. Wordmark "AllesGute" in EB Garamond. Never show ".ai" in the brand; the domain is only an address.
-- **Colour, taken from Paulina's own photos**: linen ground `#f7f1ea`, curtain green `#2f5552` (prices, footer, the mark's leaves), strawberry red `#b02a42` / `#a3263c` (actions, booking section, the berries), waffle honey `#efc483` (prices on green, candle flames), berry blush `#f4dcd4` (how it works), chalk `#231f1c` (her labels). Photos share one white-balance grade so they sit in the same light.
-- **Type**: EB Garamond (self-hosted woff2, latin + latin-ext for Polish) for everything; Chalk only on labels and the message preview. No Google Fonts link (GDPR).
-- **Photos**: `images/v2/*.webp` are crops of Paulina's own photos with one shared grade. Never use licensed characters (Paw Patrol, Frozen) in frame, never stock or AI-generated food or people. Originals stay in `images/`.
-- **Prices**: quoted per party. "Geburtstagstisch ab 150 €" (= 8 children x 19 €, the old base rate) and "Die ganze Feier nach Absprache". Paulina must confirm these numbers.
-- **Removed on purpose**: the emoji strawberry cursor (read as cheap on a premium page; the daughters now live in the mark and the "Laura & Laia" tile).
+- **Buyer**: a busy, posh millennial mother in Berlin or Märkisch-Oderland. She wants it beautiful and done for her. Brief, references and the 10-shot photo list: `docs/round-2-brief.md`.
+- **Register**: "Spielzimmer", a Nordic playroom (Konges Sløjd and Liewood): oat ground `#f4eee4`, sage `#d8dfcd`, blush `#f1d8cf`, butter `#f3e4b5`, ink `#35332d`, strawberry red `#ab2a40` for actions only.
+- **Type**: Fraunces 500 (`fonts/Fraunces-500.woff`) for headings and Jost 400/500 (`fonts/Jost-*.woff2`) for text. Caveat (`Hand`) is used only for "Hallo, ich bin Paulina." and her signature. All fonts are self-hosted, with no Google Fonts link (GDPR). EB Garamond stays for the legal pages only.
+- **Devices**: arch-shaped photo windows, scalloped section edges (tablecloth or bunting), a round "Alles Gute zum Geburtstag" seal around the strawberry mark, and price stickers on the package cards.
+- **Offer**: three named packages: No.1 Der Tisch (ab 150 €), No.2 Die Feier (ab 320 €), No.3 Ihr seid Gäste (ab 490 €). The prices are proposals that **Paulina must confirm**. Each card has a "Passt, wenn…" line, and its button selects the package and jumps to the WhatsApp form.
+- **Live thing**: "Was ihr abgebt", a chore list that ticks off as she picks a package. The enquiry-form cake still lights one candle per year.
+- **Mark**: `images/mark.svg`, two strawberries: big Laura and small Laia leaning on her. Never show ".ai" in the brand.
+- **Photos**: `images/v3/*.webp` are brightened crops of Paulina's own photos. Each package shows its own outcome: the laid table, the themed cake, and Paulina serving the guests. Never use licensed characters, stock, or AI food or people. A styled shoot (`docs/round-2-brief.md`) will replace these.
 
 ### Sections in `index.html`
 
 | Section | Purpose |
 |---|---|
-| `.hero` | "Heute seid ihr auch Gäste." + slow crossfade of three real party photos |
-| `.intro` | "Drei Stunden in der Küche." Paulina's reason for doing this |
-| `#tisch` | Band of four food photos with chalk labels |
-| `#preise` | Prices set like a menu, two groups |
-| `#paulina` | Who cooks, the mark's story, facts |
-| `.moments` | Five moments from first message to singing along (drag row) |
+| `.hero` | "Kommt einfach als Gäste." What it is, from 150 €, 8 to 30 children, region. Whole-table photo in an arch, plus the seal |
+| `#angebote` | Three package cards, then "Was ihr abgebt" (the chore list) |
+| `#essen` | "Obst zuerst." Healthy-but-beautiful hook, with three proof lines |
+| `#paulina` | Who cooks: her story, signature, Laura & Laia, facts |
+| `.how` | Three steps: one message is enough |
 | `#fragen` | Six questions |
-| `#anfrage` | Live WhatsApp message builder with preview (+491783129500) |
+| `#anfrage` | Live WhatsApp message builder (+491783129500), with the package pre-selected |
 | `impressum.html`, `datenschutz.html` | Legal pages. **Fill the [placeholders] (address, tax status) before merging to main.** |
 
 ### Checks
