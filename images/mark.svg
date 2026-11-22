@@ -1,20 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 62" role="img" aria-label="AllesGute">
-  <title>AllesGute: zwei Erdbeeren, Laura und Laia</title>
-  <defs>
-    <g id="b">
-      <path d="M20 46C8 40 0 26 1.5 14 2.6 6.5 10 3 20 5.5 30 3 37.4 6.5 38.5 14 40 26 32 40 20 46Z"/>
-    </g>
-    <g id="seeds" fill="#f6efe6">
-      <ellipse cx="11" cy="16" rx="1.3" ry="2"/><ellipse cx="20" cy="14" rx="1.3" ry="2"/><ellipse cx="29" cy="16" rx="1.3" ry="2"/>
-      <ellipse cx="15" cy="25" rx="1.3" ry="2"/><ellipse cx="25" cy="25" rx="1.3" ry="2"/>
-      <ellipse cx="20" cy="34" rx="1.3" ry="2"/>
-    </g>
-    <path id="leaf" d="M20 9C15 9 9 7 7 3 12 2 16 4 20 7 24 4 28 2 33 3 31 7 25 9 20 9ZM19 7 18 0h3l-1 7Z"/>
-  </defs>
-  <g transform="translate(2 14)">
-    <use href="#b" fill="#a3263c"/><use href="#seeds"/><use href="#leaf" fill="#2f5552"/>
-  </g>
-  <g transform="translate(34 11) rotate(14 14 20) scale(.72)">
-    <use href="#b" fill="#c4485c"/><use href="#seeds"/><use href="#leaf" fill="#2f5552"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 54">
+  <title>Alles Gute · zwei Erdbeeren</title>
+  <path fill="#a3263c" d="M9 16c4-5 11-5 17-2 7-1 14 3 14 10 0 10-10 23-19 25C13 46 3 33 5 24c1-4 2-6 4-8Zm30 6c4-4 10-5 15-1 4 1 7 6 6 11-2 7-8 12-15 15-4-2-7-8-8-13-1-5 0-9 2-12Z"/>
+  <path fill="#25483f" d="M24 16c-7 0-11-5-13-8 5 0 9 1 12 4-2-4-1-8 1-11 3 3 3 7 2 11 4-4 9-6 14-5-3 5-8 9-16 9Zm25 8c-3-1-6-4-6-7 3 0 6 1 7 4 1-4 4-7 7-7 0 3-1 6-4 8 3-1 5 0 7 2-4 2-8 1-11 0Z"/>
+  <path d="m13 23 1 2m7-4v2m8 0-1 2m-11 5 1 2m7-2-1 2m-3 5v2m25-10v2m7-1-1 2m-5 4v2" fill="none" stroke="#edf1e8" stroke-linecap="round" stroke-width="1.65"/>
 </svg>
