@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Alles Gute · Kindergeburtstage mit Paulina, Berlin &amp; Märkisch-Oderland</title>
 <meta name="description" content="Kindergeburtstag in Berlin und Märkisch-Oderland. Paulina kocht, backt und deckt den Tisch. Auf Wunsch mit Torte, Deko und Begleitung. Ab 140 €.">
-<meta property="og:title" content="Alles Gute · Kindergeburtstage mit Paulina">
+<meta property="og:title" content="Alles Gute · Heute seid ihr Gäste.">
 <meta property="og:description" content="Paulina kocht, backt und deckt den Geburtstagstisch. Berlin &amp; Märkisch-Oderland.">
 <meta property="og:image" content="https://allesgute.ai/images/v4/table.webp">
 <meta name="theme-color" content="#dce5dc">
@@ -343,6 +343,84 @@ main { position: relative; z-index: 1; background: var(--stone); }
 .candles i:nth-child(even) { background: var(--green); }
 .candles i::before { position: absolute; top: -7px; left: 0; content: ''; width: 4px; height: 6px; border-radius: 70% 30% 60% 45%; background: #9c5c20; }
 
+
+/* The invitation opens onto a slideshow, with all controls in the photo frame. */
+.invitation h1 { font-size: clamp(64px, 7.1vw, 116px); }
+.hero-gallery { position: relative; display: grid; min-width: 0; }
+.hero-stage { display: grid; min-height: 500px; overflow: hidden; isolation: isolate; background: #33584d; border-radius: 50% 50% 10px 10px / 108px 108px 10px 10px; }
+.hero-stage .hero-photo { grid-area: 1 / 1; min-height: 0; border-radius: 0; background: none; opacity: 0; transition: opacity .8s var(--ease); }
+.hero-stage .hero-photo.current { z-index: 1; opacity: 1; }
+.hero-photo:nth-child(2) img { object-position: center 45%; }
+.hero-photo:nth-child(3) img { object-position: center 65%; }
+.hero-gallery.has-slides .hero-photo figcaption { margin-bottom: 62px; }
+.slide-tools {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  display: flex;
+  z-index: 2;
+  background: var(--deep);
+  color: var(--paper);
+  border-radius: 999px;
+}
+.slide-tools button, .portfolio-controls button {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.slide-tools button:hover { background: #34564b; }
+.slide-select::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: #9aafa3; }
+.slide-select[aria-current=true]::before { background: currentColor; }
+.slide-toggle span { font-size: 16px; line-height: 1; }
+
+.portfolio { padding-block: clamp(58px, 7vw, 108px) 0; }
+.portfolio-head { display: flex; justify-content: space-between; gap: 14px; align-items: end; margin-bottom: 24px; }
+.portfolio h2 { text-wrap: pretty; }
+.portfolio-controls { display: flex; gap: 8px; flex: none; }
+.portfolio-controls button { background: var(--paper); font-size: 21px; transition: background .2s; }
+.portfolio-controls button:hover:not([aria-disabled=true]) { background: #c6d6c8; }
+.portfolio-controls button[aria-disabled=true] { opacity: .45; cursor: default; }
+.portfolio-photos {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 2 * 14px) / 3.4);
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin: 0;
+  padding: 0 0 12px;
+  list-style: none;
+  scrollbar-color: var(--green) var(--paper);
+}
+.portfolio-photos li { min-width: 0; scroll-snap-align: start; }
+.portfolio-photos img {
+  width: 100%;
+  aspect-ratio: 5/4;
+  object-fit: cover;
+  border-radius: 50% 50% 8px 8px / 54px 54px 8px 8px;
+}
+.portfolio-photos figcaption { margin-top: 8px; font-size: 16px; }
+@media (max-width: 1040px) {
+  .hero-stage { min-height: 445px; }
+  .invitation h1 { font-size: clamp(47px, 6.85vw, 89px); }
+}
+@media (max-width: 760px) {
+  .hero-stage { min-height: 0; aspect-ratio: 4/2.9; border-radius: 50% 50% 6px 6px / 41px 41px 6px 6px; }
+  .hero-stage .hero-photo { aspect-ratio: auto; }
+  .hero-gallery.has-slides .hero-photo figcaption { margin: 0 8px 56px; }
+  .slide-tools { bottom: 7px; left: 8px; }
+  .invitation h1 { font-size: clamp(47px, 12.2vw, 88px); }
+  .portfolio-photos { grid-auto-columns: min(75%, 360px); }
+  .portfolio-head { align-items: start; }
+}
+
 </style>
 </head>
 <body>
@@ -369,28 +447,46 @@ main { position: relative; z-index: 1; background: var(--stone); }
   <div class="hero-in wrap">
     <div class="invitation">
       <p class="location" data-de="Kindergeburtstage · Berlin &amp; Märkisch-Oderland" data-en="Children’s birthdays · Berlin &amp; Märkisch-Oderland" data-pl="Urodziny dzieci · Berlin i Märkisch-Oderland">Kindergeburtstage · Berlin &amp; Märkisch-Oderland</p>
-      <h1 id="hero-title"><span data-de="Heute wird" data-en="Today we" data-pl="Dziś">Heute wird</span><br><em data-de="gefeiert." data-en="celebrate." data-pl="świętujemy.">gefeiert.</em></h1>
-      <p class="lede" data-de="Selbstgemachtes von Paulina für euren Kindergeburtstag. Vom gedeckten Tisch bis zur Feier mit Torte und Spielrunde." data-en="Paulina cooks and bakes for your child’s birthday, from laying the table to bringing the cake and hosting the party." data-pl="Paulina gotuje i piecze na urodziny dziecka. Nakryje stół, a na życzenie przywiezie tort i poprowadzi przyjęcie.">Selbstgemachtes von Paulina für euren Kindergeburtstag. Vom gedeckten Tisch bis zur Feier mit Torte und Spielrunde.</p>
+      <h1 id="hero-title"><span data-de="Heute seid ihr" data-en="Today you’re" data-pl="Dziś jesteście">Heute seid ihr</span><br><em data-de="Gäste." data-en="the guests." data-pl="gośćmi.">Gäste.</em></h1>
+      <p class="lede" data-de="Seid dabei, wenn euer Kind die Kerzen auspustet. Paulina kocht, backt und deckt den Tisch. Wenn ihr mögt, führt sie auch durch die ganze Feier." data-en="Be there when your child blows out the candles. Paulina cooks, bakes and lays the table. She can host the whole party if you’d like." data-pl="Bądźcie obok, gdy wasze dziecko zdmuchuje świeczki. Paulina gotuje, piecze i nakrywa stół. Na życzenie poprowadzi też całe przyjęcie.">Seid dabei, wenn euer Kind die Kerzen auspustet. Paulina kocht, backt und deckt den Tisch. Wenn ihr mögt, führt sie auch durch die ganze Feier.</p>
       <div class="hero-actions">
         <a class="btn" href="#anfrage"><span data-de="Termin anfragen" data-en="Ask about your date" data-pl="Zapytaj o termin">Termin anfragen</span><span aria-hidden="true">↗</span></a>
         <a class="link" href="#angebote"><span data-de="Angebote ab 140 €" data-en="Packages from €140" data-pl="Pakiety od 140 €">Angebote ab 140 €</span></a>
       </div>
     </div>
-    <figure class="hero-photo">
-      <img src="images/v4/table.webp" width="1600" height="1200" fetchpriority="high" alt="Paulinas Geburtstagstisch vor dem grünen Vorhang mit selbstgemachtem Essen und Kreidetafeln" data-alt-en="Paulina’s birthday table in front of a green curtain with homemade food and chalkboard labels" data-alt-pl="Stół urodzinowy Pauliny przed zieloną zasłoną, z domowym jedzeniem i kredowymi tabliczkami">
-      <figcaption><span data-de="Gedeckt von Paulina" data-en="Set by Paulina" data-pl="Stół nakryty przez Paulinę">Gedeckt von Paulina</span></figcaption>
-    </figure>
+    <div class="hero-gallery" id="hero-gallery">
+      <div class="hero-stage" id="hero-stage">
+        <figure class="hero-photo current">
+          <img src="images/v4/table.webp" width="1600" height="1200" alt="Paulinas Geburtstagstisch vor dem grünen Vorhang mit selbstgemachtem Essen und Kreidetafeln" data-alt-en="Paulina’s birthday table in front of a green curtain with homemade food and chalkboard labels" data-alt-pl="Stół urodzinowy Pauliny przed zieloną zasłoną, z domowym jedzeniem i tabliczkami" fetchpriority="high">
+          <figcaption><span data-de="Der gedeckte Geburtstagstisch" data-en="The birthday table" data-pl="Stół urodzinowy">Der gedeckte Geburtstagstisch</span></figcaption>
+        </figure>
+        <figure class="hero-photo" aria-hidden="true" inert>
+          <img src="images/v3/theme-cake.webp" width="1400" height="1259" alt="Torte mit Blütenblättern, Wimpelkette und goldener Eins" data-alt-en="Cake with petals, bunting and a golden number one" data-alt-pl="Tort z płatkami kwiatów, girlandą i złotą jedynką" loading="lazy" decoding="async">
+          <figcaption><span data-de="Torte im Lieblingsthema" data-en="A cake in their favourite theme" data-pl="Tort w ulubionym motywie">Torte im Lieblingsthema</span></figcaption>
+        </figure>
+        <figure class="hero-photo" aria-hidden="true" inert>
+          <img src="images/v3/cutting.webp" width="1000" height="1200" alt="Paulina schneidet die Torte für die Gäste an" data-alt-en="Paulina cuts the cake for the guests" data-alt-pl="Paulina kroi tort dla gości" loading="lazy" decoding="async">
+          <figcaption><span data-de="Paulina serviert die Torte" data-en="Paulina serves the cake" data-pl="Paulina podaje tort">Paulina serviert die Torte</span></figcaption>
+        </figure>
+      </div>
+      <div class="slide-tools" id="slide-tools" hidden>
+        <button class="slide-select" type="button" aria-controls="hero-stage" aria-current="true"><span class="vh"><span data-de="Der gedeckte Geburtstagstisch" data-en="The birthday table" data-pl="Stół urodzinowy">Der gedeckte Geburtstagstisch</span></span></button>
+        <button class="slide-select" type="button" aria-controls="hero-stage" aria-current="false"><span class="vh"><span data-de="Torte im Lieblingsthema" data-en="A cake in their favourite theme" data-pl="Tort w ulubionym motywie">Torte im Lieblingsthema</span></span></button>
+        <button class="slide-select" type="button" aria-controls="hero-stage" aria-current="false"><span class="vh"><span data-de="Paulina serviert die Torte" data-en="Paulina serves the cake" data-pl="Paulina podaje tort">Paulina serviert die Torte</span></span></button>
+        <button id="slide-toggle" class="slide-toggle" type="button" aria-controls="hero-stage" aria-label="Diashow pausieren"><span aria-hidden="true">Ⅱ</span></button>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="pk wrap" id="angebote" aria-labelledby="h-pk">
-  <div class="section-head rise"><h2 id="h-pk"><span data-de="Drei Arten zu feiern" data-en="Three ways to celebrate" data-pl="Trzy sposoby na urodziny">Drei Arten zu feiern</span></h2><p data-de="Für Feiern mit 8 bis 30 Kindern. Die Preise hier gelten für 8. Vor der Buchung nennt euch Paulina den Gesamtpreis mit Anfahrt." data-en="For parties of 8 to 30 children. Prices below are for 8. Paulina will confirm the total, including travel, before you book." data-pl="Na przyjęcia dla 8–30 dzieci. Podane ceny dotyczą 8 dzieci. Przed rezerwacją Paulina poda pełną cenę z dojazdem.">Für Feiern mit 8 bis 30 Kindern. Die Preise hier gelten für 8. Vor der Buchung nennt euch Paulina den Gesamtpreis mit Anfahrt.</p></div>
+  <div class="section-head rise"><h2 id="h-pk"><span data-de="Was ihr abgeben könnt" data-en="How much can I take on?" data-pl="W czym mogę wam pomóc?">Was ihr abgeben könnt</span></h2><p data-de="Für Feiern mit 8 bis 30 Kindern. Die Preise hier gelten für 8. Vor der Buchung nennt euch Paulina den Gesamtpreis mit Anfahrt." data-en="For parties of 8 to 30 children. Prices below are for 8. Paulina will confirm the total, including travel, before you book." data-pl="Na przyjęcia dla 8–30 dzieci. Podane ceny dotyczą 8 dzieci. Przed rezerwacją Paulina poda pełną cenę z dojazdem.">Für Feiern mit 8 bis 30 Kindern. Die Preise hier gelten für 8. Vor der Buchung nennt euch Paulina den Gesamtpreis mit Anfahrt.</p></div>
   <div class="tags">
     <article class="tag rise" data-level="1" id="paket-1">
       <div class="pic"><img src="images/v3/flatlay.webp" width="1200" height="900" loading="lazy" alt="Der gedeckte Tisch von oben: Apfelkuchen, Muffins, Herzwaffeln, Marmeladen" data-alt-en="The laid table from above: apple cake, muffins, heart waffles, jams" data-alt-pl="Nakryty stół z góry: szarlotka, babeczki, gofry serduszka, dżemy"></div>
       <div class="label">
         <h3><span data-de="Der Tisch" data-en="The Table" data-pl="Stół">Der Tisch</span></h3>
-        <p class="what" data-de="Für Eltern, die das Essen abgeben möchten." data-en="For parents who want the food taken care of." data-pl="Dla rodziców, którzy chcą powierzyć komuś jedzenie.">Für Eltern, die das Essen abgeben möchten.</p>
+        <p class="what" data-de="Ihr kümmert euch um die Feier. Paulina bringt das Essen und deckt den Tisch." data-en="You plan the party. Paulina brings the food and lays the table." data-pl="Wy planujecie przyjęcie. Paulina przywozi jedzenie i nakrywa stół.">Ihr kümmert euch um die Feier. Paulina bringt das Essen und deckt den Tisch.</p>
         <ul><li><span data-de="Gemüse mit Dip, Pizza-Muffins, Obst, Bananenwaffeln, Apfelkuchen, Saft und Wasser" data-en="Vegetables with dip, pizza muffins, fruit, banana waffles, apple cake, juice and water" data-pl="Warzywa z dipem, muffinki pizzowe, owoce, gofry bananowe, szarlotka, sok i woda">Gemüse mit Dip, Pizza-Muffins, Obst, Bananenwaffeln, Apfelkuchen, Saft und Wasser</span></li><li><span data-de="Paulina baut das Buffet auf und räumt den Tisch danach ab." data-en="Paulina sets up the buffet and clears the table afterwards." data-pl="Paulina przygotowuje bufet i sprząta po nim stół.">Paulina baut das Buffet auf und räumt den Tisch danach ab.</span></li></ul>
       </div>
       <div class="stub">
@@ -402,8 +498,8 @@ main { position: relative; z-index: 1; background: var(--stone); }
       <div class="pic"><img src="images/v3/theme-cake.webp" width="1400" height="1259" loading="lazy" alt="Geburtstagstorte mit Blütenblättern, Wimpelkette und goldener Eins" data-alt-en="Birthday cake with petals, bunting and a golden number one" data-alt-pl="Tort urodzinowy z płatkami kwiatów, girlandą i złotą jedynką"></div>
       <div class="label">
         <h3><span data-de="Die Feier" data-en="The Party" data-pl="Przyjęcie">Die Feier</span></h3>
-        <p class="what" data-de="Zum gedeckten Tisch kommen Torte, Deko und eine Spiel- oder Backrunde." data-en="Add a birthday cake, decorations and a game or baking activity to the laid table." data-pl="Do nakrytego stołu dochodzą tort, dekoracje i wspólna zabawa lub pieczenie.">Zum gedeckten Tisch kommen Torte, Deko und eine Spiel- oder Backrunde.</p>
-        <ul><li><span data-de="Torte im Lieblingsthema und Deko für Tisch und Raum." data-en="A cake in their favourite theme and decorations for the table and room." data-pl="Tort w ulubionym motywie oraz dekoracje stołu i sali.">Torte im Lieblingsthema und Deko für Tisch und Raum.</span></li><li><span data-de="Paulina leitet eine Back- oder Spielrunde mit den Kindern." data-en="Paulina leads a baking session or a game with the children." data-pl="Paulina prowadzi wspólne pieczenie lub zabawę z dziećmi.">Paulina leitet eine Back- oder Spielrunde mit den Kindern.</span></li></ul>
+        <p class="what" data-de="Ihr möchtet eine Torte, die zu eurem Kind passt, und Zeit, euch zu den Gästen zu setzen." data-en="You’d love a cake that feels like your child and a chance to sit down with your guests." data-pl="Chcecie tortu, który pasuje do waszego dziecka, i chwili, żeby usiąść z gośćmi.">Ihr möchtet eine Torte, die zu eurem Kind passt, und Zeit, euch zu den Gästen zu setzen.</p>
+        <ul><li><span data-de="Der gedeckte Tisch, Torte im Lieblingsthema und Deko für Tisch und Raum." data-en="The birthday table, a cake in their favourite theme and decorations for the table and room." data-pl="Nakryty stół, tort w ulubionym motywie oraz dekoracje stołu i sali.">Der gedeckte Tisch, Torte im Lieblingsthema und Deko für Tisch und Raum.</span></li><li><span data-de="Paulina leitet eine Back- oder Spielrunde mit den Kindern." data-en="Paulina leads a baking session or a game with the children." data-pl="Paulina prowadzi wspólne pieczenie lub zabawę z dziećmi.">Paulina leitet eine Back- oder Spielrunde mit den Kindern.</span></li></ul>
       </div>
       <div class="stub">
         <p class="price"><span data-de="ab" data-en="from" data-pl="od">ab</span> <strong>270&nbsp;€</strong></p>
@@ -414,7 +510,7 @@ main { position: relative; z-index: 1; background: var(--stone); }
       <div class="pic"><img src="images/v3/cutting.webp" width="1000" height="1200" loading="lazy" alt="Paulina schneidet die Torte an, die Gäste halten schon die Teller" data-alt-en="Paulina cuts the cake while the guests hold their plates" data-alt-pl="Paulina kroi tort, a goście trzymają już talerzyki"></div>
       <div class="label">
         <h3><span data-de="Ihr seid Gäste" data-en="You’re Guests" data-pl="Jesteście gośćmi">Ihr seid Gäste</span></h3>
-        <p class="what" data-de="Für Eltern, die beim Kerzenauspusten mit am Tisch sitzen möchten." data-en="For parents who want to be at the table when the candles go out." data-pl="Dla rodziców, którzy chcą być przy stole podczas zdmuchiwania świeczek.">Für Eltern, die beim Kerzenauspusten mit am Tisch sitzen möchten.</p>
+        <p class="what" data-de="Ihr wollt mitsingen, Fotos machen und den ersten Bissen von der Torte mit eurem Kind teilen." data-en="You want to sing along, take pictures and share the first bite of cake with your child." data-pl="Chcecie zaśpiewać z gośćmi, zrobić zdjęcia i spróbować tortu razem z dzieckiem.">Ihr wollt mitsingen, Fotos machen und den ersten Bissen von der Torte mit eurem Kind teilen.</p>
         <ul><li><span data-de="Alles aus der Feier, dazu ein Mitgebsel für jedes Kind" data-en="Everything from the party, plus a take-home bag for every child" data-pl="Wszystko z przyjęcia oraz upominek dla każdego dziecka">Alles aus der Feier, dazu ein Mitgebsel für jedes Kind</span></li><li><span data-de="Ich führe durch die Feier und räume bis zum letzten Teller auf" data-en="I host the party and tidy up to the last plate" data-pl="Prowadzę przyjęcie i sprzątam do ostatniego talerza">Ich führe durch die Feier und räume bis zum letzten Teller auf</span></li></ul>
       </div>
       <div class="stub">
@@ -475,13 +571,31 @@ main { position: relative; z-index: 1; background: var(--stone); }
   </div>
 </section>
 
+
+<section class="portfolio wrap" aria-labelledby="portfolio-heading">
+  <div class="portfolio-head rise">
+    <h2 id="portfolio-heading"><span data-de="Ein Blick auf die Tafel" data-en="A look at the birthday table" data-pl="Rzut oka na urodzinowy stół">Ein Blick auf die Tafel</span></h2>
+    <div class="portfolio-controls" id="portfolio-controls" hidden>
+      <button type="button" data-gallery="-1" aria-controls="portfolio-photos"><span aria-hidden="true">←</span><span class="vh"><span data-de="Vorherige Fotos" data-en="Previous photos" data-pl="Poprzednie zdjęcia">Vorherige Fotos</span></span></button>
+      <button type="button" data-gallery="1" aria-controls="portfolio-photos"><span aria-hidden="true">→</span><span class="vh"><span data-de="Nächste Fotos" data-en="Next photos" data-pl="Następne zdjęcia">Nächste Fotos</span></span></button>
+    </div>
+  </div>
+  <ul class="portfolio-photos" id="portfolio-photos" tabindex="0" aria-labelledby="portfolio-heading">
+    <li class="rise"><figure><img src="images/v5/f-grazing.webp" width="720" height="720" alt="" data-alt-en="" data-alt-pl="" loading="lazy" decoding="async"><figcaption><span data-de="Melone, Waffeln und kleine Snacks" data-en="Watermelon, waffles and small bites" data-pl="Arbuz, gofry i drobne przekąski">Melone, Waffeln und kleine Snacks</span></figcaption></figure></li>
+    <li class="rise"><figure><img src="images/v5/f-waffles.webp" width="720" height="720" alt="" data-alt-en="" data-alt-pl="" loading="lazy" decoding="async"><figcaption><span data-de="Bananenwaffeln in Herzform" data-en="Heart-shaped banana waffles" data-pl="Gofry bananowe w kształcie serca">Bananenwaffeln in Herzform</span></figcaption></figure></li>
+    <li class="rise"><figure><img src="images/v5/f-table.webp" width="720" height="720" alt="" data-alt-en="" data-alt-pl="" loading="lazy" decoding="async"><figcaption><span data-de="Schokomuffins und Schleierkraut" data-en="Chocolate muffins and gypsophila" data-pl="Muffinki czekoladowe i gipsówka">Schokomuffins und Schleierkraut</span></figcaption></figure></li>
+    <li class="rise"><figure><img src="images/v5/f-hands.webp" width="720" height="877" alt="" data-alt-en="" data-alt-pl="" loading="lazy" decoding="async"><figcaption><span data-de="Torte mit Sahne und Beeren" data-en="Cake with cream and berries" data-pl="Tort z bitą śmietaną i owocami">Torte mit Sahne und Beeren</span></figcaption></figure></li>
+    <li class="rise"><figure><img src="images/v5/f-labels.webp" width="450" height="450" alt="" data-alt-en="" data-alt-pl="" loading="lazy" decoding="async"><figcaption><span data-de="Kleine Tafeln an jedem Gericht" data-en="Little chalkboards by each dish" data-pl="Małe tabliczki przy każdym daniu">Kleine Tafeln an jedem Gericht</span></figcaption></figure></li>
+  </ul>
+</section>
+
 <section class="letter wrap" id="paulina" aria-labelledby="h-paulina">
   <figure class="letter-photo rise">
     <img src="images/v4/hero.webp" width="780" height="975" loading="lazy" alt="Paulina stellt eine Beerentorte auf den Geburtstagstisch" data-alt-en="Paulina sets a berry cake on the birthday table" data-alt-pl="Paulina stawia tort z owocami na urodzinowym stole">
   </figure>
   <div class="letter-paper rise">
     <h2 id="h-paulina"><span data-de="Bei Paulina am Tisch" data-en="At Paulina’s table" data-pl="Przy stole Pauliny">Bei Paulina am Tisch</span></h2>
-    <p class="letter-text" data-de="Paulina Zagorska Salahova kocht und backt für Familien in Berlin und Märkisch-Oderland. Sie bringt das Essen zu euch, deckt den Tisch und schreibt die Schilder von Hand. Zwei Erdbeeren erinnern an ihre Töchter." data-en="Paulina Zagorska Salahova cooks and bakes for families in Berlin and Märkisch-Oderland. She brings the food to you, lays the table and writes each label by hand. The two strawberries are a nod to her daughters." data-pl="Paulina Zagorska Salahova gotuje i piecze dla rodzin z Berlina i Märkisch-Oderland. Przywozi jedzenie, nakrywa stół i ręcznie wypisuje tabliczki. Dwie truskawki przypominają o jej córkach.">Paulina Zagorska Salahova kocht und backt für Familien in Berlin und Märkisch-Oderland. Sie bringt das Essen zu euch, deckt den Tisch und schreibt die Schilder von Hand. Zwei Erdbeeren erinnern an ihre Töchter.</p>
+    <p class="letter-text" data-de="Paulina Zagorska Salahova ist selbst Mama von zwei Töchtern. Sie kocht und backt für Familien, die beim Kindergeburtstag mit am Tisch sitzen möchten. Sie bringt das Essen zu euch und schreibt die kleinen Kreideschilder von Hand. Die zwei Erdbeeren stehen für ihre Töchter." data-en="Paulina Zagorska Salahova is a mum of two daughters. She cooks and bakes for families who want to be at the table for their child’s birthday. She brings the food to you and writes the little chalkboard labels by hand. The two strawberries stand for her daughters." data-pl="Paulina Zagorska Salahova jest mamą dwóch córek. Gotuje i piecze dla rodzin, które chcą usiąść przy urodzinowym stole razem z dzieckiem. Przywozi jedzenie i ręcznie wypisuje małe tabliczki kredowe. Dwie truskawki symbolizują jej córki.">Paulina Zagorska Salahova ist selbst Mama von zwei Töchtern. Sie kocht und backt für Familien, die beim Kindergeburtstag mit am Tisch sitzen möchten. Sie bringt das Essen zu euch und schreibt die kleinen Kreideschilder von Hand. Die zwei Erdbeeren stehen für ihre Töchter.</p>
     <a class="link" href="#anfrage"><span data-de="Paulina schreiben" data-en="Write to Paulina" data-pl="Napiszcie do Pauliny">Paulina schreiben</span></a>
     <img src="images/mark.svg" width="62" height="54" alt="">
   </div>
@@ -675,6 +789,115 @@ byId('age').addEventListener('change', event => {
   candles.replaceChildren(...Array.from({length: count}, () => document.createElement('i')));
   candles.hidden = !count;
 });
+
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const gallery = byId('hero-gallery');
+const slideTools = byId('slide-tools');
+const slideToggle = byId('slide-toggle');
+const slideButtons = [...gallery.querySelectorAll('.slide-select')];
+const slidePhotos = [...gallery.querySelectorAll('.hero-photo')];
+const slideLabels = {
+  de: {pause: 'Diashow pausieren', play: 'Diashow abspielen'},
+  en: {pause: 'Pause slideshow', play: 'Play slideshow'},
+  pl: {pause: 'Wstrzymaj pokaz slajdów', play: 'Włącz pokaz slajdów'}
+};
+let visibleSlide = 0;
+let playing = !reducedMotion.matches;
+let timer;
+let pointerInside = false;
+let focusInside = false;
+
+function showSlide(index) {
+  visibleSlide = index;
+  slidePhotos.forEach((photo, position) => {
+    const active = position === index;
+    photo.classList.toggle('current', active);
+    photo.inert = !active;
+    photo.setAttribute('aria-hidden', String(!active));
+    slideButtons[position].setAttribute('aria-current', String(active));
+  });
+}
+
+function updateSlideshow() {
+  clearTimeout(timer);
+  const labels = slideLabels[language.value];
+  slideToggle.setAttribute('aria-label', playing ? labels.pause : labels.play);
+  slideToggle.firstElementChild.textContent = playing ? 'Ⅱ' : '▶';
+  if (playing && !document.hidden && !pointerInside && !focusInside) {
+    timer = setTimeout(() => {
+      showSlide((visibleSlide + 1) % slidePhotos.length);
+      updateSlideshow();
+    }, 6400);
+  }
+}
+
+slideButtons.forEach((button, index) => button.addEventListener('click', () => {
+  playing = false;
+  showSlide(index);
+  updateSlideshow();
+}));
+slideToggle.addEventListener('click', () => {
+  playing = !playing;
+  if (playing) {
+    pointerInside = false;
+    focusInside = false;
+  }
+  updateSlideshow();
+});
+gallery.addEventListener('pointerenter', event => {
+  if (event.pointerType !== 'mouse') return;
+  pointerInside = true;
+  updateSlideshow();
+});
+gallery.addEventListener('pointerleave', () => {
+  pointerInside = false;
+  updateSlideshow();
+});
+gallery.addEventListener('focusin', event => {
+  if (!gallery.contains(event.relatedTarget) && event.target.matches(':focus-visible')) playing = false;
+  focusInside = true;
+  updateSlideshow();
+});
+gallery.addEventListener('focusout', event => {
+  if (gallery.contains(event.relatedTarget)) return;
+  focusInside = false;
+  updateSlideshow();
+});
+document.addEventListener('visibilitychange', updateSlideshow);
+language.addEventListener('change', updateSlideshow);
+reducedMotion.addEventListener('change', event => {
+  if (event.matches) playing = false;
+  updateSlideshow();
+});
+gallery.classList.add('has-slides');
+slideTools.hidden = false;
+updateSlideshow();
+
+const portfolio = byId('portfolio-photos');
+const portfolioControls = byId('portfolio-controls');
+const [back, forward] = portfolioControls.querySelectorAll('button');
+function updatePortfolioControls() {
+  const atStart = portfolio.scrollLeft <= 2;
+  const atEnd = portfolio.scrollLeft + portfolio.clientWidth >= portfolio.scrollWidth - 2;
+  back.setAttribute('aria-disabled', String(atStart));
+  forward.setAttribute('aria-disabled', String(atEnd));
+}
+portfolioControls.querySelectorAll('button').forEach(button => {
+  button.addEventListener('click', () => {
+    if (button.getAttribute('aria-disabled') === 'true') return;
+    const first = portfolio.children[0];
+    const second = portfolio.children[1];
+    const step = second.offsetLeft - first.offsetLeft;
+    portfolio.scrollBy({
+      left: step * Number(button.dataset.gallery),
+      behavior: reducedMotion.matches ? 'auto' : 'smooth'
+    });
+  });
+});
+portfolio.addEventListener('scroll', updatePortfolioControls, {passive: true});
+window.addEventListener('resize', updatePortfolioControls);
+portfolioControls.hidden = false;
+updatePortfolioControls();
 
 if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const observer = new IntersectionObserver(entries => {
