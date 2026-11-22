@@ -1,982 +1,292 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AllesGute · Kindergeburtstag-Catering Berlin</title>
-<meta name="description" content="Frisches Catering, Themen-Deko und Herz — für den Kindergeburtstag, den dein Kind nie vergisst. Ab €19/Kind in Berlin.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --ink:#1C1610;--ink2:#3D2E25;--cream:#FAF6F0;--cream2:#F3EDE3;--sand:#E8DDD0;
-  --rose:#C33358;--rose2:#A02446;--blush:#FADDE5;--sage:#5D9463;--sage2:#C4DEC7;
-  --gold:#C49A50;--white:#FFFFFF;
-  --fd:'Cormorant Garamond',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif;
-  --ease:cubic-bezier(.16,1,.3,1);--tf:.2s cubic-bezier(.16,1,.3,1);
-  --r:12px;--rl:24px;--rx:40px;
-  --sh:0 4px 20px rgba(28,22,16,.08);--shh:0 12px 40px rgba(28,22,16,.16)
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AllesGute · Kindergeburtstage in Berlin mit Paulina Salahov</title>
+<meta name="description" content="Kindergeburtstage in Berlin und im Havelland. Paulina Salahov kümmert sich um den Geburtstagstisch oder plant eure ganze Feier. Catering ab 19 € pro Kind.">
+<link rel="icon" href="images/berries.svg" type="image/svg+xml"><style>:root {
+  --paper:#fbf6eb; --ink:#312b24; --berry:#91263a; --line:#d6c9b5; --peach:#f2dfce;
+  --serif:Georgia,"Times New Roman",serif;
 }
-html{scroll-behavior:smooth}
-body{font-family:var(--fb);background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden;cursor:none}
-body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.025;pointer-events:none;z-index:9000}
-img{max-width:100%;display:block;object-fit:cover}a{color:inherit;text-decoration:none}
-button{cursor:none;font-family:var(--fb);border:none;background:none}ul{list-style:none}
-/* Two strawberry cursors — Laura (big sister) + Laia (little sister) */
-.cur-d{width:24px;height:24px;font-size:18px;line-height:24px;text-align:center;background:none;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s var(--ease);user-select:none}
-.cur-d2{width:16px;height:16px;font-size:12px;line-height:16px;text-align:center;background:none;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);user-select:none;opacity:.75;transition:transform .15s var(--ease)}
-body.ch .cur-d{transform:translate(-50%,-50%) scale(1.5) rotate(-20deg)}
-body.ch .cur-d2{transform:translate(-50%,-50%) scale(1.3) rotate(15deg)}
-.wrap{width:min(1180px,100% - 2rem);margin:0 auto}
-section{padding:clamp(4rem,8vw,7rem) 0}
-h1,h2,h3{font-family:var(--fd);font-weight:600;line-height:1.1}
-.d-xl{font-size:clamp(2.8rem,6.5vw,5.4rem);letter-spacing:-.02em;line-height:1.05}
-.d-lg{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.02em;line-height:1.1}
-.lbl{font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;opacity:.5}
-.sec-sub{font-size:1rem;color:var(--ink2);line-height:1.7;max-width:500px;margin-top:.875rem}
-.about-s .lbl,.hiw-s .lbl,.testi-s .lbl,.areas-s .lbl,.book-s .lbl,.stats-s .lbl{color:var(--sage);opacity:1;letter-spacing:.14em}
-/* ---- ANIMATIONS (fill-mode:both = pure CSS, zero JS needed) ---- */
-@keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-/* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 0;transition:background .35s,padding .35s,box-shadow .35s;background:rgba(250,246,240,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(232,221,208,.6)}
-.nav.sx{background:rgba(250,246,240,.97);padding:.9rem 0;box-shadow:0 1px 0 var(--sand),0 4px 20px rgba(28,22,16,.05)}
-.nav-i{display:flex;align-items:center;justify-content:space-between;gap:2rem}
-.logo{display:flex;align-items:center;gap:.65rem;flex-shrink:0}
-.logo-t{font-family:var(--fd);font-size:1.5rem;font-weight:600;font-style:italic;letter-spacing:.01em;line-height:1}
-.logo-t span{color:var(--rose)}
-.nav-links{display:flex;gap:2rem;align-items:center}
-.nav-links a{font-size:.875rem;color:var(--ink2);position:relative;transition:color .2s}
-.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--rose);transition:width .2s}
-.nav-links a:hover{color:var(--ink)}.nav-links a:hover::after{width:100%}
-.nav-r{display:flex;align-items:center;gap:1.25rem;flex-shrink:0}
-.ld{position:relative}
-.ld-btn{display:flex;align-items:center;gap:.3rem;font-size:.8rem;font-weight:500;letter-spacing:.05em;color:var(--ink2);padding:.4rem .6rem;border-radius:6px;transition:background .2s;cursor:none}
-.ld-btn:hover{background:var(--sand)}.ld-btn svg{transition:transform .3s;width:12px;height:12px}.ld.op .ld-btn svg{transform:rotate(180deg)}
-.ld-menu{position:absolute;top:calc(100% + 8px);right:0;background:var(--white);border:1px solid var(--sand);border-radius:var(--r);padding:.4rem;min-width:130px;box-shadow:var(--sh);opacity:0;transform:translateY(-8px) scale(.96);pointer-events:none;transition:opacity .25s,transform .25s;z-index:200}
-.ld.op .ld-menu{opacity:1;transform:none;pointer-events:all}
-.ld-opt{display:flex;align-items:center;gap:.6rem;padding:.45rem .75rem;border-radius:6px;font-size:.85rem;cursor:none;transition:background .15s}
-.ld-opt:hover{background:var(--cream2)}.ld-opt.ac{font-weight:500;color:var(--rose2)}
-.btn-nav{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.25rem;background:var(--ink);color:var(--cream);border-radius:100px;font-size:.85rem;font-weight:500;transition:background .2s,transform .2s}
-.btn-nav:hover{background:var(--ink2);transform:scale(1.02)}
-.hbg{display:none;flex-direction:column;gap:5px;padding:.5rem;cursor:none}
-.hbg span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .3s,opacity .3s}
-.mob-nav{display:none;position:fixed;inset:0;background:var(--cream);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
-.mob-nav.op{display:flex}.mob-nav a{font-family:var(--fd);font-size:2.2rem;font-weight:600;font-style:italic}
-.mob-nav .ld{position:static}.mob-nav .ld-menu{position:static;opacity:1;transform:none;pointer-events:all;box-shadow:none;border:none;background:transparent;text-align:center}
-/* HERO */
-.hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;padding-top:120px;padding-bottom:4rem}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem 1rem;background:var(--sage2);border-radius:100px;font-size:.78rem;font-weight:500;color:#3A6B3F;margin-bottom:1.75rem;animation:fu .7s .05s var(--ease) both}
-.d-xl .hl{display:block;animation:fu .85s var(--ease) both}
-.d-xl .hl:nth-child(1){animation-delay:.18s}
-.d-xl .hl:nth-child(2){animation-delay:.30s}
-.d-xl .hl:nth-child(3){animation-delay:.44s}
-.it{font-style:italic;color:var(--rose)}
-.hero-sub{font-size:1.0625rem;color:var(--ink2);max-width:420px;line-height:1.75;margin-bottom:2.25rem;animation:fu .8s .62s var(--ease) both}
-.hero-acts{display:flex;gap:.875rem;flex-wrap:wrap;align-items:center;margin-bottom:2.5rem;animation:fu .8s .76s var(--ease) both}
-.btn-p{display:inline-flex;align-items:center;gap:.4rem;padding:.875rem 2rem;background:var(--rose);color:var(--white);border-radius:100px;font-size:.9375rem;font-weight:500;transition:background .2s,transform .3s var(--ease),box-shadow .3s}
-.btn-p:hover{background:var(--rose2);transform:scale(1.03);box-shadow:0 8px 24px rgba(195,51,88,.38)}
-.btn-s{display:inline-flex;align-items:center;gap:.4rem;padding:.875rem 2rem;border:1px solid var(--sand);border-radius:100px;font-size:.9375rem;color:var(--ink2);transition:all .2s}
-.btn-s:hover{border-color:var(--ink);background:var(--ink);color:var(--cream)}
-.hero-trust{display:flex;align-items:center;gap:.875rem;animation:fu .8s .9s var(--ease) both}
-.stars{color:var(--gold);font-size:.875rem}.hero-trust-t{font-size:.8rem;color:var(--ink2)}
-.hero-vis{animation:fu 1s .15s var(--ease) both;position:relative}
-.hero-img{border-radius:60% 40% 55% 45%/45% 55% 45% 55%;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(135deg,var(--blush),var(--sage2));position:relative}
-.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
-.hf{position:absolute;background:var(--white);border-radius:var(--r);padding:.65rem 1.1rem;box-shadow:var(--sh);display:flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:500;white-space:nowrap}
-.hf1{bottom:14%;left:-8%;animation:floaty 5s ease-in-out infinite}
-.hf2{top:12%;right:-8%;animation:floaty 5s ease-in-out 1.8s infinite}
-.hf-dot{width:8px;height:8px;border-radius:50%;background:var(--sage);flex-shrink:0}
-.hero-circle{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,228,231,.7) 0%,transparent 70%);top:50%;right:-12%;transform:translateY(-50%);z-index:-1;pointer-events:none}
-/* MARQUEE */
-.mq-strip{background:var(--ink);padding:1rem 0;overflow:hidden}
-.mq-i{display:flex;gap:2.5rem;animation:mq 28s linear infinite;white-space:nowrap;width:max-content}
-.mq-item{display:flex;align-items:center;gap:.65rem;font-size:.8rem;color:var(--cream);letter-spacing:.03em;flex-shrink:0}
-.mq-d{color:var(--rose);font-size:.45rem}
-/* GALLERY STRIP */
-.gallery{background:var(--sage2);padding:2rem 0;overflow:hidden}
-.gallery-row{display:flex;gap:.875rem;padding:0 2rem;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
-.gallery-row::-webkit-scrollbar{display:none}
-.gal-img{flex-shrink:0;border-radius:var(--rl);overflow:hidden;transition:transform .5s var(--ease)}
-.gal-img:hover{transform:scale(1.03)}
-.gal-img img{height:260px;width:auto;display:block}
-/* STATS */
-.stats-s{padding:4rem 0;background:var(--cream2);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand)}
-.stats-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-.stat{text-align:center}
-.stat-n{font-family:var(--fd);font-size:clamp(2.2rem,5vw,3.5rem);font-weight:600;font-style:italic;line-height:1;margin-bottom:.4rem}
-.stat-n em{font-style:italic;color:var(--sage)}.stat-l{font-size:.875rem;color:var(--ink2)}
-/* PACKAGES */
-.pkg-s{background:var(--ink);color:var(--cream)}
-.pkg-s .lbl{color:rgba(250,246,240,.45)}.pkg-s .d-lg{color:var(--cream)}
-.pkg-s .sec-sub{color:rgba(250,246,240,.6)}
-.calc-box{margin:2.5rem 0 1.5rem;padding:1.75rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--rl)}
-.calc-lbl{font-size:.85rem;color:rgba(250,246,240,.55);margin-bottom:1rem}
-.calc-row{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
-.calc-slider{-webkit-appearance:none;appearance:none;width:200px;height:4px;background:rgba(255,255,255,.15);border-radius:2px;outline:none}
-.calc-slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--rose);cursor:none;box-shadow:0 0 0 3px rgba(201,122,136,.3)}
-.calc-disp{font-family:var(--fd);font-style:italic;font-size:1.5rem;font-weight:600;color:var(--cream)}
-.calc-disp em{font-style:italic;color:var(--rose)}
-.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1.25rem}
-.pkg{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--rl);padding:1.75rem;position:relative;transition:transform .4s var(--ease),border-color .3s}
-.pkg:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.22)}
-.pkg.ft{background:var(--rose);border-color:var(--rose)}.pkg.ft:hover{transform:translateY(-5px) scale(1.01)}
-.pkg-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--ink);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.28rem .875rem;border-radius:100px}
-.pkg-nm{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,246,240,.5);margin-bottom:.4rem;font-weight:500}
-.pkg.ft .pkg-nm{color:rgba(255,255,255,.75)}
-.pkg-pr{display:flex;align-items:baseline;gap:.3rem;margin:.6rem 0}
-.pkg-e{font-family:var(--fd);font-style:italic;font-size:2.8rem;font-weight:600;line-height:1;color:var(--cream)}
-.pkg.ft .pkg-e{color:var(--white)}
-.pkg-u{font-size:.82rem;color:rgba(250,246,240,.5)}.pkg.ft .pkg-u{color:rgba(255,255,255,.75)}
-.pkg-tot{font-size:.8rem;color:rgba(250,246,240,.4);margin-bottom:1.25rem;min-height:1.1em;font-style:italic}
-.pkg.ft .pkg-tot{color:rgba(255,255,255,.6)}
-.pkg-list{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.75rem}
-.pkg-li{display:flex;align-items:flex-start;gap:.45rem;font-size:.85rem;color:rgba(250,246,240,.7);line-height:1.4}
-.pkg.ft .pkg-li{color:rgba(255,255,255,.9)}
-.ck{color:var(--sage);flex-shrink:0;margin-top:1px}.pkg.ft .ck{color:rgba(255,255,255,.95)}
-.pkg-btn{display:block;text-align:center;padding:.825rem;border:1px solid rgba(255,255,255,.22);border-radius:100px;font-size:.85rem;font-weight:500;color:var(--cream);transition:background .2s,border-color .2s}
-.pkg-btn:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.55)}
-.pkg.ft .pkg-btn{background:var(--white);color:var(--rose2);border-color:var(--white)}
-.pkg.ft .pkg-btn:hover{background:var(--cream)}
-.pkg-note{text-align:center;font-size:.78rem;color:rgba(250,246,240,.3);margin-top:1.75rem}
-/* HOW IT WORKS */
-.hiw-s{background:var(--cream2)}
-.hiw-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.75rem;position:relative}
-.hiw-g::before{content:'';position:absolute;top:31px;left:10%;width:80%;height:1px;background:var(--sand);z-index:0}
-.hiw-c{position:relative;z-index:1;text-align:center}
-.hiw-n{width:62px;height:62px;background:var(--white);border:2px solid var(--sage2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-style:italic;font-size:1.4rem;font-weight:600;color:var(--sage);margin:0 auto 1.25rem;transition:background .4s var(--ease),border-color .3s}
-.hiw-c:hover .hiw-n{background:var(--sage);color:var(--white);border-color:var(--sage)}
-.hiw-c h3{font-family:var(--fd);font-size:1.1rem;margin-bottom:.6rem}
-.hiw-c p{font-size:.85rem;color:var(--ink2);line-height:1.65}
-/* ABOUT */
-.about-s{background:var(--cream)}
-.about-g{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
-.about-img{aspect-ratio:4/5;border-radius:var(--rx);overflow:hidden;position:relative;background:var(--blush)}
-.about-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%}
-.about-wrap .lbl{margin-bottom:.75rem}
-.about-wrap .d-lg{margin-bottom:1.25rem;margin-top:.75rem}
-.about-txt{color:var(--ink2);line-height:1.8;margin-bottom:1.25rem;font-size:.9375rem}
-.about-sig{font-family:var(--fd);font-style:italic;font-size:1.7rem;color:var(--rose);margin-top:1.75rem}
-.chips{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.25rem}
-.chip{display:flex;align-items:center;gap:.35rem;padding:.38rem .875rem;background:var(--white);border:1px solid var(--sand);border-radius:100px;font-size:.78rem}
-/* HEALTH */
-.health-s{padding:2.5rem 0;background:var(--sage2)}
-.health-i{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1.25rem}
-.h-badge{display:flex;align-items:center;gap:.45rem;padding:.5rem 1.1rem;background:rgba(255,255,255,.65);border-radius:100px;font-size:.78rem;font-weight:500;color:#3D5C3F}
-/* TESTIMONIALS */
-.testi-s{background:var(--cream2)}
-.testi-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.testi-c{background:var(--white);border:1px solid var(--sand);border-radius:var(--rl);padding:1.75rem;transition:transform .4s var(--ease),box-shadow .3s}
-.testi-c:hover{transform:translateY(-4px);box-shadow:var(--sh)}
-.t-stars{color:var(--gold);margin-bottom:.875rem;font-size:.875rem;letter-spacing:.04em}
-.t-q{font-family:var(--fd);font-style:italic;font-size:1.05rem;line-height:1.55;color:var(--ink);margin-bottom:1.25rem}
-.t-auth{display:flex;align-items:center;gap:.65rem}
-.t-av{width:38px;height:38px;border-radius:50%;background:var(--blush);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.t-nm{font-size:.85rem;font-weight:500}.t-mt{font-size:.74rem;color:var(--ink2)}
-/* AREAS */
-.areas-s{background:var(--cream)}
-.areas-g{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.area-list{display:flex;flex-wrap:wrap;gap:.75rem}
-.area-chip{display:flex;align-items:center;gap:.4rem;padding:.55rem 1.1rem;background:var(--white);border:1px solid var(--sand);border-radius:100px;font-size:.85rem;transition:background .2s,border-color .2s,transform .2s}
-.area-chip:hover{background:rgba(93,148,99,.12);border-color:var(--sage);transform:scale(1.04)}
-.areas-note{font-size:.875rem;color:var(--ink2);line-height:1.7;margin-top:1.25rem}
-/* STATUS */
-.status{padding:.7rem 1.5rem;border-radius:100px;font-size:.8rem;font-weight:500;display:inline-flex;align-items:center;gap:.4rem;margin-bottom:2rem}
-.st-open{background:#D4F7D4;color:#2D6A2D}.st-closed{background:#FFF3C0;color:#8A6A00}.st-booked{background:#FFD6D6;color:#8A2020}
-/* BOOKING */
-.book-s{background:var(--cream2)}
-.book-g{display:grid;grid-template-columns:1fr 1.35fr;gap:4.5rem;align-items:start}
-.book-info .lbl{margin-bottom:.75rem}.book-info .d-lg{margin-bottom:1.25rem;margin-top:.75rem}
-.book-info p{color:var(--ink2);line-height:1.75;margin-bottom:1.75rem;font-size:.9375rem}
-.book-feats{display:flex;flex-direction:column;gap:.875rem}
-.book-feat{display:flex;align-items:center;gap:.65rem;font-size:.875rem}
-.bf-icon{width:34px;height:34px;background:var(--white);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
-.form-card{background:var(--white);border:1px solid var(--sand);border-radius:var(--rx);padding:2.25rem}
-.fg{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
-.fi{display:flex;flex-direction:column;gap:.35rem}.fi.full{grid-column:span 2}.fl{font-size:.78rem;font-weight:500;color:var(--ink2)}
-.fin,.fse,.fta{padding:.7rem .95rem;border:1px solid var(--sand);border-radius:var(--r);font-family:var(--fb);font-size:.875rem;color:var(--ink);background:var(--cream);outline:none;transition:border-color .2s;width:100%}
-.fin:focus,.fse:focus,.fta:focus{border-color:var(--sage)}
-.fta{resize:vertical;min-height:90px}
-.fse{appearance:none;cursor:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%236B5E55' d='M5 7L1 3h8z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .9rem center}
-.fsub{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;padding:.95rem;background:var(--rose);color:var(--white);border-radius:100px;font-size:.9375rem;font-weight:500;margin-top:1.25rem;transition:background .2s,transform .3s var(--ease),box-shadow .3s}
-.fsub:hover{background:var(--rose2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(195,51,88,.32)}
-.f-note{text-align:center;font-size:.75rem;color:var(--ink2);margin-top:.875rem;opacity:.6}
-/* FAQ */
-.faq-s{background:var(--cream2)}
-.faq-g{display:flex;flex-direction:column;gap:.5rem;max-width:720px}
-.faq-c{border:1px solid var(--sand);border-radius:var(--r);background:var(--white);overflow:hidden;transition:border-color .2s}
-.faq-c.op{border-color:var(--rose)}
-.faq-q{display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;text-align:left;padding:1.125rem 1.375rem;font-size:.9375rem;font-weight:500;color:var(--ink);line-height:1.5;cursor:none}
-.faq-q::after{content:'▾';font-size:.75rem;color:var(--ink2);flex-shrink:0;transition:transform .3s var(--ease)}
-.faq-c.op .faq-q::after{transform:rotate(180deg);color:var(--rose)}
-.faq-a{max-height:0;overflow:hidden;padding:0 1.375rem;font-size:.9rem;color:var(--ink2);line-height:1.75;transition:max-height .4s var(--ease),padding .4s var(--ease)}
-.faq-c.op .faq-a{max-height:200px;padding:.125rem 1.375rem 1.25rem}
-/* FOOTER */
-.footer{background:var(--ink);color:var(--cream);padding:3rem 0}
-.footer-i{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
-.footer-brand p{font-size:.85rem;color:rgba(250,246,240,.5);line-height:1.7;margin-top:.875rem;max-width:220px}
-.fc h4{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,246,240,.35);margin-bottom:1.1rem;font-weight:500}
-.fc ul{display:flex;flex-direction:column;gap:.65rem}
-.fc a{font-size:.85rem;color:rgba(250,246,240,.6);transition:color .2s}.fc a:hover{color:var(--cream)}
-.footer-b{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;margin-top:2rem;border-top:1px solid rgba(255,255,255,.1);font-size:.76rem;color:rgba(250,246,240,.35)}
-/* === TESTIMONIAL POLISH === */
-.testi-c{position:relative;overflow:hidden;border-radius:20px;border:1.5px solid var(--sand);transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .3s}
-.testi-c:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(28,22,16,.11);border-color:var(--sage2)}
-.testi-c::before{content:'\201C';position:absolute;top:-1.5rem;left:1.1rem;font-family:var(--fd);font-size:7rem;line-height:1;color:var(--sage2);z-index:0;pointer-events:none;font-weight:600}
-.t-q{position:relative;z-index:1;font-size:1.05rem}
-.t-av{background:linear-gradient(135deg,var(--blush),var(--sage2))}
-
-/* === PACKAGE CARD DEPTH === */
-.pkg{transition:transform .45s var(--ease),border-color .35s,box-shadow .45s}
-.pkg:hover{transform:translateY(-7px);box-shadow:0 20px 60px rgba(28,22,16,.18)}
-.pkg.ft:hover{transform:translateY(-7px) scale(1.02);box-shadow:0 24px 64px rgba(195,51,88,.28)}
-
-/* === STEP NUMBER GLOW ON HOVER === */
-.hiw-n{transition:background .4s var(--ease),border-color .3s,color .3s,box-shadow .35s}
-.hiw-c:hover .hiw-n{box-shadow:0 0 0 6px rgba(93,148,99,.18)}
-
-/* === STAT HOVER === */
-.stat{cursor:default;transition:transform .35s var(--ease)}
-.stat:hover{transform:translateY(-4px)}
-
-/* === FLOATING CTA === */
-.float-cta{position:fixed;bottom:1.5rem;right:1.5rem;z-index:500;opacity:0;transform:translateY(12px) scale(.95);pointer-events:none;transition:opacity .5s var(--ease),transform .5s var(--ease)}
-.float-cta.vis{opacity:1;transform:none;pointer-events:all}
-.float-cta a{display:flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;background:var(--rose);color:var(--white);border-radius:100px;font-size:.875rem;font-weight:600;box-shadow:0 8px 28px rgba(195,51,88,.4);transition:background .2s,transform .25s var(--ease),box-shadow .3s;white-space:nowrap}
-.float-cta a:hover{background:var(--rose2);transform:scale(1.04);box-shadow:0 12px 36px rgba(195,51,88,.45)}
-.float-cta .fcta-icon{font-size:1rem;line-height:1}
-@media(max-width:768px){.float-cta{bottom:1rem;right:1rem}.float-cta a{padding:.65rem 1.1rem;font-size:.8rem}}
-
-/* === GALLERY AESTHETIC === */
-.gal-img{border-radius:18px;box-shadow:0 4px 18px rgba(28,22,16,.1);transition:transform .55s var(--ease),box-shadow .55s}
-.gal-img:hover{transform:scale(1.04) translateY(-4px);box-shadow:0 14px 40px rgba(28,22,16,.16)}
-
-/* === SECTION TRANSITIONS === */
-.about-s{border-top:3px solid var(--sage2)}
-.book-s{border-top:3px solid var(--sage2)}
-
-/* === FORM TRUST LOCK === */
-.form-secure{display:flex;align-items:center;justify-content:center;gap:.45rem;font-size:.74rem;color:var(--sage);margin-top:.6rem;font-weight:500}
-.form-card{box-shadow:0 4px 32px rgba(28,22,16,.08);border:1.5px solid var(--sand)}
-
-/* === NAV LINK REFINEMENT === */
-.nav-links a{font-size:.9rem;font-weight:500;letter-spacing:.01em}
-.nav-links a::after{background:var(--rose)}
-.nav-links a:hover{color:var(--rose)}
-
-/* === HEALTH BADGES RICHER === */
-.health-s{background:linear-gradient(135deg,var(--sage2) 0%,#d4ead8 100%);padding:3rem 0}
-.h-badge{box-shadow:0 2px 10px rgba(93,148,99,.15);transition:transform .3s var(--ease),box-shadow .3s}
-.h-badge:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(93,148,99,.22)}
-
-/* === AREA CHIP REFINEMENT === */
-.area-chip{font-weight:500}
-
-/* === BOOKING FEATURES ICON === */
-.bf-icon{background:linear-gradient(135deg,var(--sage2) 0%,var(--blush) 100%)}
-
-/* === BIRTHDAY AMBIENT ANIMATIONS === */
-@keyframes float-up{0%{transform:translateY(0) rotate(0deg);opacity:.85}70%{opacity:.6}100%{transform:translateY(-95vh) rotate(520deg);opacity:0}}
-@keyframes sway{0%,100%{transform:translateX(0)}50%{transform:translateX(18px)}}
-@keyframes wiggle{0%,100%{transform:rotate(0)}20%{transform:rotate(-8deg)}40%{transform:rotate(8deg)}60%{transform:rotate(-5deg)}80%{transform:rotate(5deg)}}
-@keyframes sparkle{0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}}
-@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(195,51,88,.4)}100%{box-shadow:0 0 0 16px rgba(195,51,88,0)}}
-@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
-@keyframes bounce-in{0%{transform:scale(.8) translateY(10px);opacity:0}60%{transform:scale(1.06) translateY(-4px)}80%{transform:scale(.97) translateY(2px)}100%{transform:scale(1) translateY(0);opacity:1}}
-@keyframes scroll-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
-
-/* Floating confetti dots in hero */
-.confetti-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.cp{position:absolute;border-radius:50%;animation:float-up linear infinite}
-
-/* Logo wiggle on hover */
-.logo:hover svg{animation:wiggle .5s var(--ease)}
-
-/* CTA bounce spring */
-.btn-p{transition:background .2s,transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
-.btn-p:hover{transform:scale(1.06)!important}
-
-/* Featured package shimmer */
-.pkg.ft::after{content:'';position:absolute;inset:0;border-radius:var(--rl);background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.12) 50%,transparent 65%);background-size:200% 100%;animation:shimmer 3.5s ease infinite;pointer-events:none}
-
-/* Hero CTA pulse ring */
-.btn-p{animation:pulse-ring 2.2s cubic-bezier(.455,.03,.515,.955) infinite}
-.btn-p:hover{animation:none}
-
-/* Step numbers bounce in when visible */
-.hiw-n.bns{animation:bounce-in .65s cubic-bezier(.34,1.56,.64,1) both}
-
-/* Scroll indicator */
-.scroll-ind{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;opacity:.45;pointer-events:none}
-.scroll-ind span{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
-.scroll-ind svg{animation:scroll-bounce 1.5s ease-in-out infinite}
-
-/* Sparkle stars */
-.spark{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--gold);pointer-events:none}
-.spark:nth-child(1){animation:sparkle 2.1s ease-in-out .2s infinite}
-.spark:nth-child(2){animation:sparkle 2.1s ease-in-out .8s infinite}
-.spark:nth-child(3){animation:sparkle 2.1s ease-in-out 1.4s infinite}
-
-/* Hero vis sparkles positioning */
-.hero-vis{position:relative}
-.spark-1{top:8%;left:5%}
-.spark-2{bottom:20%;right:8%}
-.spark-3{top:45%;left:-5%}
-
-/* WhatsApp CTA */
-.wa-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem;background:#25D366;color:#fff;border-radius:100px;font-size:.85rem;font-weight:600;transition:background .2s,transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;box-shadow:0 4px 16px rgba(37,211,102,.3)}
-.wa-btn:hover{background:#20BD5A;transform:scale(1.05);box-shadow:0 8px 24px rgba(37,211,102,.4)}
-
-/* Payment methods */
-.pay-methods{margin-top:1rem;padding-top:.875rem;border-top:1px solid var(--sand)}
-.pay-badge{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .65rem;border-radius:100px;font-size:.72rem;font-weight:600;letter-spacing:.03em}
-
-/* Slider improvement */
-.calc-slider{cursor:grab;height:6px;background:rgba(255,255,255,.2);border-radius:3px}
-.calc-slider:active{cursor:grabbing}
-.calc-slider::-webkit-slider-thumb{width:22px;height:22px;box-shadow:0 0 0 3px rgba(195,51,88,.35);transition:transform .2s cubic-bezier(.34,1.56,.64,1)}
-.calc-slider:active::-webkit-slider-thumb{transform:scale(1.2)}
-.calc-slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--rose);border:none;cursor:grab;box-shadow:0 0 0 3px rgba(195,51,88,.35)}
-
-/* RESPONSIVE */
-@media(max-width:1024px){.pkgs{grid-template-columns:1fr}.footer-i{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){
-  .nav-links,.btn-nav{display:none}.hbg{display:flex}
-  .hero{grid-template-columns:1fr;gap:1.5rem;padding-top:90px}.hero-vis{order:-1}.hf1,.hf2{display:none}
-  .stats-g,.about-g,.areas-g,.book-g{grid-template-columns:1fr}
-  .hiw-g{grid-template-columns:1fr 1fr}.hiw-g::before{display:none}
-  .testi-g{grid-template-columns:1fr}
-  .fg{grid-template-columns:1fr}.fi.full{grid-column:span 1}
-  .footer-i{grid-template-columns:1fr;gap:2rem}
-  .cur-d,.cur-d2{display:none}body{cursor:auto}button{cursor:pointer}
+* {box-sizing:border-box}
+body {margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 "Helvetica Neue",Arial,sans-serif}
+a {color:inherit;text-decoration:none}
+img {display:block;max-width:100%;object-fit:cover}
+figure,h1,h2,h3,p {margin:0}
+h1,h2,h3,.brand,.price {font-family:var(--serif);font-weight:400;letter-spacing:-.048em;line-height:1.03}
+h1 {font-size:clamp(4rem,7.8vw,7.7rem);margin:.26em 0}
+h1 em {color:var(--berry);display:block;font-weight:400}
+h2 {font-size:clamp(2.7rem,4.7vw,5rem);max-width:17ch;text-wrap:balance}
+h3 {font-size:clamp(1.9rem,3vw,3rem)}
+p {max-width:55ch}
+.wrap {width:min(90%,1320px);margin-inline:auto}
+header {border-bottom:1px solid var(--line)}
+.bar,.bar nav,.actions,.brand,.hero-actions,.eyebrow,.band .wrap,.row,.count {display:flex;align-items:center}
+.bar {min-height:83px;justify-content:space-between;gap:1rem}
+.brand {font-weight:600;font-size:2.12rem;gap:.18em}
+.dot {color:var(--berry);margin-left:-.18em}
+nav,.actions,.hero-actions {gap:clamp(1rem,2.2vw,2.4rem)}
+select,input,textarea,button {font:inherit;color:inherit}
+#language {background:transparent;border:0;padding:.5rem .1rem;font-weight:600}
+.btn,.smallbtn {border:1px solid var(--berry);background:var(--berry);color:white;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;gap:1em;padding:1rem 1.45rem;cursor:pointer;font-size:.96rem;font-weight:600}
+.smallbtn {padding:.58rem 1.05rem}
+.btn:hover,.smallbtn:hover {background:#702032}
+a:hover {text-decoration:underline;text-underline-offset:.23em}
+:focus-visible {outline:3px solid #336945;outline-offset:3px}
+.hero {display:grid;grid-template-columns:1fr 1fr;gap:6%;padding:clamp(2rem,4.8vw,5rem) 0;align-items:center}
+.eyebrow {color:var(--berry);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;gap:.65rem;margin-bottom:1rem}
+.eyebrow i {width:24px;height:2px;background:currentColor}
+.lead {font-size:clamp(1rem,1.4vw,1.25rem);max-width:42ch}
+.hero-actions {margin-top:2rem;flex-wrap:wrap}
+.textlink {display:inline-flex;gap:.5rem;font-weight:600;text-decoration:underline;text-underline-offset:.32em}
+.cover {position:relative;margin:0 8px 8px 0}
+.cover::before {content:"";position:absolute;inset:14px -8px -8px 12px;background:repeating-linear-gradient(90deg,#e4c7be 0 4px,var(--paper) 4px 8px);border-radius:42% 42% 3px 3px}
+.cover img {position:relative;width:100%;height:clamp(330px,36vw,560px);border-radius:43% 43% 2px 2px}
+figcaption {position:absolute;bottom:17px;left:18px;background:var(--paper);padding:.36rem .8rem;transform:rotate(-3deg);font:italic 1.05rem var(--serif);color:var(--berry)}
+.band {background:#e9eada;border-block:1px solid #cbd0b8;color:#34442f}
+.band .wrap {min-height:55px;justify-content:space-around;gap:1rem;text-align:center;font-size:.91rem}
+.section {padding-block:clamp(3.4rem,6vw,6rem)}
+.planning,.story-grid,.split,.cards,.fields {display:grid;gap:clamp(1.4rem,4vw,4rem)}
+.planning {margin:2.5rem 0 3.5rem;background:var(--peach);grid-template-columns:1.25fr 1fr}
+.planning>div {align-self:center;padding:clamp(1.5rem,4vw,4rem)}
+.planning p,.story p:not(.eyebrow),.contact p:not(.eyebrow) {margin:1.15rem 0}
+.planning img {width:100%;height:100%;max-height:320px;object-position:50% 56%}
+.row {justify-content:space-between;gap:1rem;margin-bottom:1.5rem}
+.row p {margin-top:.55rem}
+.count {gap:.7rem;white-space:nowrap}
+.count select {width:auto}
+.cards {grid-template-columns:repeat(3,1fr);gap:1.2rem}
+article {border-top:3px solid var(--berry);background:#f3eddf;padding:clamp(1rem,2.3vw,2.4rem);display:flex;flex-direction:column}
+article h3 {font-size:1.7rem}
+.price {font-size:2.8rem;margin:1.25rem 0 .3rem}
+.price small {font:normal .9rem Arial,sans-serif;letter-spacing:normal}
+.total {font-weight:600;color:var(--berry)}
+ul {padding-left:1.2rem;margin:1.4rem 0;flex:1}
+li+li {margin-top:.5rem}
+.note {font-size:.91rem;margin-top:1rem}
+.story {background:#e9eada}
+.story-grid {grid-template-columns:1fr 1fr;align-items:center;padding-block:3.5rem}
+.story-grid img {width:100%;height:clamp(210px,27vw,350px)}
+.split {grid-template-columns:.9fr 1.1fr;border-top:1px solid var(--line)}
+ol {margin:0;padding-left:1.5em}
+ol li {padding-left:.4rem}
+details {border-bottom:1px solid var(--line);padding:1rem 0}
+details:first-child {padding-top:0}
+summary {cursor:pointer;font-weight:600}
+details p {margin:.8rem 0 0}
+.contact {padding-block:clamp(3rem,6vw,6rem);background:#eddbcc}
+.contact .split {border:0}
+form {display:grid;gap:1rem}
+form label {display:grid;gap:.3rem;font-size:.92rem;font-weight:600}
+.fields {grid-template-columns:1fr 1fr;gap:1rem}
+input,select,textarea {min-width:0;width:100%;background:var(--paper);border:1px solid #9b8778;border-radius:4px;padding:.65rem}
+textarea {resize:vertical}
+form button {justify-self:start}
+footer {font-size:.9rem}
+.skip {position:fixed;left:1rem;top:-5rem;z-index:5;padding:.6rem;background:white}
+.skip:focus {top:.5rem}
+.berry {display:none;position:fixed;pointer-events:none;z-index:6;transform:translate(10px,12px);font-size:12px}
+.cur-d2 {font-size:8px}
+@media(max-width:760px) {
+ .wrap {width:90%}.bar {min-height:68px}.bar nav {display:none}.brand {font-size:1.65rem}.brand img {width:32px;height:32px}
+ .actions {gap:.65rem}.smallbtn {font-size:.85rem;padding:.48rem .65rem}
+ .hero,.story-grid,.split,.planning,.cards {grid-template-columns:1fr}
+ .hero {gap:1.7rem}.hero h1 {font-size:clamp(3.7rem,13vw,5.4rem)}.hero h1 em {display:inline}
+ .hero-actions {margin-top:1.2rem}.cover img {height:clamp(220px,60vw,380px)}
+ .band .wrap {flex-wrap:wrap;gap:.15rem 1rem;padding:.7rem 0;font-size:.8rem}
+ .planning {gap:0;margin:1.5rem 0 2.5rem}.planning img {height:210px;object-position:50% 55%}
+ .row {align-items:flex-start;flex-direction:column}.cards {gap:1rem}
+ .story-grid {padding-block:2.4rem}.story-grid img {order:2}.fields {grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ footer.bar {flex-wrap:wrap}.btn {padding:.8rem 1rem}
 }
-@media(max-width:480px){.hiw-g{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-<div class="cur-d" id="cd">🍓</div><div class="cur-d2" id="cd2">🍓</div>
 
-<!-- NAV -->
-<nav class="nav" id="nav">
-<div class="wrap nav-i">
-  <a href="#" class="logo">
-    <svg width="38" height="42" viewBox="0 0 46 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="sg1" cx="36%" cy="28%" r="68%"><stop offset="0%" stop-color="#FFCAD8"/><stop offset="100%" stop-color="#D45070"/></radialGradient>
-        <radialGradient id="sg2" cx="40%" cy="22%" r="68%"><stop offset="0%" stop-color="#FFC0CC"/><stop offset="100%" stop-color="#C04060"/></radialGradient>
-      </defs>
-      <!-- Left strawberry (slightly lower) -->
-      <path d="M14 11C7 11 2 20 2 28c0 11 6 19 12 19s12-8 12-19c0-8-4-17-12-17Z" fill="url(#sg1)"/>
-      <circle cx="9" cy="23" r="1.3" fill="rgba(255,255,255,.45)"/>
-      <circle cx="15" cy="29" r="1.3" fill="rgba(255,255,255,.45)"/>
-      <circle cx="8" cy="32" r="1.1" fill="rgba(255,255,255,.4)"/>
-      <circle cx="16" cy="20" r="1" fill="rgba(255,255,255,.35)"/>
-      <path d="M14 11C12 5.5 8.5 2.5 5 1c2.5 3.5 6 6 9 9.5 3-3.5 6.5-6 9-9.5-3.5 1.5-7 4.5-9 10Z" fill="#5A9E58"/>
-      <path d="M14 11C15 6.5 17.5 4 21 3c-2 2.5-4.5 5-7 8Z" fill="#7DBF7A" opacity=".55"/>
-      <!-- Right strawberry (slightly higher, slightly smaller) -->
-      <path d="M32 7c-6 0-9.5 7.5-9.5 14.5 0 9 4.5 15.5 9.5 15.5s9.5-6.5 9.5-15.5C41.5 14.5 38 7 32 7Z" fill="url(#sg2)"/>
-      <circle cx="28" cy="18" r="1.1" fill="rgba(255,255,255,.45)"/>
-      <circle cx="34" cy="23" r="1.1" fill="rgba(255,255,255,.45)"/>
-      <circle cx="27" cy="26" r="1" fill="rgba(255,255,255,.4)"/>
-      <path d="M32 7C30 2.5 27.5 0 24.5 0c2.5 3 5.5 5 7.5 6.5 2-1.5 5-3.5 7.5-6.5C37 0 34.5 2.5 32 7Z" fill="#5A9E58"/>
-      <path d="M32 7C33 3 35.5 1 38.5 0c-2 2-4 4-6.5 7Z" fill="#7DBF7A" opacity=".55"/>
-    </svg>
-    <span class="logo-t">Alles<span>Gute</span></span>
-  </a>
-  <nav class="nav-links">
-    <a href="#pakete" data-i18n="n.pkg">Pakete</a>
-    <a href="#ablauf" data-i18n="n.hiw">Ablauf</a>
-    <a href="#ueber" data-i18n="n.about">Über uns</a>
-    <a href="#anfrage" data-i18n="n.book">Anfragen</a>
-  </nav>
-  <div class="nav-r">
-    <div class="ld" id="ld">
-      <button class="ld-btn" id="ld-btn"><span id="lc">DE</span>
-        <svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <ul class="ld-menu" id="ld-menu">
-        <li class="ld-opt ac" data-lang="de">🇩🇪 Deutsch</li>
-        <li class="ld-opt" data-lang="en">🇬🇧 English</li>
-        <li class="ld-opt" data-lang="pl">🇵🇱 Polski</li>
-      </ul>
-    </div>
-    <a href="#anfrage" class="btn-nav" data-i18n="n.cta">Anfrage senden →</a>
-  </div>
-  <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
-</div>
-</nav>
+/* The birthday invitation. Bottle green follows the fabric backdrop of the party. */
+:root {--paper:#fcf6e9;--ink:#243b32;--berry:#782838;--line:#cac6b3;--peach:#f1d7cc}
+header {background:var(--paper)}
+.brand {font-style:italic;font-size:clamp(2.1rem,3vw,3rem);letter-spacing:-.075em}
+.brand img {margin-right:.12em}
+.brand .dot {color:#a34646}
+.bar {min-height:86px}
+.smallbtn,.btn {border-radius:2px}
+.edition {width:100%;gap:0;padding:0;grid-template-columns:46% 54%;background:#203e36;color:var(--paper);align-items:stretch}
+.edition .intro {padding:clamp(44px,5.4vw,96px) clamp(25px,3.6vw,65px) clamp(40px,5vw,80px) max(5vw,calc((100vw - 1320px)/2));align-self:center}
+.edition .eyebrow {font-size:clamp(.68rem,.85vw,.8rem);letter-spacing:.125em;color:#f2d4c1}
+.edition h1 {font-size:clamp(3.45rem,5.9vw,6.7rem);letter-spacing:-.058em;margin:.34em 0 .29em;max-width:11ch}
+.edition h1 em {color:#f6d6c2;white-space:nowrap}
+.edition .lead {font-size:clamp(1rem,1.2vw,1.2rem);line-height:1.55;max-width:43ch}
+.edition .btn {background:#f6d6c2;border-color:#f6d6c2;color:#203e36}
+.edition .hero-actions {gap:1rem 1.5rem}
+.edition .cover {margin:0;display:grid;min-height:clamp(420px,40vw,680px)}
+.edition .cover img {position:absolute;inset:0;height:100%;width:100%;border-radius:0;object-position:center 55%}
+.edition .cover:before {display:none}
+.edition .cover:after {content:"";position:absolute;left:-1px;top:0;bottom:0;width:13px;background:radial-gradient(circle at 0 50%,#203e36 8px,transparent 8.8px) left top/13px 24px repeat-y}
+.folio {border-bottom:1px solid var(--line)}
+.folio .wrap {display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding-block:1rem}
+.folio p {font:italic 1.5rem var(--serif);letter-spacing:-.045em}
+.folio span {font-size:.88rem}
+.planning {background:#e5e8da}
+.planning img {max-height:350px;object-position:50% 50%}
+article {background:transparent;border-top:1px solid #68766a;border-bottom:1px solid var(--line);padding-left:0}
+.story {background:#e6e7d7}
+.contact {background:#f1d7cc}
+@media(min-width:761px) and (max-width:1100px){.edition {grid-template-columns:49% 51%}.edition h1 {font-size:6vw}.edition .intro {padding-right:1.4rem}}
+@media(max-width:760px){
+ .bar {min-height:66px}.brand {font-size:2rem}
+ .edition {display:flex;flex-direction:column}
+ .edition .intro {width:90%;padding:2rem 0 1.7rem}
+ .edition h1 {font-size:clamp(3.35rem,10.1vw,4.85rem);max-width:15ch}
+ .edition h1 em {display:inline;white-space:normal}
+ .edition .eyebrow {margin-bottom:.5rem}
+ .edition .lead {font-size:1rem}.edition .hero-actions {gap:.75rem 1rem}
+ .edition .cover {width:100%;min-height:clamp(245px,69vw,380px)}
+ .edition .cover img {object-position:center 56%}
+ .edition .cover:after {inset:-1px 0 auto;width:100%;height:9px;background:radial-gradient(circle at 50% 0,#203e36 6px,transparent 6.8px) left top/18px 9px repeat-x}
+ .folio .wrap {display:grid;gap:.18rem;padding-block:.8rem}.folio p {font-size:1.18rem}
+ .folio span {font-size:.84rem}
+}
+@media(max-width:360px){.actions{gap:.28rem}.brand{font-size:1.62rem}.edition .hero-actions{font-size:.9rem}}
 
-<!-- MOBILE NAV -->
-<div class="mob-nav" id="mobnav">
-  <a href="#pakete" data-i18n="n.pkg">Pakete</a>
-  <a href="#ablauf" data-i18n="n.hiw">Ablauf</a>
-  <a href="#ueber" data-i18n="n.about">Über uns</a>
-  <a href="#anfrage" data-i18n="n.book">Anfragen</a>
-  <div class="ld" id="ld2">
-    <button class="ld-btn" id="ld-btn2"><span id="lc2">DE</span>
-      <svg viewBox="0 0 12 12" fill="none" width="12" height="12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-    <ul class="ld-menu" id="ld-menu2">
-      <li class="ld-opt ac" data-lang2="de">🇩🇪 Deutsch</li>
-      <li class="ld-opt" data-lang2="en">🇬🇧 English</li>
-      <li class="ld-opt" data-lang2="pl">🇵🇱 Polski</li>
-    </ul>
-  </div>
-</div>
-
-<!-- HERO -->
-<section class="hero wrap">
-  <div>
-    <div class="hero-badge">✦ <span data-i18n="h.badge">Catering für Kindergeburtstage · Berlin</span></div>
-    <h1 class="d-xl" style="margin-bottom:1.75rem">
-      <span class="hl" data-i18n="h.l1">Der Geburtstag,</span>
-      <span class="hl" data-i18n="h.l2">den dein Kind</span>
-      <span class="hl it" data-i18n="h.l3">nie vergisst.</span>
-    </h1>
-    <p class="hero-sub" data-i18n="h.sub">Wenn kleine Augen groß werden vor Staunen — genau dafür ist AllesGute da. Frisches Essen, liebevolle Deko, alles organisiert. Ihr seid einfach dabei.</p>
-    <div class="hero-acts">
-      <a href="#anfrage" class="btn-p" data-magnetic data-i18n="h.cta1">Jetzt anfragen →</a>
-      <a href="#pakete" class="btn-s" data-i18n="h.cta2">Pakete ansehen</a>
-    </div>
-    <div class="hero-trust">
-      <span class="stars">★★★★★</span>
-      <span class="hero-trust-t" data-i18n="h.trust">30+ glückliche Feiern · 15+ Themen</span>
-    </div>
-  </div>
-  <div class="hero-vis">
-    <div class="hero-circle"></div>
-    <div class="confetti-wrap" id="confetti-wrap"></div>
-    <span class="spark spark-1"></span>
-    <span class="spark spark-2"></span>
-    <span class="spark spark-3"></span>
-    <div class="hero-img">
-      <img src="images/hero-cake.jpg" alt="AllesGute Kindergeburtstag Catering Berlin" loading="eager">
-    </div>
-    <div class="hf hf1"><span class="hf-dot"></span><span data-i18n="h.f1">Glutenfrei auf Wunsch</span></div>
-    <div class="hf hf2"><span style="font-size:.9rem">🍓</span><span data-i18n="h.f2">Frisch zubereitet</span></div>
-  </div>
-</section>
-<div class="scroll-ind" aria-hidden="true"><span>Scroll</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="var(--ink2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-
-<!-- MARQUEE -->
-<div class="mq-strip">
-  <div class="mq-i">
-    <span class="mq-item"><span class="mq-d">●</span><span data-i18n="mq.1">Frisch zubereitet</span></span>
-    <span class="mq-item"><span class="mq-d">●</span><span data-i18n="mq.2">Glutenfrei auf Wunsch</span></span>
-    <span class="mq-item"><span class="mq-d">●</span><span data-i18n="mq.3">Laktosefrei auf Wunsch</span></span>
-    <span class="mq-item"><span class="mq-d">●</span><span data-i18n="mq.4">15+ Geburtstagsthemen</span></span>
-    <span class="mq-item"><span class="mq-d">●</span><span data-i18n="mq.5">Catering & Deko alles inklusive</span></span>
-    <span class="mq-item"><span class="mq-d">●</span><span data-i18n="mq.6">Berlin & Umgebung</span></span>
-    <span class="mq-item"><span class="mq-d">●</span><span data-i18n="mq.7">Kein Stress für Eltern</span></span>
-    <span class="mq-item"><span class="mq-d">●</span><span data-i18n="mq.1">Frisch zubereitet</span></span>
-    <span class="mq-item"><span class="mq-d">●</span><span data-i18n="mq.2">Glutenfrei auf Wunsch</span></span>
-    <span class="mq-item"><span class="mq-d">●</span><span data-i18n="mq.3">Laktosefrei auf Wunsch</span></span>
-    <span class="mq-item"><span class="mq-d">●</span><span data-i18n="mq.4">15+ Geburtstagsthemen</span></span>
-    <span class="mq-item"><span class="mq-d">●</span><span data-i18n="mq.5">Catering & Deko alles inklusive</span></span>
-    <span class="mq-item"><span class="mq-d">●</span><span data-i18n="mq.6">Berlin & Umgebung</span></span>
-    <span class="mq-item"><span class="mq-d">●</span><span data-i18n="mq.7">Kein Stress für Eltern</span></span>
-  </div>
-</div>
-
-<!-- GALLERY -->
-<div class="gallery">
-  <div class="gallery-row">
-    <div class="gal-img"><img src="images/food-flatlay.jpg" loading="lazy" alt="Party food spread"></div>
-    <div class="gal-img"><img src="images/paulina-cutting.jpg" loading="lazy" alt="Paulina serving cake"></div>
-    <div class="gal-img"><img src="images/food-grazing.jpg" loading="lazy" alt="Grazing board"></div>
-    <div class="gal-img"><img src="images/waffles.jpg" loading="lazy" alt="Party waffles"></div>
-    <div class="gal-img"><img src="images/food-table.jpg" loading="lazy" alt="Birthday table"></div>
-    <div class="gal-img"><img src="images/cakes-top.jpg" loading="lazy" alt="Birthday cakes"></div>
-  </div>
-</div>
-
-<!-- STATS -->
-<section class="stats-s">
-<div class="wrap stats-g">
-  <div class="stat"><div class="stat-n"><em>30+</em></div><div class="stat-l" data-i18n="st.1">Feiern organisiert</div></div>
-  <div class="stat"><div class="stat-n"><em>15+</em></div><div class="stat-l" data-i18n="st.2">Individuelle Themen</div></div>
-  <div class="stat"><div class="stat-n" style="color:var(--ink)">5–6 <span style="font-size:1.6rem" data-i18n="st.3w">Wo.</span></div><div class="stat-l" data-i18n="st.3">Vorlaufzeit empfohlen</div></div>
-</div>
-</section>
-
-<!-- PACKAGES -->
-<section class="pkg-s" id="pakete">
-<div class="wrap">
-  <span class="lbl" data-i18n="pk.lbl">Unsere Pakete</span>
-  <h2 class="d-lg" style="margin-top:.75rem" data-i18n="pk.h">Transparent berechnet.<br>Pro Kind, nicht pauschal.</h2>
-  <p class="sec-sub" data-i18n="pk.sub">Zahlt nur, was ihr wirklich braucht. Berechnet die Kosten — schieb einfach den Regler.</p>
-  <div class="calc-box">
-    <p class="calc-lbl" data-i18n="pk.calc">Wie viele Kinder feiert ihr?</p>
-    <div class="calc-row">
-      <input type="range" min="8" max="30" value="12" class="calc-slider" id="cslider">
-      <div class="calc-disp" id="cdisp"><em>12</em> <span data-i18n="pk.kids">Kinder</span></div>
-    </div>
-    <p style="font-size:.75rem;color:rgba(250,246,240,.4);margin-top:.6rem;letter-spacing:.04em">↓ Gesamtpreis wird unten automatisch aktualisiert</p>
-  </div>
-  <div class="pkgs">
-    <div class="pkg">
-      <p class="pkg-nm" data-i18n="pk.1n">Basis</p>
-      <div class="pkg-pr"><span class="pkg-e">€19</span><span class="pkg-u" data-i18n="pk.per">/ Kind</span></div>
-      <p class="pkg-tot" id="t1">ab €228 gesamt</p>
-      <ul class="pkg-list">
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.1a">Themen-Snack-Buffet</span></li>
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.1b">Getränke & Saftbar</span></li>
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.1c">Kleine Überraschungstüten</span></li>
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.1d">Themen-Dekoration (Basic)</span></li>
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.1e">Auf- und Abbau inklusive</span></li>
-      </ul>
-      <a href="#anfrage" class="pkg-btn" data-i18n="pk.cta">Paket anfragen →</a>
-    </div>
-    <div class="pkg ft">
-      <div class="pkg-badge" data-i18n="pk.pop">Beliebteste Wahl</div>
-      <p class="pkg-nm" data-i18n="pk.2n">Standard</p>
-      <div class="pkg-pr"><span class="pkg-e">€29</span><span class="pkg-u" data-i18n="pk.per">/ Kind</span></div>
-      <p class="pkg-tot" id="t2">ab €348 gesamt</p>
-      <ul class="pkg-list">
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.2a">Alles aus Basis</span></li>
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.2b">Warme Gerichte & Fingerfood</span></li>
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.2c">Geburtstagstorte (Slice)</span></li>
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.2d">Spielprogramm-Koordination</span></li>
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.2e">Premium Themen-Dekoration</span></li>
-      </ul>
-      <a href="#anfrage" class="pkg-btn" data-i18n="pk.cta">Paket anfragen →</a>
-    </div>
-    <div class="pkg">
-      <p class="pkg-nm" data-i18n="pk.3n">Premium</p>
-      <div class="pkg-pr"><span class="pkg-e">€45</span><span class="pkg-u" data-i18n="pk.per">/ Kind</span></div>
-      <p class="pkg-tot" id="t3">ab €540 gesamt</p>
-      <ul class="pkg-list">
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.3a">Alles aus Standard</span></li>
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.3b">Individuelle Motivtorte</span></li>
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.3c">Koch-/Back-Workshop für Kinder</span></li>
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.3d">Exklusive Deko-Vollausstattung</span></li>
-        <li class="pkg-li"><span class="ck">✓</span><span data-i18n="pk.3e">Komplette Event-Moderation</span></li>
-      </ul>
-      <a href="#anfrage" class="pkg-btn" data-i18n="pk.cta">Paket anfragen →</a>
-    </div>
-  </div>
-  <p class="pkg-note" data-i18n="pk.note">Alle Pakete ab 8 Kindern · Glutenfreie & laktosefreie Optionen ohne Aufpreis · Preise zzgl. Anfahrt ab 20 km</p>
-</div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="hiw-s" id="ablauf">
-<div class="wrap">
-  <span class="lbl" data-i18n="hiw.lbl">So läuft es ab</span>
-  <h2 class="d-lg" style="margin:.75rem 0 .875rem" data-i18n="hiw.h">Einfacher als ihr denkt.</h2>
-  <p class="sec-sub" style="margin-bottom:3.5rem" data-i18n="hiw.sub">Von der ersten Nachricht bis zum letzten Krümel — wir tragen die Verantwortung, ihr tragt das Lächeln.</p>
-  <div class="hiw-g">
-    <div class="hiw-c"><div class="hiw-n">1</div><h3 data-i18n="hiw.1h">Ihr meldet euch</h3><p data-i18n="hiw.1p">Kein Formular-Marathon. Eine kurze Nachricht reicht — Datum, Kinderzahl, vielleicht ein Thema. Wir melden uns innerhalb von 48 h.</p></div>
-    <div class="hiw-c"><div class="hiw-n">2</div><h3 data-i18n="hiw.2h">Wir planen gemeinsam</h3><p data-i18n="hiw.2p">Kurzes Gespräch, große Wirkung. Wir klären Thema, Ernährungswünsche und Budget — und entwickeln euer persönliches Konzept.</p></div>
-    <div class="hiw-c"><div class="hiw-n">3</div><h3 data-i18n="hiw.3h">Wir kümmern uns um alles</h3><p data-i18n="hiw.3p">Einkauf, Kochen, Dekoration, Aufbau — alles passiert ohne euch. Als wären wir die liebste Tante des Geburtstagskindes.</p></div>
-    <div class="hiw-c"><div class="hiw-n">4</div><h3 data-i18n="hiw.4h">Ihr feiert einfach</h3><p data-i18n="hiw.4p">Ihr öffnet die Tür, euer Kind dreht vor Freude durch — und ihr seid dabei, statt in der Küche zu stehen. Genau so soll es sein.</p></div>
-  </div>
-</div>
-</section>
-
-<!-- ABOUT -->
-<section class="about-s" id="ueber">
-<div class="wrap about-g">
-  <div class="about-img">
-    <img src="images/paulina-portrait.jpg" loading="lazy" alt="Paulina — AllesGute Gründerin">
-  </div>
-  <div class="about-wrap">
-    <span class="lbl" data-i18n="ab.lbl">Über Paulina</span>
-    <h2 class="d-lg" data-i18n="ab.h">Gemacht von einer Mutter — für Eltern wie euch.</h2>
-    <p class="about-txt" data-i18n="ab.p1">Paulinas eigene Töchter — Laura (5) und Laia (2) — sind der Grund, warum AllesGute existiert. Beim ersten Geburtstag ihrer Großen stand Paulina drei Stunden in der Küche, während die Party draußen ohne sie lief. Das wollte sie keiner anderen Mutter zumuten.</p>
-    <p class="about-txt" data-i18n="ab.p2">Seitdem plant sie Feiern, bei denen Eltern richtig dabei sein können — nicht als Küchenhilfe, sondern als Gast beim Fest des eigenen Kindes. Jede Feier entsteht neu, mit frischen Zutaten und dem Wissen, was Kinder wirklich begeistert.</p>
-    <div class="chips">
-      <span class="chip">🎓 <span data-i18n="ab.c1">Ausgebildete Köchin</span></span>
-      <span class="chip">👧👧 <span data-i18n="ab.c2">Mama von Laura &amp; Laia</span></span>
-      <span class="chip">🌍 DE · EN · PL</span>
-      <span class="chip">📍 <span data-i18n="ab.c4">Berlin seit 2019</span></span>
-    </div>
-    <div class="about-sig">— Paulina</div>
-  </div>
-</div>
-</section>
-
-<!-- HEALTH -->
-<div class="health-s">
-<div class="wrap health-i">
-  <div class="h-badge">🌾 <span data-i18n="hl.1">Glutenfrei auf Wunsch</span></div>
-  <div class="h-badge">🥛 <span data-i18n="hl.2">Laktosefrei auf Wunsch</span></div>
-  <div class="h-badge">🥕 <span data-i18n="hl.3">Vegetarische Optionen</span></div>
-  <div class="h-badge">🍎 <span data-i18n="hl.4">Nur frische Zutaten</span></div>
-  <div class="h-badge">❌🥜 <span data-i18n="hl.5">Allergen-bewusst</span></div>
-</div>
-</div>
-
-<!-- TESTIMONIALS -->
-<section class="testi-s">
-<div class="wrap">
-  <span class="lbl" data-i18n="ts.lbl">Was Eltern sagen</span>
-  <h2 class="d-lg" style="margin:.75rem 0 3rem" data-i18n="ts.h">Echte Worte, echte Feiern.</h2>
-  <div class="testi-g">
-    <div class="testi-c"><div class="t-stars">★★★★★</div><p class="t-q" data-i18n="ts.1q">„Ich kam 20 Minuten vor den Gästen nach Hause — und der Raum sah aus wie aus einem Magazin. Ich hatte mit Paulina zwei kurze Anrufe. Mehr war nicht nötig. Die Kinder haben jedes Stück Essen aufgegessen."</p><div class="t-auth"><div class="t-av">👩</div><div><p class="t-nm">Sandra M.</p><p class="t-mt" data-i18n="ts.1m">Mutter von Finn (6) · Spandau</p></div></div></div>
-    <div class="testi-c"><div class="t-stars">★★★★★</div><p class="t-q" data-i18n="ts.2q">„Emma wollte Einhorn — Paulina hat nicht einfach pinke Deko hingestellt, sondern eine echte kleine Welt gebaut. Ich hab meinen Mann angerufen und gesagt: Du glaubst nicht, was hier passiert ist."</p><div class="t-auth"><div class="t-av">👨</div><div><p class="t-nm">Thomas &amp; Julia K.</p><p class="t-mt" data-i18n="ts.2m">Eltern von Mia (5) · Charlottenburg</p></div></div></div>
-    <div class="testi-c"><div class="t-stars">★★★★★</div><p class="t-q" data-i18n="ts.3q">„As expats, we were worried about the language barrier. Paulina spoke perfect English, planned everything remotely, and the party was beyond our expectations. 100% recommend."</p><div class="t-auth"><div class="t-av">👩</div><div><p class="t-nm">Claire & James D.</p><p class="t-mt" data-i18n="ts.3m">Parents of Noah (7) · Mitte</p></div></div></div>
-  </div>
-</div>
-</section>
-
-<!-- AREAS -->
-<section class="areas-s">
-<div class="wrap areas-g">
-  <div>
-    <span class="lbl" data-i18n="ar.lbl">Einsatzgebiet</span>
-    <h2 class="d-lg" style="margin:.75rem 0 1.25rem" data-i18n="ar.h">Wir kommen zu euch.</h2>
-    <p class="areas-note" data-i18n="ar.sub">Wir sind in ganz Berlin und der Havelland-Region unterwegs. Anfahrt innerhalb des Rings kostenlos — alles darüber hinaus nach Absprache.</p>
-  </div>
-  <div class="area-list">
-    <span class="area-chip">📍 Spandau</span>
-    <span class="area-chip">📍 Charlottenburg</span>
-    <span class="area-chip">📍 Falkensee</span>
-    <span class="area-chip">📍 Mitte</span>
-    <span class="area-chip">📍 Prenzlauer Berg</span>
-    <span class="area-chip">📍 Pankow</span>
-    <span class="area-chip">📍 Schöneberg</span>
-    <span class="area-chip">📍 <span data-i18n="ar.more">& weitere auf Anfrage</span></span>
-  </div>
-</div>
-</section>
-
-<!-- FAQ -->
-<section class="faq-s" id="faq">
-<div class="wrap">
-  <span class="lbl" data-i18n="fq.lbl">Häufige Fragen</span>
-  <h2 class="d-lg" style="margin:.75rem 0 2.5rem" data-i18n="fq.h">Alles, was ihr wissen wollt.</h2>
-  <div class="faq-g">
-    <div class="faq-c"><button class="faq-q" data-i18n="fq.1q">Wie weit im Voraus muss ich buchen?</button><div class="faq-a" data-i18n="fq.1a">Wir empfehlen 5–6 Wochen Vorlaufzeit — besonders in der Sommer-Hochsaison. Ihr habt weniger Zeit? Einfach schreiben, wir schauen was geht.</div></div>
-    <div class="faq-c"><button class="faq-q" data-i18n="fq.2q">Können Kinder mit Allergien problemlos essen?</button><div class="faq-a" data-i18n="fq.2a">Ja, und das ohne Aufpreis. Wir kochen glutenfrei, laktosefrei und allergen-bewusst. Sagt uns, was zu vermeiden ist — wir kümmern uns um den Rest.</div></div>
-    <div class="faq-c"><button class="faq-q" data-i18n="fq.3q">Was passiert, wenn wir absagen müssen?</button><div class="faq-a" data-i18n="fq.3a">Bis 14 Tage vor der Feier kostenfrei stornierbar. Danach finden wir gemeinsam eine Lösung — wir sind keine Bürokraten.</div></div>
-    <div class="faq-c"><button class="faq-q" data-i18n="fq.4q">Ist die Dekoration im Preis inbegriffen?</button><div class="faq-a" data-i18n="fq.4a">Ja. Im Basis-Paket sind Basisdeko, Tischdecken und Luftballons inklusive. Standard und Premium beinhalten vollständige Themen-Ausstattung — von Tellern bis Tischläufer.</div></div>
-    <div class="faq-c"><button class="faq-q" data-i18n="fq.5q">Kommt ihr auch außerhalb von Berlin?</button><div class="faq-a" data-i18n="fq.5a">Ja — Havelland und das Berliner Umland sind kein Problem. Schreibt uns einfach euren Ort, wir klären den Anfahrtspreis transparent im Voraus.</div></div>
-  </div>
-</div>
-</section>
-
-<!-- BOOKING -->
-<section class="book-s" id="anfrage">
-<div class="wrap book-g">
-  <div class="book-info">
-    <span class="lbl" data-i18n="bk.lbl">Anfrage</span>
-    <h2 class="d-lg" data-i18n="bk.h">Lass uns euren Moment planen.</h2>
-    <p data-i18n="bk.sub">Schreibt uns kurz — kein Vertrag, kein Stress. Wir schauen gemeinsam, ob wir passen, und ihr bekommt ein Angebot in 48 Stunden.</p>
-    <div class="book-feats">
-      <div class="book-feat"><div class="bf-icon">💬</div><span data-i18n="bk.f1">Kostenlose Erstberatung</span></div>
-      <div class="book-feat"><div class="bf-icon">⚡</div><span data-i18n="bk.f2">Antwort innerhalb 48h</span></div>
-      <div class="book-feat"><div class="bf-icon">🔒</div><span data-i18n="bk.f3">Keine Anzahlung ohne Absprache</span></div>
-      <div class="book-feat"><div class="bf-icon">💳</div><span data-i18n="bk.f4">Bequem online bezahlen</span></div>
-    </div>
-    <div style="margin-top:1.75rem">
-      <p style="font-size:.8rem;color:var(--ink2);margin-bottom:.75rem;opacity:.7">Lieber direkt schreiben?</p>
-      <a href="https://wa.me/491783129500?text=Hallo%20Paulina%2C%20ich%20interessiere%20mich%20f%C3%BCr%20euer%20Catering." class="wa-btn" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp schreiben
-      </a>
-    </div>
-  </div>
-  <div>
-    <div id="stat-banner"></div>
-    <div class="form-card">
-      <form id="bkform" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-        <div class="fg">
-          <div class="fi"><label class="fl" data-i18n="fm.name">Euer Name</label><input name="name" class="fin" required data-i18n-ph="fm.nameph" placeholder="Lena Müller"></div>
-          <div class="fi"><label class="fl" data-i18n="fm.email">E-Mail</label><input name="email" type="email" class="fin" required placeholder="lena@example.com"></div>
-          <div class="fi"><label class="fl" data-i18n="fm.date">Wunschdatum</label><input name="date" type="date" class="fin" required></div>
-          <div class="fi"><label class="fl" data-i18n="fm.kids">Anzahl Kinder</label><input name="kids" type="number" min="8" max="50" class="fin" required placeholder="12"></div>
-          <div class="fi"><label class="fl" data-i18n="fm.pkg">Paket</label>
-            <select name="package" class="fse">
-              <option value="" data-i18n="fm.pkg0">Noch unsicher</option>
-              <option value="basis" data-i18n="fm.pkg1">Basis (ab €19/Kind)</option>
-              <option value="standard" data-i18n="fm.pkg2">Standard (ab €29/Kind)</option>
-              <option value="premium" data-i18n="fm.pkg3">Premium (ab €45/Kind)</option>
-            </select>
-          </div>
-          <div class="fi"><label class="fl" data-i18n="fm.theme">Thema (optional)</label><input name="theme" class="fin" placeholder="z.B. Einhorn, Dino…"></div>
-          <div class="fi full"><label class="fl" data-i18n="fm.msg">Besondere Wünsche</label><textarea name="message" class="fta" placeholder="Allergien, Diät, Location…"></textarea></div>
-        </div>
-        <button type="submit" class="fsub" data-magnetic><span data-i18n="fm.sub">Anfrage senden</span> →</button>
-        <p class="f-note" data-i18n="fm.note">Kostenlos & unverbindlich · Antwort in 48h · Bezahlung erst nach Bestätigung</p>
-        <div class="form-secure">🔒 Sichere Übertragung · Keine Weitergabe von Daten</div>
-        <div class="pay-methods">
-          <span style="font-size:.72rem;color:var(--ink2);opacity:.6;letter-spacing:.04em">Bezahlung nach Bestätigung via</span>
-          <div style="display:flex;gap:.6rem;align-items:center;margin-top:.4rem;flex-wrap:wrap">
-            <span class="pay-badge" style="background:#635BFF;color:#fff">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"/></svg>
-              Stripe
-            </span>
-            <span class="pay-badge" style="background:#003087;color:#fff">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.59 3.025-2.566 6.082-8.558 6.082H9.928l-1.185 7.5h4.019l.962-6.076c.083-.518.527-.9 1.05-.9h.66c4.298 0 7.664-1.747 8.648-6.797.284-1.45.158-2.66-.86-3.522z"/></svg>
-              PayPal
-            </span>
-            <span class="pay-badge" style="background:var(--sage);color:#fff">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              WhatsApp
-            </span>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-<div class="wrap">
-  <div class="footer-i">
-    <div class="footer-brand">
-      <div class="logo">
-        <svg width="28" height="32" viewBox="0 0 46 48" fill="none"><defs><radialGradient id="sfg1" cx="36%" cy="28%" r="68%"><stop offset="0%" stop-color="#FFCAD8"/><stop offset="100%" stop-color="#D45070"/></radialGradient><radialGradient id="sfg2" cx="40%" cy="22%" r="68%"><stop offset="0%" stop-color="#FFC0CC"/><stop offset="100%" stop-color="#C04060"/></radialGradient></defs><path d="M14 11C7 11 2 20 2 28c0 11 6 19 12 19s12-8 12-19c0-8-4-17-12-17Z" fill="url(#sfg1)"/><circle cx="9" cy="23" r="1.3" fill="rgba(255,255,255,.45)"/><circle cx="15" cy="29" r="1.3" fill="rgba(255,255,255,.45)"/><circle cx="8" cy="32" r="1.1" fill="rgba(255,255,255,.4)"/><path d="M14 11C12 5.5 8.5 2.5 5 1c2.5 3.5 6 6 9 9.5 3-3.5 6.5-6 9-9.5-3.5 1.5-7 4.5-9 10Z" fill="#5A9E58"/><path d="M32 7c-6 0-9.5 7.5-9.5 14.5 0 9 4.5 15.5 9.5 15.5s9.5-6.5 9.5-15.5C41.5 14.5 38 7 32 7Z" fill="url(#sfg2)"/><circle cx="28" cy="18" r="1.1" fill="rgba(255,255,255,.45)"/><circle cx="34" cy="23" r="1.1" fill="rgba(255,255,255,.45)"/><path d="M32 7C30 2.5 27.5 0 24.5 0c2.5 3 5.5 5 7.5 6.5 2-1.5 5-3.5 7.5-6.5C37 0 34.5 2.5 32 7Z" fill="#5A9E58"/></svg>
-        <span class="logo-t" style="color:var(--cream)">Alles<span style="color:var(--rose)">Gute</span></span>
-      </div>
-      <p data-i18n="ft.desc">Kindergeburtstag-Catering in Berlin. Frisch, thematisch, unvergesslich.</p>
-    </div>
-    <div class="fc"><h4 data-i18n="ft.h1">Service</h4><ul><li><a href="#pakete" data-i18n="n.pkg">Pakete</a></li><li><a href="#ablauf" data-i18n="n.hiw">Ablauf</a></li><li><a href="#faq" data-i18n="fq.lbl">Häufige Fragen</a></li><li><a href="#anfrage" data-i18n="n.book">Anfragen</a></li></ul></div>
-    <div class="fc"><h4 data-i18n="ft.h2">Info</h4><ul><li><a href="#ueber" data-i18n="n.about">Über uns</a></li><li><a href="mailto:hello@allesgute.ai">hello@allesgute.ai</a></li></ul></div>
-    <div class="fc"><h4 data-i18n="ft.h3">Rechtliches</h4><ul><li><a href="#" data-i18n="ft.imp">Impressum</a></li><li><a href="#" data-i18n="ft.dsg">Datenschutz</a></li></ul></div>
-  </div>
-  <div class="footer-b"><span>© 2025 AllesGute.AI</span><span data-i18n="ft.made">Mit ❤️ für Berliner Kinder</span></div>
-</div>
-</footer>
-
-<!-- FLOATING CTA -->
-<div class="float-cta" id="floatcta">
-  <a href="#anfrage"><span class="fcta-icon">🎂</span><span data-i18n="n.cta">Anfrage senden →</span></a>
-</div>
-
-<script>
-const CFG={status:"open",email:"hello@allesgute.ai"};
-const T={
-de:{"n.pkg":"Pakete","n.hiw":"Ablauf","n.about":"Über uns","n.book":"Anfragen","n.cta":"Anfrage senden →","h.badge":"Catering für Kindergeburtstage · Berlin","h.l1":"Der Geburtstag,","h.l2":"den dein Kind","h.l3":"nie vergisst.","h.sub":"Wenn kleine Augen groß werden vor Staunen — genau dafür ist AllesGute da. Frisches Essen, liebevolle Deko, alles organisiert. Ihr seid einfach dabei.","h.cta1":"Jetzt anfragen →","h.cta2":"Pakete ansehen","h.trust":"30+ glückliche Feiern · 15+ Themen","h.f1":"Glutenfrei auf Wunsch","h.f2":"Frisch zubereitet","mq.1":"Frisch zubereitet","mq.2":"Glutenfrei auf Wunsch","mq.3":"Laktosefrei auf Wunsch","mq.4":"15+ Geburtstagsthemen","mq.5":"Catering & Deko alles inklusive","mq.6":"Berlin & Umgebung","mq.7":"Kein Stress für Eltern","st.1":"Feiern organisiert","st.2":"Individuelle Themen","st.3":"Vorlaufzeit empfohlen","st.3w":"Wo.","pk.lbl":"Unsere Pakete","pk.h":"Transparent berechnet.<br>Pro Kind, nicht pauschal.","pk.sub":"Zahlt nur, was ihr wirklich braucht. Berechnet die Kosten — schieb einfach den Regler.","pk.calc":"Wie viele Kinder feiert ihr?","pk.kids":"Kinder","pk.per":"/ Kind","pk.pop":"Beliebteste Wahl","pk.1n":"Basis","pk.2n":"Standard","pk.3n":"Premium","pk.1a":"Themen-Snack-Buffet","pk.1b":"Getränke & Saftbar","pk.1c":"Kleine Überraschungstüten","pk.1d":"Themen-Dekoration (Basic)","pk.1e":"Auf- und Abbau inklusive","pk.2a":"Alles aus Basis","pk.2b":"Warme Gerichte & Fingerfood","pk.2c":"Geburtstagstorte (Slice)","pk.2d":"Spielprogramm-Koordination","pk.2e":"Premium Themen-Dekoration","pk.3a":"Alles aus Standard","pk.3b":"Individuelle Motivtorte","pk.3c":"Koch-/Back-Workshop für Kinder","pk.3d":"Exklusive Deko-Vollausstattung","pk.3e":"Komplette Event-Moderation","pk.cta":"Paket anfragen →","pk.note":"Alle Pakete ab 8 Kindern · Glutenfreie & laktosefreie Optionen ohne Aufpreis · Preise zzgl. Anfahrt ab 20 km","hiw.lbl":"So läuft es ab","hiw.h":"Einfacher als ihr denkt.","hiw.sub":"Von der ersten Nachricht bis zum letzten Krümel — wir tragen die Verantwortung, ihr tragt das Lächeln.","hiw.1h":"Ihr meldet euch","hiw.1p":"Kein Formular-Marathon. Eine kurze Nachricht reicht — Datum, Kinderzahl, vielleicht ein Thema. Wir melden uns innerhalb von 48 h.","hiw.2h":"Wir planen gemeinsam","hiw.2p":"Kurzes Gespräch, große Wirkung. Wir klären Thema, Ernährungswünsche und Budget — und entwickeln euer persönliches Konzept.","hiw.3h":"Wir kümmern uns um alles","hiw.3p":"Einkauf, Kochen, Dekoration, Aufbau — alles passiert ohne euch. Als wären wir die liebste Tante des Geburtstagskindes.","hiw.4h":"Ihr feiert einfach","hiw.4p":"Ihr öffnet die Tür, euer Kind dreht vor Freude durch — und ihr seid dabei, statt in der Küche zu stehen. Genau so soll es sein.","ab.lbl":"Über Paulina","ab.h":"Gemacht von einer Mutter — für Eltern wie euch.","ab.p1":"Paulinas eigene Töchter — Laura (5) und Laia (2) — sind der Grund, warum AllesGute existiert. Beim ersten Geburtstag ihrer Großen stand Paulina drei Stunden in der Küche, während die Party draußen ohne sie lief. Das wollte sie keiner anderen Mutter zumuten.","ab.p2":"Seitdem plant sie Feiern, bei denen Eltern richtig dabei sein können — nicht als Küchenhilfe, sondern als Gast beim Fest des eigenen Kindes. Jede Feier entsteht neu, mit frischen Zutaten und dem Wissen, was Kinder wirklich begeistert.","ab.c1":"Ausgebildete Köchin","ab.c2":"Mama von Laura &amp; Laia","ab.c4":"Berlin seit 2019","ts.lbl":"Was Eltern sagen","ts.h":"Echte Worte, echte Feiern.","ts.1q":"„Ich kam 20 Minuten vor den Gästen nach Hause — und der Raum sah aus wie aus einem Magazin. Ich hatte mit Paulina zwei kurze Anrufe. Mehr war nicht nötig. Die Kinder haben jedes Stück Essen aufgegessen.\"","ts.1m":"Mutter von Finn (6) · Spandau","ts.2q":"„Emma wollte Einhorn — Paulina hat nicht einfach pinke Deko hingestellt, sondern eine echte kleine Welt gebaut. Ich hab meinen Mann angerufen und gesagt: Du glaubst nicht, was hier passiert ist.\"","ts.2m":"Eltern von Mia (5) · Charlottenburg","ts.3q":"„As expats, we were worried about the language barrier. Paulina spoke perfect English, planned everything remotely, and the party was beyond our expectations. 100% recommend.\"","ts.3m":"Parents of Noah (7) · Mitte","ar.lbl":"Einsatzgebiet","ar.h":"Wir kommen zu euch.","ar.sub":"Wir sind in ganz Berlin und der Havelland-Region unterwegs. Anfahrt innerhalb des Rings kostenlos — alles darüber hinaus nach Absprache.","ar.more":"& weitere auf Anfrage","bk.lbl":"Anfrage","bk.h":"Lass uns euren Moment planen.","bk.sub":"Schreibt uns kurz — kein Vertrag, kein Stress. Wir schauen gemeinsam, ob wir passen, und ihr bekommt ein Angebot in 48 Stunden.","bk.f1":"Kostenlose Erstberatung","bk.f2":"Antwort innerhalb 48h","bk.f3":"Keine Anzahlung ohne Absprache","bk.f4":"Bequem online bezahlen","fm.name":"Euer Name","fm.nameph":"Lena Müller","fm.email":"E-Mail","fm.date":"Wunschdatum","fm.kids":"Anzahl Kinder","fm.pkg":"Paket","fm.pkg0":"Noch unsicher","fm.pkg1":"Basis (ab €19/Kind)","fm.pkg2":"Standard (ab €29/Kind)","fm.pkg3":"Premium (ab €45/Kind)","fm.theme":"Thema (optional)","fm.msg":"Besondere Wünsche","fm.sub":"Anfrage senden","fm.note":"Kostenlos & unverbindlich · Antwort in 48h · Bezahlung erst nach Bestätigung","st.open":"✦ Wir nehmen Anfragen an","st.closed":"✦ Momentan nicht verfügbar","st.booked":"✦ Aktuell ausgebucht","ft.desc":"Kindergeburtstag-Catering in Berlin. Frisch, thematisch, unvergesslich.","ft.h1":"Service","ft.h2":"Info","ft.h3":"Rechtliches","ft.imp":"Impressum","ft.dsg":"Datenschutz","ft.made":"Mit ❤️ für Berliner Kinder","hl.1":"Glutenfrei auf Wunsch","hl.2":"Laktosefrei auf Wunsch","hl.3":"Vegetarische Optionen","hl.4":"Nur frische Zutaten","hl.5":"Allergen-bewusst","fq.lbl":"Häufige Fragen","fq.h":"Alles, was ihr wissen wollt.","fq.1q":"Wie weit im Voraus muss ich buchen?","fq.1a":"Wir empfehlen 5–6 Wochen Vorlaufzeit — besonders in der Sommer-Hochsaison. Ihr habt weniger Zeit? Einfach schreiben, wir schauen was geht.","fq.2q":"Können Kinder mit Allergien problemlos essen?","fq.2a":"Ja, und das ohne Aufpreis. Wir kochen glutenfrei, laktosefrei und allergen-bewusst. Sagt uns, was zu vermeiden ist — wir kümmern uns um den Rest.","fq.3q":"Was passiert, wenn wir absagen müssen?","fq.3a":"Bis 14 Tage vor der Feier kostenfrei stornierbar. Danach finden wir gemeinsam eine Lösung — wir sind keine Bürokraten.","fq.4q":"Ist die Dekoration im Preis inbegriffen?","fq.4a":"Ja. Im Basis-Paket sind Basisdeko, Tischdecken und Luftballons inklusive. Standard und Premium beinhalten vollständige Themen-Ausstattung — von Tellern bis Tischläufer.","fq.5q":"Kommt ihr auch außerhalb von Berlin?","fq.5a":"Ja — Havelland und das Berliner Umland sind kein Problem. Schreibt uns einfach euren Ort, wir klären den Anfahrtspreis transparent im Voraus."},
-en:{"n.pkg":"Packages","n.hiw":"How it works","n.about":"About","n.book":"Book","n.cta":"Send inquiry →","h.badge":"Birthday catering for kids · Berlin","h.l1":"The birthday","h.l2":"your child will","h.l3":"never forget.","h.sub":"When little eyes go wide with wonder — that's exactly what AllesGute is for. Fresh food, loving decoration, everything organized. You just get to be there.","h.cta1":"Inquire now →","h.cta2":"View packages","h.trust":"30+ happy celebrations · 15+ themes","h.f1":"Gluten-free on request","h.f2":"Freshly prepared","mq.1":"Freshly prepared","mq.2":"Gluten-free on request","mq.3":"Lactose-free on request","mq.4":"15+ birthday themes","mq.5":"Catering & decor all included","mq.6":"Berlin & surroundings","mq.7":"Zero stress for parents","st.1":"Celebrations organized","st.2":"Individual themes","st.3":"Lead time recommended","st.3w":"wks","pk.lbl":"Our packages","pk.h":"Transparent pricing.<br>Per child, not a flat fee.","pk.sub":"Pay for exactly what you need. Calculate your party cost — drag the slider.","pk.calc":"How many children?","pk.kids":"children","pk.per":"/ child","pk.pop":"Most popular","pk.1n":"Basic","pk.2n":"Standard","pk.3n":"Premium","pk.1a":"Themed snack buffet","pk.1b":"Drinks & juice bar","pk.1c":"Surprise goodie bags","pk.1d":"Themed decoration (basic)","pk.1e":"Setup & cleanup included","pk.2a":"Everything in Basic","pk.2b":"Hot dishes & finger food","pk.2c":"Birthday cake (slice)","pk.2d":"Game programme coordination","pk.2e":"Premium themed decoration","pk.3a":"Everything in Standard","pk.3b":"Custom birthday cake","pk.3c":"Cooking/baking workshop","pk.3d":"Exclusive full decoration","pk.3e":"Complete event hosting","pk.cta":"Inquire about this →","pk.note":"All packages from 8 children · Gluten-free & lactose-free at no extra charge · Travel costs apply beyond 20 km","hiw.lbl":"How it works","hiw.h":"Simpler than you think.","hiw.sub":"From your first message to the last crumb — we take responsibility, you take the smiles.","hiw.1h":"You reach out","hiw.1p":"No lengthy forms. A short message is enough — date, number of kids, maybe a theme. We reply within 48 hours.","hiw.2h":"We plan together","hiw.2p":"A short call, big impact. We discuss theme, dietary needs and budget — and build your personal concept.","hiw.3h":"We handle everything","hiw.3p":"Shopping, cooking, decoration, setup — all without you. Like having the best auntie in the world organize everything.","hiw.4h":"You just celebrate","hiw.4p":"You open the door, your child goes wild with joy — and you're actually there for it, not stuck in the kitchen. That's the goal.","ab.lbl":"About Paulina","ab.h":"Made by a mother — for parents like you.","ab.p1":"Paulina's own daughters — Laura (5) and Laia (2) — are the reason AllesGute exists. At her eldest's first birthday, Paulina spent three hours in the kitchen while the party happened outside without her. She didn't want any other mother to go through that.","ab.p2":"Since then she plans celebrations where parents can actually be present — not as the cook, but as a guest at their own child's party. Every event is built fresh, with real ingredients and a real understanding of what kids love.","ab.c1":"Trained chef","ab.c2":"Mama of Laura &amp; Laia","ab.c4":"Berlin since 2019","ts.lbl":"What parents say","ts.h":"Real words, real celebrations.","ts.1q":"\"I got home 20 minutes before the guests — and the room looked like it came out of a magazine. I had two short calls with Paulina. That was it. The kids ate every single thing.\"","ts.1m":"Mother of Finn (6) · Spandau","ts.2q":"\"Emma wanted unicorns — Paulina didn't just put up pink decorations, she built a whole little world. I called my husband and said: you won't believe what happened in here.\"","ts.2m":"Parents of Mia (5) · Charlottenburg","ts.3q":"\"As expats, we were worried about the language barrier. Paulina spoke perfect English, planned everything remotely, and the party was beyond our expectations. 100% recommend.\"","ts.3m":"Parents of Noah (7) · Mitte","ar.lbl":"Service area","ar.h":"We come to you.","ar.sub":"We cover all of Berlin and the Havelland region. Travel within the ring road is free — everything beyond by arrangement.","ar.more":"& more on request","bk.lbl":"Inquiry","bk.h":"Let's plan your moment.","bk.sub":"Write us a quick message — no contract, no pressure. We'll see if we're the right fit and send you a quote within 48 hours.","bk.f1":"Free initial consultation","bk.f2":"Reply within 48h","bk.f3":"No deposit without agreement","bk.f4":"Easy online payment","fm.name":"Your name","fm.nameph":"Anna Smith","fm.email":"Email","fm.date":"Preferred date","fm.kids":"Number of children","fm.pkg":"Package","fm.pkg0":"Not sure yet","fm.pkg1":"Basic (from €19/child)","fm.pkg2":"Standard (from €29/child)","fm.pkg3":"Premium (from €45/child)","fm.theme":"Theme (optional)","fm.msg":"Special requests","fm.sub":"Send inquiry","fm.note":"Free & non-binding · Reply in 48h · Payment only after confirmation","st.open":"✦ Now accepting bookings","st.closed":"✦ Currently unavailable","st.booked":"✦ Fully booked","ft.desc":"Kids birthday catering in Berlin. Fresh, themed, unforgettable.","ft.h1":"Service","ft.h2":"Info","ft.h3":"Legal","ft.imp":"Imprint","ft.dsg":"Privacy","ft.made":"Made with ❤️ for Berlin kids","hl.1":"Gluten-free on request","hl.2":"Lactose-free on request","hl.3":"Vegetarian options","hl.4":"Fresh ingredients only","hl.5":"Allergen-aware","fq.lbl":"Common questions","fq.h":"Everything you want to know.","fq.1q":"How far in advance should I book?","fq.1a":"We recommend 5–6 weeks lead time — especially in summer. Need it sooner? Just write us, we'll see what we can do.","fq.2q":"Can children with allergies eat safely?","fq.2a":"Yes, and at no extra charge. We cook gluten-free, lactose-free and allergen-aware. Tell us what to avoid — we handle the rest.","fq.3q":"What if we need to cancel?","fq.3a":"Free cancellation up to 14 days before the event. After that we'll work something out together — we're not bureaucrats.","fq.4q":"Is decoration included in the price?","fq.4a":"Yes. The Basic package includes base decor, table covers and balloons. Standard and Premium include full themed decoration — from plates to table runners.","fq.5q":"Do you serve outside Berlin?","fq.5a":"Yes — the Havelland region and Berlin surroundings are no problem. Just send us your location and we'll sort out travel costs transparently upfront."},
-pl:{"n.pkg":"Pakiety","n.hiw":"Jak działamy","n.about":"O nas","n.book":"Zapytaj","n.cta":"Wyślij zapytanie →","h.badge":"Catering na urodziny dzieci · Berlin","h.l1":"Urodziny, które","h.l2":"twoje dziecko","h.l3":"zapamięta na zawsze.","h.sub":"Kiedy małe oczy robią się wielkie z zachwytu — właśnie dla tego powstało AllesGute. Świeże jedzenie, piękne dekoracje, wszystko zorganizowane. Wy po prostu jesteście obok.","h.cta1":"Zapytaj teraz →","h.cta2":"Zobacz pakiety","h.trust":"30+ szczęśliwych imprez · 15+ tematów","h.f1":"Bezglutenowe na życzenie","h.f2":"Świeżo przyrządzone","mq.1":"Świeżo przyrządzone","mq.2":"Bezglutenowe na życzenie","mq.3":"Bez laktozy na życzenie","mq.4":"15+ tematów urodzinowych","mq.5":"Catering i dekoracje w cenie","mq.6":"Berlin i okolice","mq.7":"Zero stresu dla rodziców","st.1":"Zorganizowanych imprez","st.2":"Indywidualnych tematów","st.3":"Zalecany czas przygotowania","st.3w":"tyg.","pk.lbl":"Nasze pakiety","pk.h":"Przejrzyste ceny.<br>Za dziecko, nie ryczałt.","pk.sub":"Płacisz tylko za to, czego naprawdę potrzebujesz. Oblicz koszt — przesuń suwak.","pk.calc":"Ile dzieci świętuje?","pk.kids":"dzieci","pk.per":"/ dziecko","pk.pop":"Najpopularniejszy wybór","pk.1n":"Podstawowy","pk.2n":"Standard","pk.3n":"Premium","pk.1a":"Tematyczny bufet przekąskowy","pk.1b":"Napoje i bar sokowy","pk.1c":"Niespodzianki na wynos","pk.1d":"Dekoracja tematyczna (podstawowa)","pk.1e":"Montaż i demontaż w cenie","pk.2a":"Wszystko z pakietu Podstawowego","pk.2b":"Ciepłe dania i finger food","pk.2c":"Tort urodzinowy (porcja)","pk.2d":"Koordynacja programu gier","pk.2e":"Premium dekoracja tematyczna","pk.3a":"Wszystko ze Standardu","pk.3b":"Indywidualny tort urodzinowy","pk.3c":"Warsztaty kulinarne dla dzieci","pk.3d":"Ekskluzywna pełna dekoracja","pk.3e":"Kompletne prowadzenie imprezy","pk.cta":"Zapytaj o pakiet →","pk.note":"Wszystkie pakiety od 8 dzieci · Opcje bezglutenowe i bez laktozy bez dopłat · Dojazd powyżej 20 km płatny","hiw.lbl":"Jak działamy","hiw.h":"Prostsze niż myślisz.","hiw.sub":"Od pierwszej wiadomości do ostatniego okruszka — my bierzemy odpowiedzialność, wy zbieracie uśmiechy.","hiw.1h":"Piszesz do nas","hiw.1p":"Żadnych długich formularzy. Wystarczy krótka wiadomość — data, liczba dzieci, może temat. Odpowiadamy w ciągu 48 godzin.","hiw.2h":"Planujemy razem","hiw.2p":"Krótka rozmowa, duży efekt. Ustalamy temat, preferencje żywieniowe i budżet — i tworzymy twój osobisty koncept.","hiw.3h":"My zajmujemy się wszystkim","hiw.3p":"Zakupy, gotowanie, dekoracje, montaż — wszystko bez ciebie. Jakbyśmy byli najlepszą ciocią dziecka solenizanta.","hiw.4h":"Wy po prostu świętujecie","hiw.4p":"Otwierasz drzwi, twoje dziecko skacze z radości — a ty jesteś przy nim, zamiast stać w kuchni. Właśnie o to chodzi.","ab.lbl":"O Paulinie","ab.h":"Stworzone przez mamę — dla rodziców takich jak wy.","ab.p1":"Własne córki Pauliny — Laura (5) i Laia (2) — są powodem, dla którego AllesGute istnieje. Na pierwszych urodzinach starszej, Paulina spędziła trzy godziny w kuchni, podczas gdy impreza toczyła się bez niej. Nie chciała, żeby żadna inna mama przez to przechodziła.","ab.p2":"Od tamtej pory organizuje urodziny, na których rodzice mogą naprawdę być obecni — nie jako kucharz, ale jako gość na własnym przyjęciu dziecka. Każda impreza powstaje od nowa, ze świeżych składników i z prawdziwym wyczuciem tego, co dzieci kochają.","ab.c1":"Wykształcona kucharka","ab.c2":"Mama Laury i Lai","ab.c4":"Berlin od 2019","ts.lbl":"Co mówią rodzice","ts.h":"Prawdziwe słowa, prawdziwe imprezy.","ts.1q":"„Wróciłam do domu 20 minut przed gośćmi — a pokój wyglądał jak z magazynu. Miałam z Pauliną dwie krótkie rozmowy. To było wszystko. Dzieci zjadły dosłownie wszystko do ostatniego kęsa.\"","ts.1m":"Mama Finna (6) · Spandau","ts.2q":"„Emma chciała jednorożca — Paulina nie wystawiła po prostu różowych dekoracji, ona zbudowała prawdziwy mały świat. Zadzwoniłam do męża i powiedziałam: nie uwierzysz, co tu się stało.\"","ts.2m":"Rodzice Mai (5) · Charlottenburg","ts.3q":"„As expats, we were worried about the language barrier. Paulina spoke perfect English, planned everything remotely, and the party was beyond our expectations. 100% recommend.\"","ts.3m":"Rodzice Noaha (7) · Mitte","ar.lbl":"Obszar działania","ar.h":"Przyjeżdżamy do ciebie.","ar.sub":"Obsługujemy cały Berlin i region Havelland. Dojazd w obrębie Ringbahn bezpłatny — poza tym po uzgodnieniu.","ar.more":"i więcej na zapytanie","bk.lbl":"Zapytanie","bk.h":"Zaplanujmy wasz moment razem.","bk.sub":"Napisz do nas — bez umowy, bez presji. Sprawdzimy razem, czy do siebie pasujemy i wyślemy ofertę w ciągu 48 godzin.","bk.f1":"Bezpłatna konsultacja","bk.f2":"Odpowiedź w 48h","bk.f3":"Brak zaliczki bez porozumienia","bk.f4":"Wygodna płatność online","fm.name":"Twoje imię","fm.nameph":"Anna Kowalska","fm.email":"E-mail","fm.date":"Preferowana data","fm.kids":"Liczba dzieci","fm.pkg":"Pakiet","fm.pkg0":"Jeszcze nie wiem","fm.pkg1":"Podstawowy (od €19/dziecko)","fm.pkg2":"Standard (od €29/dziecko)","fm.pkg3":"Premium (od €45/dziecko)","fm.theme":"Temat (opcjonalnie)","fm.msg":"Szczególne życzenia","fm.sub":"Wyślij zapytanie","fm.note":"Bezpłatnie i bez zobowiązań · Odpowiedź w 48h · Płatność dopiero po potwierdzeniu","st.open":"✦ Przyjmujemy rezerwacje","st.closed":"✦ Tymczasowo niedostępne","st.booked":"✦ Całkowicie zajęte","ft.desc":"Catering na urodziny dzieci w Berlinie. Świeże, tematyczne, niezapomniane.","ft.h1":"Usługi","ft.h2":"Info","ft.h3":"Prawne","ft.imp":"Impressum","ft.dsg":"Prywatność","ft.made":"Z ❤️ dla berlińskich dzieci","hl.1":"Bezglutenowe na życzenie","hl.2":"Bez laktozy na życzenie","hl.3":"Opcje wegetariańskie","hl.4":"Tylko świeże składniki","hl.5":"Świadomość alergenów","fq.lbl":"Często zadawane pytania","fq.h":"Wszystko, co chcecie wiedzieć.","fq.1q":"Jak wcześnie trzeba rezerwować?","fq.1a":"Polecamy 5–6 tygodni z wyprzedzeniem — szczególnie w szczycie letnim. Mniej czasu? Po prostu napisz, zobaczymy co możemy zrobić.","fq.2q":"Czy dzieci z alergiami mogą bezpiecznie jeść?","fq.2a":"Tak, i bez dodatkowych opłat. Gotujemy bezglutenowo, bez laktozy i z uwzględnieniem alergenów. Powiedz nam, czego unikać — my zajmiemy się resztą.","fq.3q":"Co się stanie, jeśli musimy odwołać?","fq.3a":"Bezpłatne odwołanie do 14 dni przed imprezą. Później razem znajdziemy rozwiązanie — nie jesteśmy biurokratami.","fq.4q":"Czy dekoracje są wliczone w cenę?","fq.4a":"Tak. W pakiecie Podstawowym są podstawowe dekoracje, obrusy i balony. Standard i Premium obejmują pełne wyposażenie tematyczne — od talerzy po bieżniki.","fq.5q":"Czy obsługujecie miejsca poza Berlinem?","fq.5a":"Tak — region Havelland i okolice Berlina nie stanowią problemu. Napisz nam swój adres, a my z góry podamy transparentny koszt dojazdu."}
+@font-face{font-family:Fraunces;src:url('fonts/Fraunces.ttf') format('truetype');font-display:swap}
+@font-face{font-family:Caveat;src:url('fonts/Caveat.ttf') format('truetype');font-display:swap}
+:root{--paper:#fffaf1;--ink:#273753;--berry:#9e302d;--line:#d0c5b7;--serif:Fraunces,Georgia,serif}
+header{background:var(--paper);border-color:#c0b8a9}
+.brand{font:500 clamp(2.6rem,4vw,4rem)/1 Caveat,cursive;letter-spacing:-.09em;gap:.06em;color:#9e302d}
+.brand img{width:63px;height:55px;margin-right:.1em}.dot{display:none}
+.bar{min-height:84px}.actions #language{width:3.5rem;flex:none}.smallbtn{color:var(--ink);background:transparent;border-color:var(--ink);border-radius:40px}.smallbtn:hover{background:#e9e0d4}
+.letter{background:#fffaef;border-bottom:1px solid #b4bebd;position:relative}
+.letter-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7%;align-items:center;padding-block:clamp(46px,4.4vw,76px)}
+.album{position:relative;isolation:isolate;min-height:clamp(415px,38.5vw,625px)}
+.album:before{content:'';position:absolute;left:0;top:5%;width:81%;height:86%;background-color:#e4e9e6;background-image:repeating-linear-gradient(90deg,#8398b34d 0 8px,transparent 8px 17px),repeating-linear-gradient(0deg,#8398b352 0 8px,transparent 8px 17px);transform:rotate(-4deg)}
+.largeprint,.smallprint{position:absolute;background:#fffef8;padding:9px 9px 0;box-shadow:0 2px 5px #503e3524;border:1px solid #d9d2c3}
+.largeprint{top:1%;left:6%;width:73%;height:94%;transform:rotate(-2deg)}
+.largeprint img,.smallprint img{width:100%;height:calc(100% - 39px);object-fit:cover}
+.largeprint img{object-position:center 50%}
+.album figcaption{position:static;transform:none;background:transparent;padding:0;text-align:center;font:500 1.55rem/38px Caveat,cursive;letter-spacing:0;color:var(--ink)}
+.smallprint{right:0;bottom:-1%;width:47%;height:38%;transform:rotate(6deg)}
+.album .smallprint figcaption{font-size:1.22rem}
+.service{font-size:1rem;font-weight:500;margin-bottom:1rem}
+.letter h1{font-size:clamp(3.65rem,5.25vw,6rem);max-width:13ch;letter-spacing:-.062em;line-height:1.03;margin:0 0 1.4rem;color:#253852}
+.letter h1 strong{display:block;color:#a03232;font:500 1.13em/.96 Caveat,cursive;letter-spacing:-.055em;margin:.07em 0 .12em}
+.letter .lead{font-size:clamp(1rem,1.21vw,1.22rem);line-height:1.55;max-width:45ch}
+.sign{font:500 2.15rem/1 Caveat,cursive;margin:.7rem 0 1.4rem;transform:rotate(-5deg);width:max-content}
+.hero-actions{gap:1rem 1.5rem;margin:0}
+.btn{border-radius:40px;background:#9e302d;border-color:#9e302d}
+.textlink{color:#293b56}
+#pakete{padding-top:clamp(3rem,4.8vw,5rem)}
+#pakete h2{max-width:23ch}
+.planning{background:#dfE8ec}.story{background:#e9e6cc}
+.contact{background:#f3dcd4}
+@media(min-width:761px) and (max-width:950px){.letter-inner{gap:5%}.letter h1{font-size:3.6rem}.service{font-size:.9rem}}
+@media(max-width:760px){
+ .brand{font-size:2.7rem}.brand img{width:42px;height:42px}.bar{min-height:67px}
+ .actions{gap:.15rem}.actions #language{width:3.1rem}
+ .letter-inner{display:flex;flex-direction:column;gap:1.5rem;padding:1.6rem 0 2.2rem;align-items:stretch}
+ .letter-copy{order:-1}.letter h1{font-size:clamp(3.2rem,10.5vw,5rem);max-width:15ch;margin-bottom:.8rem}
+ .letter h1 strong{margin:0}.service{font-size:.91rem;margin-bottom:.6rem}
+ .sign{font-size:1.75rem;margin:.5rem 0 1rem}.letter .lead{font-size:1rem}.hero-actions{gap:.55rem 1rem;font-size:.94rem}
+ .album{min-height:0;height:clamp(280px,78vw,425px);margin:0 2%}.largeprint img{object-position:50% 57%}
+ .album figcaption{font-size:1.2rem}.album .smallprint figcaption{font-size:1rem}
+ .smallprint{height:46%}
+}
+.album .largeprint figcaption {width:65%;white-space:nowrap}
+</style></head>
+<body id="top"><a class="skip" href="#main"><span data-de="Zum Inhalt" data-en="Skip to content" data-pl="Przejdź do treści">Zum Inhalt</span></a>
+<header><div class="wrap bar"><a href="#top" aria-label="AllesGute"><span class="brand"><img src="images/berries.svg" width="43" height="42" alt="">AllesGute<span class="dot">.</span></span></a><nav><a href="#pakete"><span data-de="Angebot" data-en="Packages" data-pl="Oferta">Angebot</span></a><a href="#ueber">Paulina</a><a href="#faq"><span data-de="Fragen" data-en="Questions" data-pl="Pytania">Fragen</span></a></nav><div class="actions"><select id="language" aria-label="Sprache / Language / Język"><option value="de">DE</option><option value="en">EN</option><option value="pl">PL</option></select><a class="smallbtn" href="#anfrage"><span data-de="Anfragen" data-en="Enquire" data-pl="Zapytaj">Anfragen</span> ↗</a></div></div></header>
+<main id="main"><section class="letter"><div class="letter-inner wrap"><div class="album">
+<figure class="largeprint"><img src="images/paulina-cutting.jpg" width="1000" height="1748" fetchpriority="high" alt="Hände beim Anschneiden der zweistöckigen Geburtstagstorte" data-alt-en="Hands cutting a two-tier birthday cake" data-alt-pl="Dłonie krojące piętrowy tort urodzinowy"><figcaption><span data-de="Das erste Stück." data-en="The first slice." data-pl="Pierwszy kawałek.">Das erste Stück.</span></figcaption></figure>
+<figure class="smallprint"><img src="images/birthday-table.webp" width="1600" height="1200" alt="Ein fertiger Geburtstagstisch mit Papierlaternen und Bananenwaffeln" data-alt-en="A party table set with paper lanterns and banana waffles" data-alt-pl="Urodzinowy stół z papierowymi lampionami i goframi bananowymi"><figcaption><span data-de="Bevor es losgeht …" data-en="Before the guests arrive…" data-pl="Zanim przyjdą goście…">Bevor es losgeht …</span></figcaption></figure>
+</div><div class="letter-copy">
+<p class="service"><span data-de="Kindergeburtstage in Berlin &amp; Havelland" data-en="Children’s parties in Berlin &amp; Havelland" data-pl="Urodziny dzieci w Berlinie i Havellandzie">Kindergeburtstage in Berlin &amp; Havelland</span></p>
+<h1><span data-de="Heute seid ihr" data-en="Today, you’re" data-pl="Dziś wy też">Heute seid ihr</span> <strong><span data-de="auch Gäste." data-en="guests, too." data-pl="jesteście gośćmi.">auch Gäste.</span></strong></h1>
+<p class="lead"><span data-de="Am ersten Geburtstag meiner Tochter stand ich drei Stunden in der Küche. Heute übernehme ich für andere Eltern das Essen, die Spiele und den Ablauf. Oder einfach nur den Geburtstagstisch." data-en="I spent three hours in the kitchen on my daughter’s first birthday. Now I take care of the food, games and timing for other parents. Or just the birthday table, if that’s all you need." data-pl="W pierwsze urodziny mojej córki spędziłam trzy godziny w kuchni. Dziś pomagam innym rodzicom. Przygotuję jedzenie, wymyślę zabawy i poprowadzę przyjęcie. Mogę też po prostu zająć się urodzinowym stołem.">Am ersten Geburtstag meiner Tochter stand ich drei Stunden in der Küche. Heute übernehme ich für andere Eltern das Essen, die Spiele und den Ablauf. Oder einfach nur den Geburtstagstisch.</span></p>
+<p class="sign">Paulina</p><div class="hero-actions"><a class="btn" href="#anfrage" data-choice="full"><span data-de="Feier mit Paulina planen" data-en="Plan a party with Paulina" data-pl="Zaplanuj przyjęcie z Pauliną">Feier mit Paulina planen</span> ↗</a><a href="#catering" class="textlink"><span data-de="Catering &amp; Preise" data-en="Catering &amp; prices" data-pl="Catering i ceny">Catering &amp; Preise</span></a></div></div></div></section>
+<section class="wrap section" id="pakete"><h2><span data-de="Der Geburtstagstisch oder die ganze Feier?" data-en="The birthday table or the whole party?" data-pl="Urodzinowy stół czy całe przyjęcie?">Der Geburtstagstisch oder die ganze Feier?</span></h2>
+<div class="planning"><div><h3><span data-de="Die ganze Feier" data-en="The whole party" data-pl="Całe przyjęcie">Die ganze Feier</span></h3><p><span data-de="Wer kommt, was spielt ihr, wann gibt es Torte? Paulina plant den Ablauf mit euch. Was sie vor Ort übernimmt und was es kostet, steht in eurem persönlichen Angebot." data-en="Who’s coming, what will you play, and when is it time for cake? Paulina plans the day with you. Your quote sets out what she’ll handle on site and what it costs." data-pl="Kto przyjdzie, w co się pobawicie i kiedy podać tort? Paulina ułoży z wami plan dnia. W wycenie znajdziecie zakres jej pracy na miejscu i cenę.">Wer kommt, was spielt ihr, wann gibt es Torte? Paulina plant den Ablauf mit euch. Was sie vor Ort übernimmt und was es kostet, steht in eurem persönlichen Angebot.</span></p><a class="textlink" href="#anfrage" data-choice="full"><span data-de="Feier planen lassen" data-en="Ask about party planning" data-pl="Zapytaj o organizację">Feier planen lassen</span> ↗</a></div><img src="images/birthday-cake.webp" loading="lazy" alt="Geburtstagstorte mit Wimpelkette und kleinen Tieren" data-alt-en="Birthday cake with bunting and animal decorations" data-alt-pl="Tort urodzinowy z girlandą i figurkami zwierząt"></div>
+<div class="row" id="catering"><div><h3><span data-de="Catering für euren Tisch" data-en="Catering for your table" data-pl="Catering na wasz stół">Catering für euren Tisch</span></h3><p><span data-de="Vergleicht die Pakete für eure Gästezahl." data-en="Compare the packages for your guest count." data-pl="Porównajcie pakiety dla swojej liczby gości.">Vergleicht die Pakete für eure Gästezahl.</span></p></div><label class="count"><span data-de="Anzahl Kinder" data-en="Children attending" data-pl="Liczba dzieci">Anzahl Kinder</span> <select id="count"></select></label></div><div class="cards"><article><h3><span data-de="Basis" data-en="Basic" data-pl="Podstawowy">Basis</span></h3><p class="price">19 € <small><span data-de="/ Kind" data-en="/ child" data-pl="/ dziecko">/ Kind</span></small></p><p class="total" data-rate="19"></p><ul><li><span data-de="Themen-Snack-Buffet" data-en="Themed snack buffet" data-pl="Tematyczny bufet przekąskowy">Themen-Snack-Buffet</span></li><li><span data-de="Getränke &amp; Saftbar" data-en="Drinks &amp; juice bar" data-pl="Napoje i bar sokowy">Getränke &amp; Saftbar</span></li><li><span data-de="Kleine Überraschungstüten" data-en="Surprise goodie bags" data-pl="Niespodzianki na wynos">Kleine Überraschungstüten</span></li><li><span data-de="Themen-Dekoration (Basic)" data-en="Themed decoration (basic)" data-pl="Dekoracja tematyczna (podstawowa)">Themen-Dekoration (Basic)</span></li><li><span data-de="Auf- und Abbau inklusive" data-en="Setup &amp; cleanup included" data-pl="Montaż i demontaż w cenie">Auf- und Abbau inklusive</span></li></ul><a class="textlink" href="#anfrage" data-choice="1"><span data-de="Paket anfragen" data-en="Enquire about this package" data-pl="Zapytaj o ten pakiet">Paket anfragen</span> ↗</a></article>
+<article><h3><span data-de="Standard" data-en="Standard" data-pl="Standard">Standard</span></h3><p class="price">29 € <small><span data-de="/ Kind" data-en="/ child" data-pl="/ dziecko">/ Kind</span></small></p><p class="total" data-rate="29"></p><ul><li><span data-de="Alles aus Basis" data-en="Everything in Basic" data-pl="Wszystko z pakietu Podstawowego">Alles aus Basis</span></li><li><span data-de="Warme Gerichte &amp; Fingerfood" data-en="Hot dishes &amp; finger food" data-pl="Ciepłe dania i finger food">Warme Gerichte &amp; Fingerfood</span></li><li><span data-de="Geburtstagstorte (Slice)" data-en="Birthday cake (slice)" data-pl="Tort urodzinowy (porcja)">Geburtstagstorte (Slice)</span></li><li><span data-de="Spielprogramm-Koordination" data-en="Game programme coordination" data-pl="Koordynacja programu gier">Spielprogramm-Koordination</span></li><li><span data-de="Premium Themen-Dekoration" data-en="Premium themed decoration" data-pl="Premium dekoracja tematyczna">Premium Themen-Dekoration</span></li></ul><a class="textlink" href="#anfrage" data-choice="2"><span data-de="Paket anfragen" data-en="Enquire about this package" data-pl="Zapytaj o ten pakiet">Paket anfragen</span> ↗</a></article>
+<article><h3><span data-de="Premium" data-en="Premium" data-pl="Premium">Premium</span></h3><p class="price">45 € <small><span data-de="/ Kind" data-en="/ child" data-pl="/ dziecko">/ Kind</span></small></p><p class="total" data-rate="45"></p><ul><li><span data-de="Alles aus Standard" data-en="Everything in Standard" data-pl="Wszystko ze Standardu">Alles aus Standard</span></li><li><span data-de="Individuelle Motivtorte" data-en="Custom birthday cake" data-pl="Indywidualny tort urodzinowy">Individuelle Motivtorte</span></li><li><span data-de="Koch-/Back-Workshop für Kinder" data-en="Cooking/baking workshop" data-pl="Warsztaty kulinarne dla dzieci">Koch-/Back-Workshop für Kinder</span></li><li><span data-de="Exklusive Deko-Vollausstattung" data-en="Exclusive full decoration" data-pl="Ekskluzywna pełna dekoracja">Exklusive Deko-Vollausstattung</span></li><li><span data-de="Komplette Event-Moderation" data-en="Complete event hosting" data-pl="Kompletne prowadzenie imprezy">Komplette Event-Moderation</span></li></ul><a class="textlink" href="#anfrage" data-choice="3"><span data-de="Paket anfragen" data-en="Enquire about this package" data-pl="Zapytaj o ten pakiet">Paket anfragen</span> ↗</a></article></div><p class="note"><span data-de="Anfahrt kann hinzukommen. Paulina bestätigt den Endpreis für euren Ort vor der Buchung." data-en="Travel may cost extra. Paulina confirms the final price for your location before you book." data-pl="Dojazd może być dodatkowo płatny. Przed rezerwacją Paulina potwierdzi cenę dla waszej lokalizacji.">Anfahrt kann hinzukommen. Paulina bestätigt den Endpreis für euren Ort vor der Buchung.</span></p></section>
+<section class="story" id="ueber"><div class="wrap story-grid"><img src="images/banana-waffles.webp" loading="lazy" alt="Waffeln auf Paulinas Geburtstagstisch" data-alt-en="Waffles on Paulina’s birthday table" data-alt-pl="Gofry na urodzinowym stole Pauliny"><div><p class="eyebrow">Paulina Salahov</p><h2><span data-de="Paulinas Familie" data-en="Paulina’s family" data-pl="Rodzina Pauliny">Paulinas Familie</span></h2><p><span data-de="Heute kocht die Mutter von Laura und Laia für andere Familien, damit die Eltern beim Kerzenauspusten dabei sind." data-en="Today, Laura and Laia’s mum cooks for other families so parents can be there when the candles go out." data-pl="Dziś mama Laury i Lai gotuje dla innych rodzin, żeby rodzice byli przy dzieciach, gdy zdmuchują świeczki.">Heute kocht die Mutter von Laura und Laia für andere Familien, damit die Eltern beim Kerzenauspusten dabei sind.</span></p></div></div></section>
+<section class="wrap section split" id="ablauf"><h2><span data-de="Vom Datum zur Feier" data-en="From a date to a party" data-pl="Od daty do przyjęcia">Vom Datum zur Feier</span></h2><ol><li><span data-de="Nennt Paulina euren Wunschtermin, den Ort und die ungefähre Kinderzahl." data-en="Tell Paulina your date, location and approximate guest count." data-pl="Podajcie Paulinie datę, miejsce i przybliżoną liczbę dzieci.">Nennt Paulina euren Wunschtermin, den Ort und die ungefähre Kinderzahl.</span></li><li><span data-de="Ihr besprecht Essen, Spiele, Allergien und Budget. Paulina schickt euch ein Angebot." data-en="Discuss food, games, allergies and budget. Paulina sends you a quote." data-pl="Omówicie jedzenie, zabawy, alergie i budżet. Paulina prześle wycenę.">Ihr besprecht Essen, Spiele, Allergien und Budget. Paulina schickt euch ein Angebot.</span></li><li><span data-de="Vor der Feier stimmt ihr Aufbau, Zeiten und Aufgaben miteinander ab." data-en="Before the party, agree on setup, timing and who handles what." data-pl="Przed przyjęciem ustalicie przygotowania, godziny i podział zadań.">Vor der Feier stimmt ihr Aufbau, Zeiten und Aufgaben miteinander ab.</span></li></ol></section>
+<section class="wrap section split" id="faq"><h2><span data-de="Vor der Buchung" data-en="Before you book" data-pl="Przed rezerwacją">Vor der Buchung</span></h2><div><details><summary><span data-de="Wie früh sollten wir anfragen?" data-en="When should we get in touch?" data-pl="Kiedy najlepiej napisać?">Wie früh sollten wir anfragen?</span></summary><p><span data-de="Am besten fünf bis sechs Wochen vorher. Für kurzfristige Termine fragt direkt bei Paulina nach." data-en="Ideally five to six weeks ahead. For shorter notice, ask Paulina about your date." data-pl="Najlepiej pięć lub sześć tygodni wcześniej. Jeśli czasu jest mniej, zapytajcie Paulinę o termin.">Am besten fünf bis sechs Wochen vorher. Für kurzfristige Termine fragt direkt bei Paulina nach.</span></p></details>
+<details><summary><span data-de="Was ist bei Allergien wichtig?" data-en="What if a guest has an allergy?" data-pl="Co z alergiami pokarmowymi?">Was ist bei Allergien wichtig?</span></summary><p><span data-de="Besprecht Allergien vor der Buchung mit Paulina. Klärt gemeinsam Zutaten, Zubereitung und möglichen Kreuzkontakt." data-en="Discuss allergies with Paulina before booking. Ask about ingredients, preparation and possible cross-contact." data-pl="Przed rezerwacją omówcie z Pauliną alergie, składniki, sposób przygotowania i ryzyko kontaktu z alergenami.">Besprecht Allergien vor der Buchung mit Paulina. Klärt gemeinsam Zutaten, Zubereitung und möglichen Kreuzkontakt.</span></p></details>
+<details><summary><span data-de="Kommt ihr auch ins Umland?" data-en="Do you travel outside Berlin?" data-pl="Czy dojeżdżacie poza Berlin?">Kommt ihr auch ins Umland?</span></summary><p><span data-de="Ja, auch ins Havelland. Nennt euren Ort, damit Paulina die Anfahrt im Angebot berücksichtigen kann." data-en="Yes, including Havelland. Tell Paulina where you’re celebrating so she can include travel in your quote." data-pl="Tak, również do Havellandu. Podajcie miejscowość, żeby Paulina mogła uwzględnić dojazd w wycenie.">Ja, auch ins Havelland. Nennt euren Ort, damit Paulina die Anfahrt im Angebot berücksichtigen kann.</span></p></details>
+<details><summary><span data-de="Was gilt bei einer Absage?" data-en="What if we need to cancel?" data-pl="Co w razie odwołania przyjęcia?">Was gilt bei einer Absage?</span></summary><p><span data-de="Bis 14 Tage vor der Feier könnt ihr kostenlos absagen. Für spätere Absagen sprecht mit Paulina." data-en="You can cancel free of charge up to 14 days before the party. Contact Paulina for later cancellations." data-pl="Możecie bezpłatnie odwołać przyjęcie do 14 dni przed terminem. Późniejszą rezygnację omówcie z Pauliną.">Bis 14 Tage vor der Feier könnt ihr kostenlos absagen. Für spätere Absagen sprecht mit Paulina.</span></p></details></div></section>
+<section class="contact" id="anfrage"><div class="wrap split"><div><h2><span data-de="Wann feiert ihr?" data-en="When’s the party?" data-pl="Kiedy świętujecie?">Wann feiert ihr?</span></h2><p><span data-de="Erstellt eine Nachricht an Paulina. In WhatsApp könnt ihr sie prüfen und selbst abschicken." data-en="Prepare a message for Paulina. You can review and send it in WhatsApp." data-pl="Przygotujcie wiadomość do Pauliny. W WhatsAppie możecie ją sprawdzić i wysłać.">Erstellt eine Nachricht an Paulina. In WhatsApp könnt ihr sie prüfen und selbst abschicken.</span></p><a class="textlink" href="mailto:hello@allesgute.ai">hello@allesgute.ai</a></div>
+<form id="request"><label><span data-de="Wofür interessiert ihr euch?" data-en="What are you interested in?" data-pl="Co was interesuje?">Wofür interessiert ihr euch?</span><select id="choice"><option value="open" data-de="Noch offen" data-en="Still deciding" data-pl="Jeszcze nie wiemy">Noch offen</option><option value="full" data-de="Planung der ganzen Feier" data-en="Full party planning" data-pl="Organizacja całego przyjęcia">Planung der ganzen Feier</option><option value="1">Basis</option><option value="2">Standard</option><option value="3">Premium</option></select></label><div class="fields"><label><span data-de="Wunschdatum" data-en="Preferred date" data-pl="Termin">Wunschdatum</span><input type="date" id="date"></label><label><span data-de="Anzahl Kinder" data-en="Children attending" data-pl="Liczba dzieci">Anzahl Kinder</span><input type="number" min="1" step="1" id="guests"></label></div><label><span data-de="Ort oder Stadtteil" data-en="Town or district" data-pl="Miejscowość lub dzielnica">Ort oder Stadtteil</span><input id="place"></label><label><span data-de="Was soll Paulina übernehmen?" data-en="What would you like Paulina to handle?" data-pl="Czym ma się zająć Paulina?">Was soll Paulina übernehmen?</span><textarea id="notes" rows="2"></textarea></label><button class="btn"><span data-de="In WhatsApp öffnen" data-en="Open in WhatsApp" data-pl="Otwórz w WhatsAppie">In WhatsApp öffnen</span> ↗</button></form></div></section></main>
+<footer class="wrap bar"><a href="#top" aria-label="AllesGute"><span class="brand"><img src="images/berries.svg" width="43" height="42" alt="">AllesGute<span class="dot">.</span></span></a><span>Paulina Salahov · Berlin</span></footer>
+<div aria-hidden="true" class="berry cur-d" id="cd">🍓</div><div aria-hidden="true" class="berry cur-d2" id="cd2">🍓</div>
+<script>const get = id => document.getElementById(id);
+const count = get('count');
+const choice = get('choice');
+const language = get('language');
+const guests = get('guests');
+const packageNames = {
+  de: ['Basis','Standard','Premium'],
+  en: ['Basic','Standard','Premium'],
+  pl: ['Podstawowy','Standard','Premium']
 };
-// ── Language ──────────────────────────────────────────────────────────────
-let lang=localStorage.getItem('ag-lang')||'de';
-function applyLang(l){
-  lang=l;localStorage.setItem('ag-lang',l);document.documentElement.lang=l;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(T[l]&&T[l][k]!==undefined)el.innerHTML=T[l][k];});
-  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{const k=el.dataset.i18nPh;if(T[l]&&T[l][k])el.placeholder=T[l][k];});
-  ['lc','lc2'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=l.toUpperCase();});
-  document.querySelectorAll('.ld-opt').forEach(o=>o.classList.toggle('ac',(o.dataset.lang||o.dataset.lang2)===l));
-  const sb=document.getElementById('stat-banner');
-  if(sb){const sm={open:'st-open',closed:'st-closed',booked:'st-booked'},sk={open:'st.open',closed:'st.closed',booked:'st.booked'},st=CFG.status||'open';sb.innerHTML=`<div class="status ${sm[st]}">${T[l][sk[st]]||T.de[sk[st]]}</div>`;}
-  updateCalc();
-}
-
-// ── Language dropdowns (clean — stopPropagation everywhere) ──────────────
-function initDrop(btnId,wrapId,dataAttr){
-  const btn=document.getElementById(btnId),wrap=document.getElementById(wrapId);
-  if(!btn||!wrap)return;
-  btn.addEventListener('click',e=>{
-    e.stopPropagation();
-    document.querySelectorAll('.ld.op').forEach(d=>{if(d!==wrap)d.classList.remove('op');});
-    wrap.classList.toggle('op');
-  });
-  wrap.querySelectorAll('.ld-opt').forEach(opt=>{
-    opt.addEventListener('click',e=>{
-      e.stopPropagation();
-      const l=opt.dataset[dataAttr]||opt.dataset.lang||opt.dataset.lang2;
-      if(l)applyLang(l);
-      wrap.classList.remove('op');
-      const mn=document.getElementById('mobnav');
-      if(mn)mn.classList.remove('op');
-    });
+for (let n = 8; n <= 30; n++) count.add(new Option(n, n));
+count.value = 12;
+function updatePrices() {
+  const lang = language.value;
+  const prefix = {de:'ab',en:'from',pl:'od'}[lang];
+  const suffix = {de:'gesamt',en:'total',pl:'łącznie'}[lang];
+  const currency = new Intl.NumberFormat(lang, {style:'currency',currency:'EUR',maximumFractionDigits:0});
+  document.querySelectorAll('[data-rate]').forEach(el => {
+    el.textContent = [prefix, currency.format(Number(el.dataset.rate) * Number(count.value)), suffix].join(' ');
   });
 }
-initDrop('ld-btn','ld','lang');
-initDrop('ld-btn2','ld2','lang2');
-document.addEventListener('click',()=>document.querySelectorAll('.ld.op').forEach(d=>d.classList.remove('op')));
-
-// ── Custom cursor — Laura 🍓 (big) + Laia 🍓 (little sister, lags behind) ──
-const cd=document.getElementById('cd'),cd2=document.getElementById('cd2');
-if(cd&&cd2&&window.matchMedia('(pointer:fine)').matches){
-  let mx=0,my=0,lx=0,ly=0;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';});
-  (function loop(){lx+=(mx-lx)*.09;ly+=(my-ly)*.09;cd2.style.left=(lx+14)+'px';cd2.style.top=(ly+12)+'px';requestAnimationFrame(loop)})();
-  document.querySelectorAll('a,button,.ld-opt,.faq-q,[data-magnetic]').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{document.body.classList.add('ch');});
-    el.addEventListener('mouseleave',()=>{document.body.classList.remove('ch');});
+function applyLanguage(lang) {
+  document.documentElement.lang = lang;
+  language.value = lang;
+  document.querySelectorAll('[data-de]').forEach(el => el.textContent = el.dataset[lang]);
+  document.querySelectorAll('img[data-alt-en]').forEach(img => {
+    img.dataset.altDe ??= img.alt;
+    img.alt = img.getAttribute('data-alt-' + lang);
   });
+  packageNames[lang].forEach((name, index) => choice.options[index + 2].textContent = name);
+  updatePrices();
 }
-
-// ── Nav scroll + floating CTA ─────────────────────────────────────────────
-const navEl=document.getElementById('nav'),floatEl=document.getElementById('floatcta');
-window.addEventListener('scroll',()=>{
-  if(navEl)navEl.classList.toggle('sx',scrollY>40);
-  if(floatEl)floatEl.classList.toggle('vis',scrollY>window.innerHeight*.6);
-},{passive:true});
-
-// ── Hamburger ─────────────────────────────────────────────────────────────
-const hbg=document.getElementById('hbg'),mobnav=document.getElementById('mobnav');
-if(hbg&&mobnav){
-  hbg.addEventListener('click',e=>{e.stopPropagation();mobnav.classList.toggle('op');});
-  mobnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobnav.classList.remove('op')));
-  document.addEventListener('click',e=>{if(!mobnav.contains(e.target)&&e.target!==hbg)mobnav.classList.remove('op');});
-}
-
-// ── Magnetic buttons ──────────────────────────────────────────────────────
-document.querySelectorAll('[data-magnetic]').forEach(btn=>{
-  btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)*.28,y=(e.clientY-r.top-r.height/2)*.28;btn.style.transform=`translate(${x}px,${y}px)`;});
-  btn.addEventListener('mouseleave',()=>btn.style.transform='');
+let initialLanguage = 'de';
+try {
+  const saved = localStorage.getItem('ag-lang');
+  if (Object.hasOwn(packageNames, saved)) initialLanguage = saved;
+} catch {}
+applyLanguage(initialLanguage);
+language.addEventListener('change', () => {
+  applyLanguage(language.value);
+  try { localStorage.setItem('ag-lang',language.value); } catch {}
 });
-
-// ── Price calculator ──────────────────────────────────────────────────────
-const cslider=document.getElementById('cslider');
-function updateCalc(){
-  if(!cslider)return;
-  const n=+cslider.value,kw=(T[lang]&&T[lang]['pk.kids'])||'Kinder';
-  const cdisp=document.getElementById('cdisp');
-  if(cdisp)cdisp.innerHTML=`<em>${n}</em> ${kw}`;
-  const ab=lang==='en'?'from ':lang==='pl'?'od ':'ab ';
-  const tot=lang==='en'?' total':lang==='pl'?' łącznie':' gesamt';
-  const t1=document.getElementById('t1'),t2=document.getElementById('t2'),t3=document.getElementById('t3');
-  if(t1)t1.textContent=ab+'€'+(n*19)+tot;
-  if(t2)t2.textContent=ab+'€'+(n*29)+tot;
-  if(t3)t3.textContent=ab+'€'+(n*45)+tot;
-}
-if(cslider){
-  cslider.addEventListener('input',updateCalc);
-  cslider.addEventListener('change',updateCalc); // keyboard accessibility
-}
-
-// ── Birthday confetti ambient ─────────────────────────────────────────────
-(function(){
-  const wrap=document.getElementById('confetti-wrap');
-  if(!wrap)return;
-  const colors=['#C33358','#5D9463','#C49A50','#7B9EE0','#E07BB5','#9B6BC4','#F4A460','#5BC4C4'];
-  const shapes=['●','★','♦','▲'];
-  for(let i=0;i<18;i++){
-    const p=document.createElement('span');
-    const color=colors[i%colors.length];
-    const shape=shapes[i%shapes.length];
-    const size=6+Math.random()*8;
-    const left=5+Math.random()*90;
-    const dur=5+Math.random()*7;
-    const delay=Math.random()*8;
-    p.textContent=shape;
-    p.style.cssText=`position:absolute;bottom:-10px;left:${left}%;font-size:${size}px;color:${color};opacity:0;animation:float-up ${dur}s ${delay}s ease-in infinite;pointer-events:none;user-select:none;`;
-    wrap.appendChild(p);
+count.addEventListener('change', updatePrices);
+document.querySelectorAll('[data-choice]').forEach(link => link.addEventListener('click', () => {
+  choice.value = link.dataset.choice;
+  if (choice.value !== 'full') guests.value = count.value;
+}));
+get('request').addEventListener('submit', event => {
+  event.preventDefault();
+  const lang = language.value;
+  const greeting = {de:'Hallo Paulina!',en:'Hi Paulina!',pl:'Cześć Paulino!'}[lang];
+  const lines = [greeting];
+  for (const id of ['choice','date','guests','place','notes']) {
+    const field = get(id);
+    const value = id === 'choice' ? field.selectedOptions[0].textContent : field.value.trim();
+    if (value) lines.push(field.labels[0].querySelector('span').textContent + ': ' + value);
   }
-})();
-
-// ── Launch confetti burst (on form success) ───────────────────────────────
-function launchConfetti(){
-  const colors=['#C33358','#5D9463','#C49A50','#7B9EE0','#E07BB5','#F4A460'];
-  for(let i=0;i<40;i++){
-    const p=document.createElement('div');
-    const color=colors[Math.floor(Math.random()*colors.length)];
-    const x=Math.random()*window.innerWidth;
-    const size=5+Math.random()*8;
-    p.style.cssText=`position:fixed;left:${x}px;top:${window.innerHeight*.8}px;width:${size}px;height:${size}px;background:${color};border-radius:${Math.random()>.5?'50%':'2px'};pointer-events:none;z-index:9999;animation:float-up ${1.5+Math.random()*2}s ease-out forwards;`;
-    document.body.appendChild(p);
-    setTimeout(()=>p.remove(),4000);
-  }
-}
-
-// ── Form submit ───────────────────────────────────────────────────────────
-document.getElementById('bkform')?.addEventListener('submit',async e=>{
-  e.preventDefault();
-  const btn=e.target.querySelector('.fsub'),orig=btn.innerHTML;
-  btn.innerHTML='<span style="display:inline-block;animation:spin .8s linear infinite;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;width:18px;height:18px"></span>';
-  btn.disabled=true;
-  try{
-    const r=await fetch(e.target.action,{method:'POST',body:new FormData(e.target),headers:{Accept:'application/json'}});
-    if(r.ok){
-      launchConfetti();
-      e.target.innerHTML=`<div style="text-align:center;padding:2.5rem"><div style="font-size:3rem;margin-bottom:1rem">🎉</div><div style="font-family:var(--fd);font-style:italic;font-size:1.5rem;margin-bottom:.5rem">${lang==='en'?'Request received!':lang==='pl'?'Zapytanie przyjęte!':'Anfrage erhalten!'}</div><p style="color:var(--ink2);font-size:.875rem">${lang==='en'?"We'll reply within 48 hours.":lang==='pl'?'Odpowiemy w ciągu 48 godzin.':'Wir melden uns innerhalb von 48 Stunden.'}</p></div>`;
-    }else throw new Error();
-  }catch{btn.innerHTML=orig;btn.disabled=false;window.location.href='mailto:'+CFG.email+'?subject=Anfrage%20AllesGute';}
+  location.href = 'https://wa.me/491783129500?text=' + encodeURIComponent(lines.join('\n'));
 });
-
-// ── Scroll reveal (viewport-aware — no flash on already-visible elements) ─
-(function(){
-  const EASE='cubic-bezier(.16,1,.3,1)';
-  const revealed=new WeakSet();
-  function reveal(el){
-    if(revealed.has(el))return;
-    revealed.add(el);
-    const d=parseFloat(el.dataset.rvd||0);
-    requestAnimationFrame(()=>{
-      el.style.transition=`opacity .72s ${d}s ${EASE}, transform .72s ${d}s ${EASE}`;
-      el.style.opacity='1';
-      el.style.transform='none';
-      // Clear inline transition after animation so hover states aren't sluggish
-      setTimeout(()=>{el.style.transition='';},Math.ceil((d+.75)*1000));
-    });
-  }
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){reveal(e.target);obs.unobserve(e.target);}});
-  },{threshold:.09,rootMargin:'0px 0px -28px 0px'});
-  function prep(el,delay,dir='Y'){
-    // Skip elements already in viewport — reveal them instantly
-    const r=el.getBoundingClientRect();
-    if(r.top<window.innerHeight-50&&r.bottom>0){
-      el.dataset.rvd='0';
-      reveal(el);
-      return;
+// Laura and Laia, the two strawberry cursors from the original site.
+const cursorLaura = get('cd');
+const cursorLaia = get('cd2');
+if (matchMedia('(pointer:fine) and (prefers-reduced-motion:no-preference)').matches) {
+  let previous;
+  document.addEventListener('mousemove', event => {
+    for (const [berry, point] of [[cursorLaura,event],[cursorLaia,previous || event]]) {
+      berry.style.display = 'block';
+      berry.style.left = point.clientX + 'px';
+      berry.style.top = point.clientY + 'px';
     }
-    el.style.opacity='0';
-    el.style.transform=dir==='X-'?'translateX(-24px)':dir==='X+'?'translateX(24px)':'translateY(26px)';
-    el.dataset.rvd=delay.toFixed(2);
-    obs.observe(el);
-  }
-  const groups=[
-    ['.stat',.07],['.pkg',.13],['.hiw-c',.11],['.testi-c',.11],
-    ['.gal-img',.07],['.footer-i>*',.08],['.area-chip',.04]
-  ];
-  const singles=['.about-img','.about-wrap','.book-info','.form-card','.health-i','.areas-note'];
-  groups.forEach(([sel,base])=>document.querySelectorAll(sel).forEach((el,i)=>prep(el,base*i)));
-  singles.forEach(sel=>document.querySelectorAll(sel).forEach(el=>prep(el,0)));
-  document.querySelectorAll('.stats-s .wrap>.d-lg,.about-wrap .d-lg,.testi-s .d-lg,.book-info .d-lg').forEach(el=>prep(el,0,'X-'));
-  // Safety net: force-reveal anything still hidden after 2.5s
-  setTimeout(()=>{
-    document.querySelectorAll('[data-rvd]').forEach(el=>{
-      if(!revealed.has(el))reveal(el);
-    });
-  },2500);
-})();
-
-// ── Counter animation ─────────────────────────────────────────────────────
-(function(){
-  const EASE=t=>1-Math.pow(1-t,3);
-  const co=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(!e.isIntersecting)return;
-      const el=e.target,raw=el.textContent;
-      const num=parseInt(raw);
-      if(isNaN(num)){co.unobserve(el);return;}
-      const suf=raw.replace(String(num),'');
-      const s=performance.now(),dur=1100;
-      (function tick(now){
-        const p=Math.min((now-s)/dur,1);
-        el.textContent=Math.round(EASE(p)*num)+suf;
-        if(p<1)requestAnimationFrame(tick);
-      })(s);
-      co.unobserve(el);
-    });
-  },{threshold:.6});
-  document.querySelectorAll('.stat-n em').forEach(el=>co.observe(el));
-})();
-
-// ── FAQ accordion ─────────────────────────────────────────────────────────
-document.querySelectorAll('.faq-q').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const c=btn.closest('.faq-c');
-    const isOp=c.classList.contains('op');
-    document.querySelectorAll('.faq-c.op').forEach(x=>x.classList.remove('op'));
-    if(!isOp)c.classList.add('op');
+    previous = event;
   });
-});
-
-applyLang(lang);
-</script>
-</body>
-</html>
+  document.addEventListener('mouseleave', () => {
+    cursorLaura.style.display = cursorLaia.style.display = 'none';
+  });
+}
+</script></body></html>
