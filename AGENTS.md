@@ -35,29 +35,39 @@ No build step. No framework. No dependencies. Plain HTML file deployed to Netlif
 
 **Region**: Berlin and Märkisch-Oderland (Paulina lives in Neuenhagen). Not Havelland.
 
-### Brand (round 3, Nov 22 2026, branch `feature/round-3-soul`)
+### Brand (round 4, Nov 22 2026, branch `feature/round-4-clear`)
 
-- **Buyer**: a busy, posh millennial mother in Berlin or Märkisch-Oderland. She wants it beautiful and done for her. Brief for round 3: soul from restraint, honest product tags and Paulina's own voice (Cucinelli/Muji register). Photo shoot list: `docs/round-2-brief.md`.
-- **Colour**: one pale-sage ground `#dce5dc` everywhere (Tural's pick), ink `#1c2826`, Paulina's curtain green `#2d514c` for the two big fields (hand-over list, enquiry), strawberry red `#ab2a40` for actions only. No cream or warm white, no boxed grey panels.
-- **Type**: EB Garamond 400 (`fonts/EBGaramond-*.woff2`) for headings, the letter and prices; Jost 400/500 for text. Self-hosted only, no Google Fonts link (GDPR).
-- **One shape: the arch.** Every photo sits in an arch window, the two green fields have a curtain-dome top, buttons, toggles, chore rows and form fields are pills or round. No scallops, seal or stickers.
-- **Offer**: three packages, always called "Angebot": Der Tisch (ab 140 €), Die Feier (ab 270 €), Ihr seid Gäste (ab 350 €), each for 8 children. Each is a product tag: Enthält / Ich mache / Für / Passt, wenn. No package is preselected; its button selects it (red ring on the photo) and jumps to the WhatsApp form.
-- **Copy is specific**: name the real dishes (Gemüse mit Dip, Pizza-Muffins, Bananenwaffeln, Apfelkuchen, Beeren auf Sahne). Every snack and dessert is a healthy choice. Never invent facts.
-- **Live thing**: "Was ihr abgebt", a chore list with package toggles. The enquiry-form cake lights one candle per year.
-- **Mark**: `images/mark.svg`, two strawberries: big Laura and small Laia leaning on her. Never show ".ai" in the brand.
-- **Photos**: `images/v4/*.webp`, Paulina's own photos re-cropped to 4:5 and graded cooler and calmer. Each package shows its own outcome: the labelled banana waffles, the themed cake, Paulina serving the guests. Never use licensed characters, stock, or AI food or people. Several sources are soft video stills; the styled shoot will replace them.
+- **Name**: always **"Alles Gute"**, with a space (Tural, Nov 22). The domain and email stay `allesgute.ai`. Never show ".ai" in the brand.
+- **Buyer**: a busy, posh millennial mother in Berlin or Märkisch-Oderland. Everything must be unmistakably clear: what it is, the three offers, how to order, where to send.
+- **Colour**:
+  - Pale-sage ground `#dce5dc`.
+  - Strawberry red `#ab2a40` for actions and for one field, Paulina's letter.
+  - Curtain green `#2d514c` for two fields: the hand-over list and the enquiry.
+  - Each offer card has its own tone: blush `#f3dbd3`, butter `#f2e5b9`, sky `#d6e1ef`.
+  - No cream or warm white.
+- **Type**: EB Garamond 400 for headings, the letter and prices; Jost 400/500 for text. Self-hosted only, no Google Fonts link (GDPR).
+- **Shapes are round**:
+  - Photos sit in arches or domes.
+  - The coloured fields have a dome top.
+  - Buttons, toggles, fields and step numbers are pills or circles.
+- **Offer**: three cards, always called "Angebot": Der Tisch (ab 140 €), Die Feier (ab 270 €), Ihr seid Gäste (ab 350 €), each for 8 children. Each card has a whole photo, Enthält / Ich mache / Passt, wenn, and a button. Nothing is preselected. A button selects its card (raised, outlined) and jumps to the WhatsApp form.
+- **Copy is specific**: name the real dishes. Every snack and dessert is a healthy choice. Never invent facts.
+- **Photos**: Paulina's own.
+  - Hero: `images/v4/table.webp`, the real table in front of the green curtain. Used unretouched on Tural's call: the Frozen canvas and napkins were official decorations. A version without them is in `docs/table-without-disney.webp` if ever needed.
+  - Offers: `images/v3/flatlay|theme-cake|cutting.webp`.
+  - Never use stock or AI-made food or people.
 
 ### Sections in `index.html`
 
 | Section | Purpose |
 |---|---|
-| `.hero` | "Kommt einfach als Gäste." The real dishes, from 140 €, 8 to 30 children, region. Whole-table photo in an arch |
-| `#angebote` | Three package cards, then "Was ihr abgebt" (the chore list) |
+| `.hero` | "Kommt einfach als Gäste." The real dishes, from 140 €, 8 to 30 children, region. Paulina's curtain table, captioned |
+| `#angebote` | Three coloured offer cards, then "Was ihr abgebt" (the chore list, green) |
+| `#ablauf` | "So bestellt ihr": three numbered steps and an enquiry button |
 | `#essen` | "Gesund bis zum Nachtisch." Snacks, sweets, cake, labels and allergies, named specifically |
-| `#paulina` | "Ein Brief von Paulina": her letter (Paulina to confirm wording), signature, Laura & Laia, facts |
-| `.how` | Three steps: one message is enough |
+| `#paulina` | "Ein Brief von Paulina" on the strawberry-red field (Paulina to confirm wording) |
 | `#fragen` | Six questions |
-| `#anfrage` | Live WhatsApp message builder (+491783129500), with the package pre-selected |
+| `#anfrage` | Live WhatsApp message builder (+491783129500), with the package pre-selected (green) |
 | `impressum.html`, `datenschutz.html` | Legal pages. Filled Nov 22 2026: Kantstr. 17, 15366 Neuenhagen bei Berlin; Kleinunternehmerin (§ 19 UStG). |
 
 ### Checks
