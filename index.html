@@ -1,281 +1,557 @@
 <!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AllesGute · Kindergeburtstage in Berlin mit Paulina Salahov</title>
-<meta name="description" content="Kindergeburtstage in Berlin und im Havelland. Paulina Salahov kümmert sich um den Geburtstagstisch oder plant eure ganze Feier. Catering ab 19 € pro Kind.">
-<link rel="icon" href="images/berries.svg" type="image/svg+xml"><style>:root {
-  --paper:#fbf6eb; --ink:#312b24; --berry:#91263a; --line:#d6c9b5; --peach:#f2dfce;
-  --serif:Georgia,"Times New Roman",serif;
-}
-* {box-sizing:border-box}
-body {margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 "Helvetica Neue",Arial,sans-serif}
-a {color:inherit;text-decoration:none}
-img {display:block;max-width:100%;object-fit:cover}
-figure,h1,h2,h3,p {margin:0}
-h1,h2,h3,.brand,.price {font-family:var(--serif);font-weight:400;letter-spacing:-.048em;line-height:1.03}
-h1 {font-size:clamp(4rem,7.8vw,7.7rem);margin:.26em 0}
-h1 em {color:var(--berry);display:block;font-weight:400}
-h2 {font-size:clamp(2.7rem,4.7vw,5rem);max-width:17ch;text-wrap:balance}
-h3 {font-size:clamp(1.9rem,3vw,3rem)}
-p {max-width:55ch}
-.wrap {width:min(90%,1320px);margin-inline:auto}
-header {border-bottom:1px solid var(--line)}
-.bar,.bar nav,.actions,.brand,.hero-actions,.eyebrow,.band .wrap,.row,.count {display:flex;align-items:center}
-.bar {min-height:83px;justify-content:space-between;gap:1rem}
-.brand {font-weight:600;font-size:2.12rem;gap:.18em}
-.dot {color:var(--berry);margin-left:-.18em}
-nav,.actions,.hero-actions {gap:clamp(1rem,2.2vw,2.4rem)}
-select,input,textarea,button {font:inherit;color:inherit}
-#language {background:transparent;border:0;padding:.5rem .1rem;font-weight:600}
-.btn,.smallbtn {border:1px solid var(--berry);background:var(--berry);color:white;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;gap:1em;padding:1rem 1.45rem;cursor:pointer;font-size:.96rem;font-weight:600}
-.smallbtn {padding:.58rem 1.05rem}
-.btn:hover,.smallbtn:hover {background:#702032}
-a:hover {text-decoration:underline;text-underline-offset:.23em}
-:focus-visible {outline:3px solid #336945;outline-offset:3px}
-.hero {display:grid;grid-template-columns:1fr 1fr;gap:6%;padding:clamp(2rem,4.8vw,5rem) 0;align-items:center}
-.eyebrow {color:var(--berry);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;gap:.65rem;margin-bottom:1rem}
-.eyebrow i {width:24px;height:2px;background:currentColor}
-.lead {font-size:clamp(1rem,1.4vw,1.25rem);max-width:42ch}
-.hero-actions {margin-top:2rem;flex-wrap:wrap}
-.textlink {display:inline-flex;gap:.5rem;font-weight:600;text-decoration:underline;text-underline-offset:.32em}
-.cover {position:relative;margin:0 8px 8px 0}
-.cover::before {content:"";position:absolute;inset:14px -8px -8px 12px;background:repeating-linear-gradient(90deg,#e4c7be 0 4px,var(--paper) 4px 8px);border-radius:42% 42% 3px 3px}
-.cover img {position:relative;width:100%;height:clamp(330px,36vw,560px);border-radius:43% 43% 2px 2px}
-figcaption {position:absolute;bottom:17px;left:18px;background:var(--paper);padding:.36rem .8rem;transform:rotate(-3deg);font:italic 1.05rem var(--serif);color:var(--berry)}
-.band {background:#e9eada;border-block:1px solid #cbd0b8;color:#34442f}
-.band .wrap {min-height:55px;justify-content:space-around;gap:1rem;text-align:center;font-size:.91rem}
-.section {padding-block:clamp(3.4rem,6vw,6rem)}
-.planning,.story-grid,.split,.cards,.fields {display:grid;gap:clamp(1.4rem,4vw,4rem)}
-.planning {margin:2.5rem 0 3.5rem;background:var(--peach);grid-template-columns:1.25fr 1fr}
-.planning>div {align-self:center;padding:clamp(1.5rem,4vw,4rem)}
-.planning p,.story p:not(.eyebrow),.contact p:not(.eyebrow) {margin:1.15rem 0}
-.planning img {width:100%;height:100%;max-height:320px;object-position:50% 56%}
-.row {justify-content:space-between;gap:1rem;margin-bottom:1.5rem}
-.row p {margin-top:.55rem}
-.count {gap:.7rem;white-space:nowrap}
-.count select {width:auto}
-.cards {grid-template-columns:repeat(3,1fr);gap:1.2rem}
-article {border-top:3px solid var(--berry);background:#f3eddf;padding:clamp(1rem,2.3vw,2.4rem);display:flex;flex-direction:column}
-article h3 {font-size:1.7rem}
-.price {font-size:2.8rem;margin:1.25rem 0 .3rem}
-.price small {font:normal .9rem Arial,sans-serif;letter-spacing:normal}
-.total {font-weight:600;color:var(--berry)}
-ul {padding-left:1.2rem;margin:1.4rem 0;flex:1}
-li+li {margin-top:.5rem}
-.note {font-size:.91rem;margin-top:1rem}
-.story {background:#e9eada}
-.story-grid {grid-template-columns:1fr 1fr;align-items:center;padding-block:3.5rem}
-.story-grid img {width:100%;height:clamp(210px,27vw,350px)}
-.split {grid-template-columns:.9fr 1.1fr;border-top:1px solid var(--line)}
-ol {margin:0;padding-left:1.5em}
-ol li {padding-left:.4rem}
-details {border-bottom:1px solid var(--line);padding:1rem 0}
-details:first-child {padding-top:0}
-summary {cursor:pointer;font-weight:600}
-details p {margin:.8rem 0 0}
-.contact {padding-block:clamp(3rem,6vw,6rem);background:#eddbcc}
-.contact .split {border:0}
-form {display:grid;gap:1rem}
-form label {display:grid;gap:.3rem;font-size:.92rem;font-weight:600}
-.fields {grid-template-columns:1fr 1fr;gap:1rem}
-input,select,textarea {min-width:0;width:100%;background:var(--paper);border:1px solid #9b8778;border-radius:4px;padding:.65rem}
-textarea {resize:vertical}
-form button {justify-self:start}
-footer {font-size:.9rem}
-.skip {position:fixed;left:1rem;top:-5rem;z-index:5;padding:.6rem;background:white}
-.skip:focus {top:.5rem}
-.berry {display:none;position:fixed;pointer-events:none;z-index:6;transform:translate(10px,12px);font-size:12px}
-.cur-d2 {font-size:8px}
-@media(max-width:760px) {
- .wrap {width:90%}.bar {min-height:68px}.bar nav {display:none}.brand {font-size:1.65rem}.brand img {width:32px;height:32px}
- .actions {gap:.65rem}.smallbtn {font-size:.85rem;padding:.48rem .65rem}
- .hero,.story-grid,.split,.planning,.cards {grid-template-columns:1fr}
- .hero {gap:1.7rem}.hero h1 {font-size:clamp(3.7rem,13vw,5.4rem)}.hero h1 em {display:inline}
- .hero-actions {margin-top:1.2rem}.cover img {height:clamp(220px,60vw,380px)}
- .band .wrap {flex-wrap:wrap;gap:.15rem 1rem;padding:.7rem 0;font-size:.8rem}
- .planning {gap:0;margin:1.5rem 0 2.5rem}.planning img {height:210px;object-position:50% 55%}
- .row {align-items:flex-start;flex-direction:column}.cards {gap:1rem}
- .story-grid {padding-block:2.4rem}.story-grid img {order:2}.fields {grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
- footer.bar {flex-wrap:wrap}.btn {padding:.8rem 1rem}
-}
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AllesGute · Kindergeburtstage mit Paulina, Berlin &amp; Märkisch-Oderland</title>
+<meta name="description" content="Frische, schöne Geburtstagstische für Kinder in Berlin und Märkisch-Oderland. Paulina kocht, deckt den Tisch und räumt wieder ab. Ab 140 €.">
+<meta property="og:title" content="AllesGute · Kommt einfach als Gäste.">
+<meta property="og:description" content="Paulina kocht, deckt den Tisch und räumt wieder ab. Berlin &amp; Märkisch-Oderland.">
+<meta property="og:image" content="https://allesgute.ai/images/v3/cake-hands.webp">
+<meta name="theme-color" content="#e4eadf">
+<link rel="icon" href="images/mark.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/Fraunces-500.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/Jost-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Fraunces;src:url('fonts/Fraunces-500.woff') format('woff');font-weight:400 600;font-display:swap}
+@font-face{font-family:Jost;font-weight:400;font-display:swap;src:url('fonts/Jost-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122}
+@font-face{font-family:Jost;font-weight:400;font-display:swap;src:url('fonts/Jost-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02AF,U+1E00-1EFF}
+@font-face{font-family:Jost;font-weight:500;font-display:swap;src:url('fonts/Jost-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122}
+@font-face{font-family:Jost;font-weight:500;font-display:swap;src:url('fonts/Jost-500-latin-ext.woff2') format('woff2');unicode-range:U+0100-02AF,U+1E00-1EFF}
+@font-face{font-family:Hand;src:url('fonts/Caveat-subset.woff') format('woff');font-display:swap}
 
-@font-face {font-family:Fraunces;src:url('fonts/Fraunces.ttf') format('truetype');font-display:swap}
-:root {--paper:#fffdf7;--ink:#28372e;--berry:#923847;--line:#d5d7c8;--peach:#e8ecdf;--serif:Fraunces,Georgia,serif}
-header {background:var(--paper)}
-.wrap {width:min(90%,1380px)}
-.bar {min-height:84px}
-.brand {color:#5f2930;letter-spacing:-.065em;font-size:2.6rem;gap:.13em}
-.brand img {width:45px;height:47px;object-fit:contain;margin-right:.12em}
-.brand .dot {display:none}
-#language {width:3.6rem}
-.btn,.smallbtn {border-radius:3px}
-.opening {display:grid;grid-template-columns:1.08fr 1fr;gap:7%;align-items:center;padding-block:clamp(34px,4.1vw,68px)}
-.location {font-size:.98rem;font-weight:500;line-height:1.4;color:#52634f}
-.opening h1 {font-size:clamp(3.7rem,5.9vw,6.2rem);margin:.18em 0 0;line-height:.98;letter-spacing:-.069em}
-.opening h1 em {display:block;font-family:Georgia,serif;font-weight:400;color:var(--berry);line-height:1.06}
-.opening-copy>p {font-size:clamp(1rem,1.25vw,1.23rem);line-height:1.55;max-width:47ch}
-.opening-actions {display:flex;align-items:center;flex-wrap:wrap;gap:1rem 1.25rem;margin-top:1.45rem}
-.textlink {text-underline-offset:.28em}
-.feature {display:grid;grid-template-columns:1.65fr 1fr;align-items:stretch}
-.scene {position:relative;min-height:390px;margin:0}
-.scene img {position:absolute;inset:0;width:100%;height:100%;object-position:50% 55%}
-.scene figcaption {position:absolute;bottom:14px;left:14px;background:var(--paper);color:var(--ink);transform:none;padding:.46rem .8rem;font:normal .85rem/1.35 Arial,sans-serif}
-.quote-note {background:#e6ebdd;padding:clamp(1.5rem,2.9vw,3.2rem);color:#233d30}
-.quote-note h2 {font-size:clamp(2rem,2.55vw,2.9rem);line-height:1.05;max-width:16ch}
-.quote-note dl {margin:1.15rem 0 0}
-.quote-note dt {font-weight:650;margin-top:1rem;padding-top:.85rem;border-top:1px solid #bac6af}
-.quote-note dd {margin:.12rem 0 0;line-height:1.45;color:#394d3d}
-#pakete h2 {max-width:23ch}
-.planning {background:#f2e3dc;margin-top:1.9rem}
-.planning img {max-height:340px;object-position:50% 50%}
-article {background:#f4f2e8;border-top:2px solid #889981}
-.story {background:#e6ebdd}
-.story-grid {grid-template-columns:.8fr 1fr;gap:8%;padding-block:3rem}
-.story-grid img {height:330px;object-position:center 55%}
-.story .location {margin-bottom:.8rem}
-.contact {background:#ede3d7}
-@media(max-width:950px){.opening {gap:4%}.feature {grid-template-columns:1.35fr 1fr}.quote-note {font-size:.94rem}}
-@media(max-width:760px){
- .bar {min-height:66px}.brand {font-size:1.95rem}.brand img {width:35px;height:37px}
- #language {width:3rem}.actions {gap:.5rem}.smallbtn {padding:.46rem .65rem}
- .opening,.feature,.story-grid {grid-template-columns:minmax(0,1fr)}
- .opening {padding:1.6rem 0;gap:1rem}.opening h1 {font-size:clamp(3.2rem,10.8vw,5rem);line-height:1}
- .location {font-size:.92rem}.opening h1 em {display:inline}.opening-actions {margin-top:1.1rem}
- .scene {min-height:clamp(245px,68vw,390px)}.scene figcaption{bottom:8px;left:8px;font-size:.78rem}
- .quote-note {padding:1.5rem}.quote-note h2 {max-width:18ch}
- .story-grid img {order:2;height:260px}.story-grid {gap:1.5rem}
+:root{
+  /* Nordic playroom: oat linen, sage, blush, butter; strawberry red only for actions */
+  --oat:#e4eadf; --card:#f1f3ec; --curtain:#2d514c; --on-curtain:#eef2ea; --sky:#dce6ee; --berry:#7a1e33; --on-berry:#fbf1ec; --ink:#35332d; --soft:#5f5b51;
+  --sage:#d8dfcd; --sage-d:#6f8162; --blush:#f1d8cf; --butter:#f3e4b5;
+  --red:#ab2a40; --red-press:#8d1f33;
+  --serif:Fraunces,'Iowan Old Style',Georgia,serif;
+  --sans:Jost,'Avenir Next',system-ui,sans-serif;
+  --gut:clamp(20px,5.5vw,88px);
+  --space:clamp(96px,12vw,176px);
 }
-@font-face{font-family:Caveat;src:url('fonts/Caveat.ttf') format('truetype');font-display:swap}
-:root{--paper:#fffaf0;--ink:#46352d;--berry:#913947}
-header{border-bottom:0}
-.welcome{background:#ffedbc;border-top:1px solid #e4d8b8;position:relative}
-.welcome:after{content:"";display:block;height:12px;background:radial-gradient(ellipse at 50% 0,#ffedbc 68%,transparent 72%) 0 0/28px 12px repeat-x;position:absolute;left:0;right:0;bottom:-11px}
-.welcome-inner{display:grid;grid-template-columns:1fr .86fr;gap:7%;align-items:center;padding-block:clamp(1.5rem,3.6vw,4rem)}
-.hello{font:500 clamp(1.7rem,2.45vw,2.65rem)/1.1 Caveat,cursive;color:var(--berry);transform:rotate(-3deg);transform-origin:left}
-.welcome h1{font-size:clamp(4.1rem,6.2vw,6.7rem);line-height:1.01;letter-spacing:-.065em;margin:.19em 0}
-.welcome h1 em{color:var(--berry);font-family:Georgia,serif}
-.welcome-copy{font-size:clamp(1.05rem,1.3vw,1.32rem);line-height:1.5;max-width:43ch}
-.welcome .btn,.smallbtn,form .btn{border-radius:24px}
-.where{font-size:.92rem;color:#634e3c;margin-top:1rem}
-.host-photo{position:relative;padding:.6rem;background:#fffdf5;transform:rotate(1.8deg);margin-right:1rem;box-shadow:1px 3px 8px #61452323}
-.host-photo:before{content:"";position:absolute;inset:5% -3% -2% 8%;background:repeating-linear-gradient(90deg,#667fab48 0 6px,transparent 6px 12px),repeating-linear-gradient(0deg,#667fab48 0 6px,#eeeae1 6px 12px);z-index:-1;transform:rotate(-5deg)}
-.host-photo img{width:100%;height:clamp(365px,33vw,520px);object-position:50% 49%}
-.menu-story{padding-block:clamp(3rem,5vw,5rem) 1rem}
-.menu-intro{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:6%;margin-bottom:1.8rem}
-.menu-intro h2{color:var(--berry);font-size:clamp(2.7rem,4.9vw,5rem);max-width:none}
-.menu-photos{display:grid;grid-template-columns:1fr .86fr 1.1fr;gap:2.4%}
-.menu-photos img{width:100%;height:clamp(160px,18vw,300px);border-radius:6px}
-.menu-photos figcaption{position:static;transform:none;padding:.45rem 0 0;background:transparent;color:var(--ink);font:500 1.6rem/1.15 Caveat,cursive}
-.planning{border-radius:16px;overflow:hidden}.story{background:#e9e9cf}.contact{background:#f8dfd0}
-@media(max-width:760px){
-.welcome-inner{grid-template-columns:minmax(0,1fr);gap:1.15rem;padding-block:1.45rem 1.9rem}
-.welcome h1{font-size:clamp(3.45rem,12vw,5rem);margin:.16em 0}.welcome h1 em{display:inline}
-.welcome-copy{font-size:1rem}.where{font-size:.85rem;margin-top:.65rem}
-.host-photo{margin:0 .5rem;padding:.35rem}.host-photo img{height:clamp(210px,58vw,330px);object-position:50% 43%}
-.menu-intro{grid-template-columns:1fr;gap:.75rem;margin-bottom:1rem}
-.menu-photos{grid-template-columns:1fr 1fr;gap:1rem .7rem}.menu-photos figure:last-child{grid-column:1/-1}
-.menu-photos img{height:clamp(130px,37vw,220px)}.menu-photos figure:last-child img{height:clamp(175px,47vw,260px)}
-.menu-photos figcaption{font-size:1.25rem}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--oat);color:var(--ink);font:400 18px/1.62 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--red);outline-offset:3px;border-radius:6px}
+.about :focus-visible,.contact .alt :focus-visible{outline-color:var(--butter)}
+::selection{background:var(--butter)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:var(--oat);padding:10px 16px;border-radius:99px;z-index:20}
+.skip:focus{top:12px}
+.wrap{padding-inline:var(--gut)}
+
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.022em;text-wrap:balance}
+h1{font-size:clamp(46px,6.4vw,96px);line-height:.98}
+h2{font-size:clamp(38px,4.6vw,68px);line-height:1.02}
+h3{font-size:clamp(28px,2.4vw,36px);line-height:1.1}
+.lede{font-size:clamp(19px,1.5vw,22px);max-width:34ch}
+
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;font:500 17px/1 var(--sans);letter-spacing:.01em;padding:18px 30px;border-radius:999px;border:0;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--red-press)}
+.btn:active{transform:scale(.98)}
+.btn.small{padding:12px 20px;font-size:16px}
+
+/* scalloped edges: the party tablecloth */
+.scallop-b,.scallop-t{position:relative}
+.scallop-b::after,.scallop-t::before{content:"";position:absolute;left:0;right:0;height:22px;background-repeat:repeat-x;background-size:44px 22px;pointer-events:none}
+
+/* header */
+.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:22px}
+.brand{display:flex;align-items:center;gap:12px;font:500 23px/1 var(--sans);letter-spacing:.015em;text-decoration:none}
+.brand img{width:40px;height:auto}
+.bar nav{display:flex;gap:clamp(18px,2.4vw,36px);font-size:16px}
+.bar nav a{text-decoration:underline;text-decoration-color:transparent;text-underline-offset:6px;text-decoration-thickness:1.5px;padding-block:6px;transition:text-decoration-color .3s}
+.bar nav a:hover{text-decoration-color:currentColor}
+.tools{display:flex;align-items:center;gap:14px}
+select,input,textarea{font:inherit;color:inherit}
+#language{appearance:none;background:transparent;border:1.5px solid rgba(53,51,45,.28);border-radius:99px;padding:8px 14px;font-size:16px;cursor:pointer}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,6vw,110px);align-items:end;padding-block:clamp(16px,3vw,40px) var(--space)}
+.hero-copy{padding-bottom:clamp(8px,4vw,64px)}
+.hello{font:400 clamp(28px,2.6vw,36px)/1 Hand,cursive;color:var(--red);margin-bottom:22px}
+.hero .lede{margin-top:32px}
+.act{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px}
+.where{font-size:18px;font-weight:500;color:var(--ink)}
+.arch{position:relative;border-radius:999px 999px 30px 30px;overflow:hidden;background:var(--sage);isolation:isolate}
+.arch img{width:100%;height:100%;object-fit:cover}
+.hero .stage{position:relative}
+.hero .arch{aspect-ratio:4/5}
+.seal{position:absolute;width:clamp(120px,12vw,168px);left:clamp(-64px,-4vw,-20px);bottom:clamp(28px,5vw,72px);z-index:2}
+.seal svg{width:100%;height:auto;animation:turn 40s linear infinite}
+@keyframes turn{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.seal svg{animation:none}}
+
+/* packages */
+.pk{padding-block:0 var(--space)}
+.pk-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
+.pk-head p{justify-self:end;max-width:30ch}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px);margin-top:clamp(48px,5vw,72px);align-items:stretch}
+.card{position:relative;background:var(--tone);border:2px solid transparent;border-radius:28px;padding:14px 14px 30px;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),background .35s}
+.card:nth-child(1){--tone:var(--blush)}.card:nth-child(2){--tone:var(--butter)}.card:nth-child(3){--tone:var(--sky)}
+.card .pic{border-radius:999px 999px 18px 18px;overflow:hidden;background:var(--card);aspect-ratio:1/1.08}
+.card .pic img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.card:hover .pic img{transform:scale(1.035)}
+.card .no{position:absolute;top:24px;right:24px;width:76px;height:76px;border-radius:50%;background:var(--oat);display:grid;place-content:center;text-align:center;font:500 21px/1 var(--serif);transform:rotate(8deg)}
+.card .no small{display:block;font:400 14px/1.2 var(--sans)}
+.card .body{padding:26px 14px 0;display:flex;flex-direction:column;flex:1}
+.card .price{display:flex;align-items:baseline;gap:8px;margin-top:8px;font:500 18px/1.3 var(--sans);color:var(--red)}
+.card .what{margin-top:12px;padding-right:8px}
+.card ul{list-style:none;padding:0;margin-top:18px;display:grid;gap:8px;font-size:16px}
+.card li{display:flex;gap:10px;align-items:baseline}
+.card li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--oat);border:1.5px solid rgba(53,51,45,.35);transform:translateY(-2px)}
+.fit{margin-top:auto;padding-top:22px;font-size:16px;color:var(--soft);font-style:normal}
+.pick{padding-top:18px}
+.pick button{width:100%;justify-content:center;background:transparent;color:var(--ink);border:1.5px solid rgba(53,51,45,.3)}
+.pick button:hover{background:var(--oat)}
+.card.on{border-color:var(--ink);transform:translateY(-8px)}
+.card.on .pick button{background:var(--ink);color:var(--oat);border-color:var(--ink)}
+
+/* the list that empties */
+.list{background:var(--sky);padding-block:clamp(64px,6vw,96px) clamp(72px,7vw,104px);margin-top:clamp(56px,6vw,96px)}
+.list.scallop-b::after{bottom:-21px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 22'%3E%3Cpath d='M0 0h44v0a22 22 0 0 1-44 0Z' fill='%23dce6ee'/%3E%3C/svg%3E")}
+.list.scallop-t::before{top:-21px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 22'%3E%3Cpath d='M0 22a22 22 0 0 1 44 0Z' fill='%23dce6ee'/%3E%3C/svg%3E")}
+.list-in{display:grid;grid-template-columns:.9fr 1.2fr;gap:clamp(32px,6vw,96px);align-items:center}
+.list h2 em{font-style:normal;color:var(--red)}
+.list .note{margin-top:22px;max-width:34ch}
+.legend{display:flex;align-items:center;gap:10px;margin-top:18px;font-size:16px}
+.legend .k{width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(53,51,45,.4)}
+.legend .k.on{background:var(--berry);border-color:var(--berry)}
+.legend .k+span{margin-right:14px}
+.chores{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:12px}
+.chores li{display:flex;align-items:center;gap:12px;background:var(--oat);border-radius:999px;padding:13px 24px 13px 14px;font-size:clamp(18px,1.5vw,21px);transition:opacity .35s,background .35s}
+.chores li i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--berry);display:grid;place-items:center;transition:background .35s,transform .35s}
+.chores li i svg{width:14px;height:14px}
+.chores li i path{stroke-dasharray:20;stroke-dashoffset:0;transition:stroke-dashoffset .4s .1s}
+.chores li{border:1.5px solid transparent}
+.chores li.yours{background:transparent;border-color:rgba(53,51,45,.25)}
+.chores li.yours i{background:transparent;border:1.5px solid rgba(53,51,45,.35)}
+.chores li.yours i path{stroke-dashoffset:20}
+.chores li.yours span{color:var(--soft)}
+
+/* food */
+.food{padding-block:clamp(72px,8vw,120px) clamp(72px,8vw,120px);display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(32px,6vw,110px);align-items:center}
+.food .arch{aspect-ratio:5/6}
+.food .side{display:grid;gap:40px}
+.food .lede{margin-top:26px}
+.facts3{list-style:none;padding:0;display:grid;gap:0}
+.facts3 li{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:center;padding-block:12px}
+.facts3 .dot{width:64px;height:64px;border-radius:50%;overflow:hidden;background:var(--blush)}
+.facts3 .dot img{width:100%;height:100%;object-fit:cover}
+.facts3 b{font-weight:500;display:block}
+.facts3 small{font-size:16px;color:var(--soft)}
+
+/* Paulina */
+.about{background:var(--berry);color:var(--on-berry);border-radius:clamp(28px,4vw,56px);margin-inline:clamp(10px,1.6vw,24px);padding:clamp(64px,8vw,120px) calc(var(--gut) - clamp(10px,1.6vw,24px))}
+.about-in{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,100px);align-items:center}
+.about .arch{aspect-ratio:4/5;background:var(--blush)}
+.about .lede{margin-top:24px;max-width:38ch}
+.sign{font:400 clamp(40px,4vw,56px)/1 Hand,cursive;color:var(--butter);margin-top:20px;transform:rotate(-3deg);transform-origin:left}
+.daughters{display:flex;gap:18px;align-items:center;margin-top:34px;padding:18px 22px;background:var(--on-berry);color:var(--ink);border-radius:22px;max-width:520px}
+.daughters img{width:56px;flex:none}
+.daughters p{font-size:16px;line-height:1.5}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 32px;margin-top:34px;max-width:520px}
+.facts dt{font-size:16px;color:#ecd3d7}
+.facts dd{font:500 20px/1.3 var(--serif);margin-top:2px}
+
+/* how */
+.how{padding-block:var(--space)}
+.how ol{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,48px);margin-top:clamp(44px,5vw,72px);counter-reset:s}
+.how li{counter-increment:s;padding-top:8px}
+.how li::before{content:counter(s);display:grid;place-items:center;width:clamp(72px,6vw,92px);aspect-ratio:1;border-radius:50%;background:var(--blush);font:500 clamp(34px,3vw,44px)/1 var(--serif);margin-bottom:22px}
+.how li:nth-child(2)::before{background:var(--sky)}.how li:nth-child(3)::before{background:var(--butter)}
+.how h3{font-size:clamp(26px,2.2vw,32px)}
+.how p{margin-top:12px;max-width:32ch}
+.how-head{display:grid;grid-template-columns:1fr auto;justify-content:space-between;align-items:end;gap:32px}
+.how-head h2{max-width:13ch}
+@media (max-width:900px){.how-head{grid-template-columns:1fr}.how-head h2{max-width:none}}
+.how-head img{width:clamp(220px,28vw,400px);aspect-ratio:2/1;object-fit:cover;border-radius:999px}
+
+/* faq */
+.faq{padding-block:0 var(--space);display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,100px);align-items:start}
+.faq .lede{margin-top:22px;max-width:28ch}
+.faq details{background:var(--card);border-radius:22px;padding-inline:26px;margin-bottom:10px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;align-items:center;padding-block:22px;font:500 clamp(20px,1.7vw,24px)/1.3 var(--serif)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:30px;height:30px;border-radius:50%;background:var(--blush) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath d='M15 9v12M9 15h12' stroke='%2335332d' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") center/100%;transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding-bottom:24px;max-width:60ch}
+
+/* contact */
+.contact{background:var(--curtain);color:var(--on-curtain);padding-block:clamp(88px,9vw,140px) clamp(72px,8vw,120px)}
+.contact.scallop-t::before{top:-21px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 22'%3E%3Cpath d='M0 22a22 22 0 0 1 44 0Z' fill='%232d514c'/%3E%3C/svg%3E")}
+.contact-in{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,100px);align-items:start}
+.contact .lede{margin-top:22px}
+.contact .alt{margin-top:22px;font-size:18px}
+form{background:var(--card);color:var(--ink);border-radius:30px;padding:clamp(22px,3vw,40px);display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+label{display:grid;gap:7px;font-size:16px;color:var(--soft)}
+label.wide{grid-column:1/-1}
+input,select:not(#language),textarea{width:100%;background:var(--oat);border:1.5px solid transparent;border-radius:14px;padding:13px 15px;font-size:16px;color:var(--ink);transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--sage-d);outline:none}
+textarea{resize:vertical}
+.preview{grid-column:1/-1;display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center;background:var(--butter);border-radius:22px;padding:18px 22px}
+.cake{width:150px;height:auto}
+.flame{transform-origin:50% 100%;animation:flick 1.4s ease-in-out infinite alternate}
+@keyframes flick{to{transform:scaleY(.86) translateX(.4px)}}
+@media (prefers-reduced-motion:reduce){.flame{animation:none}}
+.preview .who{font-size:16px;color:var(--soft)}
+#msg{white-space:pre-line;font-size:16px;line-height:1.5;margin-top:4px}
+.send{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.send small{font-size:16px;color:var(--soft)}
+
+/* footer */
+footer{padding-block:clamp(72px,8vw,120px) 36px}
+.foot{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(24px,5vw,80px);align-items:center}
+.foot .big{font:500 clamp(54px,9vw,148px)/.9 var(--serif);letter-spacing:-.035em}
+.foot ul{list-style:none;padding:0;display:grid;gap:6px;font-size:16px}
+.foot-mark{width:clamp(80px,9vw,128px)}
+.legal{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:56px;font-size:16px;color:var(--soft)}
+
+/* entrances */
+.js .rise{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rise{opacity:1;transform:none;transition:none}}
+
+/* phone */
+@media (max-width:900px){
+  .bar nav{display:none}
+  .hero,.list-in,.food,.about-in,.faq,.contact-in,.pk-head{grid-template-columns:1fr}
+  .pk-head p{justify-self:start}
+  .hero{padding-top:4px}
+  .seal{left:auto;right:12px;bottom:-34px}
+  .cards{grid-template-columns:1fr}
+  .how ol{grid-template-columns:1fr}
+  .food .arch{aspect-ratio:4/5}
+  .foot{grid-template-columns:1fr}
 }
-</style></head>
-<body id="top"><a class="skip" href="#main"><span data-de="Zum Inhalt" data-en="Skip to content" data-pl="Przejdź do treści">Zum Inhalt</span></a>
-<header><div class="wrap bar"><a href="#top" aria-label="AllesGute"><span class="brand"><img src="images/berries.svg" width="43" height="42" alt="">AllesGute<span class="dot">.</span></span></a><nav><a href="#pakete"><span data-de="Angebot" data-en="Packages" data-pl="Oferta">Angebot</span></a><a href="#ueber">Paulina</a><a href="#faq"><span data-de="Fragen" data-en="Questions" data-pl="Pytania">Fragen</span></a></nav><div class="actions"><select id="language" aria-label="Sprache / Language / Język"><option value="de">DE</option><option value="en">EN</option><option value="pl">PL</option></select><a class="smallbtn" href="#anfrage"><span data-de="Anfragen" data-en="Enquire" data-pl="Zapytaj">Anfragen</span> ↗</a></div></div></header>
-<main id="main"><section class="welcome"><div class="wrap welcome-inner"><div class="welcome-note">
-<p class="hello"><span data-de="Kommt rein, ich bin Paulina." data-en="Come on in, I’m Paulina." data-pl="Witajcie, jestem Paulina.">Kommt rein, ich bin Paulina.</span></p>
-<h1><span data-de="Heute seid ihr" data-en="Today, you’re" data-pl="Dziś wy też">Heute seid ihr</span> <em><span data-de="auch Gäste." data-en="guests, too." data-pl="jesteście gośćmi.">auch Gäste.</span></em></h1>
-<p class="welcome-copy"><span data-de="Was mag euer Kind am liebsten? Erzählt mir davon. Ich kümmere mich ums Essen, decke den Tisch und suche Spiele aus, die zu eurem Kind passen. Beim Geburtstagslied könnt ihr einfach mitsingen." data-en="What does your child love? Tell me about them. I’ll make the food, set the table and choose games they’ll enjoy. When it’s time to sing Happy Birthday, you can sing along." data-pl="Co wasze dziecko lubi najbardziej? Opowiedzcie mi o nim. Przygotuję jedzenie, nakryję do stołu i dobiorę zabawy. A kiedy przyjdzie pora na „Sto lat”, będziecie mogli zaśpiewać razem.">Was mag euer Kind am liebsten? Erzählt mir davon. Ich kümmere mich ums Essen, decke den Tisch und suche Spiele aus, die zu eurem Kind passen. Beim Geburtstagslied könnt ihr einfach mitsingen.</span></p>
-<div class="opening-actions"><a class="btn" href="#anfrage" data-choice="full"><span data-de="Paulina von eurer Feier erzählen" data-en="Tell Paulina about your party" data-pl="Opowiedz Paulinie o przyjęciu">Paulina von eurer Feier erzählen</span> ↗</a></div>
-<p class="where"><span data-de="Kindergeburtstage &amp; Familienfeste · Berlin und Havelland" data-en="Children’s birthdays &amp; family parties · Berlin and Havelland" data-pl="Urodziny dzieci i przyjęcia rodzinne · Berlin i Havelland">Kindergeburtstage &amp; Familienfeste · Berlin und Havelland</span></p></div>
-<figure class="host-photo"><img src="images/paulina-cutting.jpg" fetchpriority="high" alt="Beim Anschneiden der Geburtstagstorte an Paulinas gedecktem Tisch" data-alt-en="Cutting the birthday cake at Paulina’s party table" data-alt-pl="Krojenie tortu przy urodzinowym stole Pauliny"></figure></div></section>
-<section class="menu-story wrap"><div class="menu-intro"><h2><span data-de="Noch eine Waffel?" data-en="One more waffle?" data-pl="Jeszcze jednego gofra?">Noch eine Waffel?</span></h2><p><span data-de="Auf meinen Tischen findet ihr Bananenwaffeln, frische Beeren und Geburtstagstorte. Was isst euer Kind gern? Sagt mir auch, wenn ich auf bestimmte Zutaten achten soll." data-en="I serve banana waffles, fresh berries and birthday cake. What does your child like to eat? Let me know if there are ingredients we need to discuss." data-pl="Na moim stole znajdziecie bananowe gofry, świeże owoce i tort urodzinowy. Co lubi jeść wasze dziecko? Dajcie mi też znać, jeśli mam zwrócić uwagę na konkretne składniki.">Auf meinen Tischen findet ihr Bananenwaffeln, frische Beeren und Geburtstagstorte. Was isst euer Kind gern? Sagt mir auch, wenn ich auf bestimmte Zutaten achten soll.</span></p></div>
-<div class="menu-photos"><figure><img src="images/waffle-table.webp" alt="" loading="lazy"><figcaption><span data-de="Bananenwaffeln" data-en="Banana waffles" data-pl="Gofry bananowe">Bananenwaffeln</span></figcaption></figure><figure><img src="images/summer-berries.webp" alt="" loading="lazy"><figcaption><span data-de="Beeren und Kirschen" data-en="Berries and cherries" data-pl="Owoce jagodowe i czereśnie">Beeren und Kirschen</span></figcaption></figure><figure><img src="images/birthday-table.webp" alt="" loading="lazy"><figcaption><span data-de="Alles bereit für die kleinen Gäste" data-en="Ready for the little guests" data-pl="Wszystko gotowe na małych gości">Alles bereit für die kleinen Gäste</span></figcaption></figure></div></section>
-<section class="wrap section" id="pakete"><h2><span data-de="Der Geburtstagstisch oder die ganze Feier?" data-en="The birthday table or the whole party?" data-pl="Urodzinowy stół czy całe przyjęcie?">Der Geburtstagstisch oder die ganze Feier?</span></h2>
-<div class="planning"><div><h3><span data-de="Die ganze Feier" data-en="The whole party" data-pl="Całe przyjęcie">Die ganze Feier</span></h3><p><span data-de="Wir besprechen, wie viele Kinder kommen, was sie spielen und wann es Essen gibt. Vor der Buchung schreibe ich euch, was ich übernehme und was es kostet." data-en="We’ll talk about how many children are coming, what they’ll play and when they’ll eat. Before you book, I’ll send you the price and a list of what I’ll take care of." data-pl="Ustalimy, ile dzieci przyjdzie, w co się pobawią i kiedy usiądą do stołu. Przed rezerwacją napiszę wam, czym się zajmę i ile to będzie kosztować.">Wir besprechen, wie viele Kinder kommen, was sie spielen und wann es Essen gibt. Vor der Buchung schreibe ich euch, was ich übernehme und was es kostet.</span></p><a class="textlink" href="#anfrage" data-choice="full"><span data-de="Feier planen lassen" data-en="Ask about party planning" data-pl="Zapytaj o organizację">Feier planen lassen</span> ↗</a></div><img src="images/birthday-cake.webp" loading="lazy" alt="Geburtstagstorte mit Wimpelkette und kleinen Tieren" data-alt-en="Birthday cake with bunting and animal decorations" data-alt-pl="Tort urodzinowy z girlandą i figurkami zwierząt"></div>
-<div class="row" id="catering"><div><h3><span data-de="Catering für euren Tisch" data-en="Catering for your table" data-pl="Catering na wasz stół">Catering für euren Tisch</span></h3><p><span data-de="Vergleicht die Pakete für eure Gästezahl." data-en="Compare the packages for your guest count." data-pl="Porównajcie pakiety dla swojej liczby gości.">Vergleicht die Pakete für eure Gästezahl.</span></p></div><label class="count"><span data-de="Anzahl Kinder" data-en="Children attending" data-pl="Liczba dzieci">Anzahl Kinder</span> <select id="count"></select></label></div><div class="cards"><article><h3><span data-de="Basis" data-en="Basic" data-pl="Podstawowy">Basis</span></h3><p class="price">19 € <small><span data-de="/ Kind" data-en="/ child" data-pl="/ dziecko">/ Kind</span></small></p><p class="total" data-rate="19"></p><ul><li><span data-de="Themen-Snack-Buffet" data-en="Themed snack buffet" data-pl="Tematyczny bufet przekąskowy">Themen-Snack-Buffet</span></li><li><span data-de="Getränke &amp; Saftbar" data-en="Drinks &amp; juice bar" data-pl="Napoje i bar sokowy">Getränke &amp; Saftbar</span></li><li><span data-de="Kleine Überraschungstüten" data-en="Surprise goodie bags" data-pl="Niespodzianki na wynos">Kleine Überraschungstüten</span></li><li><span data-de="Tischdeko passend zum Thema" data-en="Simple table decorations to match the theme" data-pl="Dekoracje stołu dopasowane do tematu">Tischdeko passend zum Thema</span></li><li><span data-de="Auf- und Abbau inklusive" data-en="Setup &amp; cleanup included" data-pl="Montaż i demontaż w cenie">Auf- und Abbau inklusive</span></li></ul><a class="textlink" href="#anfrage" data-choice="1"><span data-de="Paket anfragen" data-en="Enquire about this package" data-pl="Zapytaj o ten pakiet">Paket anfragen</span> ↗</a></article>
-<article><h3><span data-de="Standard" data-en="Standard" data-pl="Standard">Standard</span></h3><p class="price">29 € <small><span data-de="/ Kind" data-en="/ child" data-pl="/ dziecko">/ Kind</span></small></p><p class="total" data-rate="29"></p><ul><li><span data-de="Alles aus Basis" data-en="Everything in Basic" data-pl="Wszystko z pakietu Podstawowego">Alles aus Basis</span></li><li><span data-de="Warme Gerichte &amp; Fingerfood" data-en="Hot dishes &amp; finger food" data-pl="Ciepłe dania i finger food">Warme Gerichte &amp; Fingerfood</span></li><li><span data-de="Ein Stück Geburtstagstorte pro Kind" data-en="A slice of birthday cake for each child" data-pl="Kawałek tortu dla każdego dziecka">Ein Stück Geburtstagstorte pro Kind</span></li><li><span data-de="Ich organisiere die Spiele" data-en="I organise the games" data-pl="Zorganizuję zabawy">Ich organisiere die Spiele</span></li><li><span data-de="Passende Teller und Tischläufer zum Thema" data-en="Plates and table runners to match the theme" data-pl="Talerzyki i bieżniki dopasowane do tematu">Passende Teller und Tischläufer zum Thema</span></li></ul><a class="textlink" href="#anfrage" data-choice="2"><span data-de="Paket anfragen" data-en="Enquire about this package" data-pl="Zapytaj o ten pakiet">Paket anfragen</span> ↗</a></article>
-<article><h3><span data-de="Premium" data-en="Premium" data-pl="Premium">Premium</span></h3><p class="price">45 € <small><span data-de="/ Kind" data-en="/ child" data-pl="/ dziecko">/ Kind</span></small></p><p class="total" data-rate="45"></p><ul><li><span data-de="Alles aus Standard" data-en="Everything in Standard" data-pl="Wszystko ze Standardu">Alles aus Standard</span></li><li><span data-de="Individuelle Motivtorte" data-en="Custom birthday cake" data-pl="Indywidualny tort urodzinowy">Individuelle Motivtorte</span></li><li><span data-de="Koch-/Back-Workshop für Kinder" data-en="Cooking/baking workshop" data-pl="Warsztaty kulinarne dla dzieci">Koch-/Back-Workshop für Kinder</span></li><li><span data-de="Die gesamte Deko für eure Feier" data-en="All the decorations for your party" data-pl="Wszystkie dekoracje na przyjęcie">Die gesamte Deko für eure Feier</span></li><li><span data-de="Ich führe die Kinder durch die Feier" data-en="I host the party from start to finish" data-pl="Poprowadzę całe przyjęcie">Ich führe die Kinder durch die Feier</span></li></ul><a class="textlink" href="#anfrage" data-choice="3"><span data-de="Paket anfragen" data-en="Enquire about this package" data-pl="Zapytaj o ten pakiet">Paket anfragen</span> ↗</a></article></div><p class="note"><span data-de="Anfahrt kann hinzukommen. Paulina bestätigt den Endpreis für euren Ort vor der Buchung." data-en="Travel may cost extra. Paulina confirms the final price for your location before you book." data-pl="Dojazd może być dodatkowo płatny. Przed rezerwacją Paulina potwierdzi cenę dla waszej lokalizacji.">Anfahrt kann hinzukommen. Paulina bestätigt den Endpreis für euren Ort vor der Buchung.</span></p></section>
-<section class="story" id="ueber"><div class="wrap story-grid"><img src="images/food-table.jpg" loading="lazy" alt="Waffeln, Kuchen und Blumen auf Paulinas Tisch" data-alt-en="Waffles, cakes and flowers on Paulina’s table" data-alt-pl="Gofry, ciasta i kwiaty na stole Pauliny"><div><p class="location">Paulina Salahov</p><h2><span data-de="Drei Stunden in der Küche." data-en="Three hours in the kitchen." data-pl="Trzy godziny w kuchni.">Drei Stunden in der Küche.</span></h2><p><span data-de="So habe ich den ersten Geburtstag meiner großen Tochter verbracht. Draußen wurde gefeiert. Heute plane ich Geburtstage für andere Familien, damit ihr neben eurem Kind sitzen könnt, wenn es die Kerzen auspustet." data-en="That’s where I spent my eldest daughter’s first birthday. The party was happening outside. Today I plan birthdays for other families, so you can sit beside your child when it’s time to blow out the candles." data-pl="Tyle czasu spędziłam w kuchni w pierwsze urodziny mojej starszej córki. Przyjęcie trwało na dworze. Dziś organizuję urodziny dla innych rodzin, żebyście mogli być przy swoim dziecku, gdy zdmuchuje świeczki.">So habe ich den ersten Geburtstag meiner großen Tochter verbracht. Draußen wurde gefeiert. Heute plane ich Geburtstage für andere Familien, damit ihr neben eurem Kind sitzen könnt, wenn es die Kerzen auspustet.</span></p><a href="#anfrage" class="textlink"><span data-de="Paulina schreiben" data-en="Write to Paulina" data-pl="Napisz do Pauliny">Paulina schreiben</span> ↗</a></div></div></section><section class="wrap section split" id="ablauf"><h2><span data-de="Wie planen wir zusammen?" data-en="How do we plan the party together?" data-pl="Jak razem zaplanujemy przyjęcie?">Wie planen wir zusammen?</span></h2><ol><li><span data-de="Schreibt mir, wann und wo ihr feiern wollt und wie viele Kinder ungefähr kommen." data-en="Tell me when and where you’d like to celebrate and roughly how many children are coming." data-pl="Napiszcie mi, kiedy i gdzie chcecie świętować i ile mniej więcej dzieci przyjdzie.">Schreibt mir, wann und wo ihr feiern wollt und wie viele Kinder ungefähr kommen.</span></li><li><span data-de="Wir sprechen über Essen, Spiele, Allergien und euer Budget. Danach schicke ich euch ein Angebot." data-en="We’ll talk about food, games, allergies and your budget. Then I’ll send you a quote." data-pl="Omówimy jedzenie, zabawy, alergie i budżet. Potem prześlę wam wycenę.">Wir sprechen über Essen, Spiele, Allergien und euer Budget. Danach schicke ich euch ein Angebot.</span></li><li><span data-de="Vor der Feier klären wir, wann ich zum Aufbau komme und wer welche Aufgaben übernimmt." data-en="Before the party, we’ll agree on when I’ll come to set up and who’s doing what." data-pl="Przed przyjęciem ustalimy, kiedy przyjadę wszystko przygotować i kto czym się zajmie.">Vor der Feier klären wir, wann ich zum Aufbau komme und wer welche Aufgaben übernimmt.</span></li></ol></section>
-<section class="wrap section split" id="faq"><h2><span data-de="Vor der Buchung" data-en="Before you book" data-pl="Przed rezerwacją">Vor der Buchung</span></h2><div><details><summary><span data-de="Wie früh sollten wir anfragen?" data-en="When should we get in touch?" data-pl="Kiedy najlepiej napisać?">Wie früh sollten wir anfragen?</span></summary><p><span data-de="Am besten fünf bis sechs Wochen vorher. Für kurzfristige Termine fragt direkt bei Paulina nach." data-en="Ideally five to six weeks ahead. For shorter notice, ask Paulina about your date." data-pl="Najlepiej pięć lub sześć tygodni wcześniej. Jeśli czasu jest mniej, zapytajcie Paulinę o termin.">Am besten fünf bis sechs Wochen vorher. Für kurzfristige Termine fragt direkt bei Paulina nach.</span></p></details>
-<details><summary><span data-de="Was ist bei Allergien wichtig?" data-en="What if a guest has an allergy?" data-pl="Co z alergiami pokarmowymi?">Was ist bei Allergien wichtig?</span></summary><p><span data-de="Besprecht Allergien vor der Buchung mit Paulina. Klärt gemeinsam Zutaten, Zubereitung und möglichen Kreuzkontakt." data-en="Discuss allergies with Paulina before booking. Ask about ingredients, preparation and possible cross-contact." data-pl="Przed rezerwacją omówcie z Pauliną alergie, składniki, sposób przygotowania i ryzyko kontaktu z alergenami.">Besprecht Allergien vor der Buchung mit Paulina. Klärt gemeinsam Zutaten, Zubereitung und möglichen Kreuzkontakt.</span></p></details>
-<details><summary><span data-de="Kommt ihr auch ins Umland?" data-en="Do you travel outside Berlin?" data-pl="Czy dojeżdżacie poza Berlin?">Kommt ihr auch ins Umland?</span></summary><p><span data-de="Ja, auch ins Havelland. Nennt euren Ort, damit Paulina die Anfahrt im Angebot berücksichtigen kann." data-en="Yes, including Havelland. Tell Paulina where you’re celebrating so she can include travel in your quote." data-pl="Tak, również do Havellandu. Podajcie miejscowość, żeby Paulina mogła uwzględnić dojazd w wycenie.">Ja, auch ins Havelland. Nennt euren Ort, damit Paulina die Anfahrt im Angebot berücksichtigen kann.</span></p></details>
-<details><summary><span data-de="Was gilt bei einer Absage?" data-en="What if we need to cancel?" data-pl="Co w razie odwołania przyjęcia?">Was gilt bei einer Absage?</span></summary><p><span data-de="Bis 14 Tage vor der Feier könnt ihr kostenlos absagen. Für spätere Absagen sprecht mit Paulina." data-en="You can cancel free of charge up to 14 days before the party. Contact Paulina for later cancellations." data-pl="Możecie bezpłatnie odwołać przyjęcie do 14 dni przed terminem. Późniejszą rezygnację omówcie z Pauliną.">Bis 14 Tage vor der Feier könnt ihr kostenlos absagen. Für spätere Absagen sprecht mit Paulina.</span></p></details></div></section>
-<section class="contact" id="anfrage"><div class="wrap split"><div><h2><span data-de="Wann feiert ihr?" data-en="When’s the party?" data-pl="Kiedy świętujecie?">Wann feiert ihr?</span></h2><p><span data-de="Erstellt eine Nachricht an Paulina. In WhatsApp könnt ihr sie prüfen und selbst abschicken." data-en="Prepare a message for Paulina. You can review and send it in WhatsApp." data-pl="Przygotujcie wiadomość do Pauliny. W WhatsAppie możecie ją sprawdzić i wysłać.">Erstellt eine Nachricht an Paulina. In WhatsApp könnt ihr sie prüfen und selbst abschicken.</span></p><a class="textlink" href="mailto:hello@allesgute.ai">hello@allesgute.ai</a></div>
-<form id="request"><label><span data-de="Wofür interessiert ihr euch?" data-en="What are you interested in?" data-pl="Co was interesuje?">Wofür interessiert ihr euch?</span><select id="choice"><option value="open" data-de="Noch offen" data-en="Still deciding" data-pl="Jeszcze nie wiemy">Noch offen</option><option value="full" data-de="Planung der ganzen Feier" data-en="Full party planning" data-pl="Organizacja całego przyjęcia">Planung der ganzen Feier</option><option value="1">Basis</option><option value="2">Standard</option><option value="3">Premium</option></select></label><div class="fields"><label><span data-de="Wunschdatum" data-en="Preferred date" data-pl="Termin">Wunschdatum</span><input type="date" id="date"></label><label><span data-de="Anzahl Kinder" data-en="Children attending" data-pl="Liczba dzieci">Anzahl Kinder</span><input type="number" min="1" step="1" id="guests"></label></div><label><span data-de="Ort oder Stadtteil" data-en="Town or district" data-pl="Miejscowość lub dzielnica">Ort oder Stadtteil</span><input id="place"></label><label><span data-de="Was soll Paulina übernehmen?" data-en="What would you like Paulina to handle?" data-pl="Czym ma się zająć Paulina?">Was soll Paulina übernehmen?</span><textarea id="notes" rows="2"></textarea></label><button class="btn"><span data-de="In WhatsApp öffnen" data-en="Open in WhatsApp" data-pl="Otwórz w WhatsAppie">In WhatsApp öffnen</span> ↗</button></form></div></section></main>
-<footer class="wrap bar"><a href="#top" aria-label="AllesGute"><span class="brand"><img src="images/berries.svg" width="43" height="42" alt="">AllesGute<span class="dot">.</span></span></a><span>Paulina Salahov · Berlin</span></footer>
-<div aria-hidden="true" class="berry cur-d" id="cd">🍓</div><div aria-hidden="true" class="berry cur-d2" id="cd2">🍓</div>
-<script>const get = id => document.getElementById(id);
-const count = get('count');
-const choice = get('choice');
-const language = get('language');
-const guests = get('guests');
-const packageNames = {
-  de: ['Basis','Standard','Premium'],
-  en: ['Basic','Standard','Premium'],
-  pl: ['Podstawowy','Standard','Premium']
+@media (max-width:560px){
+  body{font-size:16px}
+  .brand span{display:none}
+  form{grid-template-columns:1fr}
+  .preview{grid-template-columns:1fr}
+  .cake{width:120px}
+  .facts{grid-template-columns:1fr 1fr}
+  .how-head img{width:100%}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main"><span data-de="Zum Inhalt" data-en="Skip to content" data-pl="Przejdź do treści">Zum Inhalt</span></a>
+
+<header class="bar wrap">
+  <a class="brand" href="#top" aria-label="AllesGute, zur Startseite"><img src="images/mark.svg" width="44" height="41" alt=""><span>AllesGute</span></a>
+  <nav aria-label="Seiten">
+    <a href="#angebote"><span data-de="Angebote" data-en="Packages" data-pl="Pakiety">Angebote</span></a>
+    <a href="#essen"><span data-de="Essen" data-en="Food" data-pl="Jedzenie">Essen</span></a>
+    <a href="#paulina">Paulina</a>
+    <a href="#fragen"><span data-de="Fragen" data-en="Questions" data-pl="Pytania">Fragen</span></a>
+  </nav>
+  <div class="tools">
+    <label class="vh" for="language">Sprache / Language / Język</label>
+    <select id="language"><option value="de">DE</option><option value="en">EN</option><option value="pl">PL</option></select>
+    <a class="btn small" href="#anfrage"><span data-de="Anfragen" data-en="Enquire" data-pl="Zapytaj">Anfragen</span></a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero wrap" id="top">
+  <div class="hero-copy">
+    <p class="hello rise"><span data-de="Hallo, ich bin Paulina." data-en="Hello, I’m Paulina." data-pl="Cześć, jestem Paulina.">Hallo, ich bin Paulina.</span></p>
+    <h1 class="rise"><span data-de="Kommt einfach als Gäste." data-en="Just come as guests." data-pl="Przyjdźcie po prostu jako goście.">Kommt einfach als Gäste.</span></h1>
+    <p class="lede rise"><span data-de="Ich bringe den fertigen Geburtstagstisch für euer Kind: frisch gekocht, schön gedeckt, danach wieder abgeräumt. Auf Wunsch auch Torte, Deko und die ganze Feier." data-en="I bring your child’s birthday table, ready: freshly cooked, beautifully laid and cleared away afterwards. Cake, decorations and the whole party too, if you like." data-pl="Przywożę gotowy stół urodzinowy dla waszego dziecka: świeżo przygotowany, pięknie nakryty i potem sprzątnięty. Na życzenie także tort, dekoracje i całe przyjęcie.">Ich bringe den fertigen Geburtstagstisch für euer Kind: frisch gekocht, schön gedeckt, danach wieder abgeräumt. Auf Wunsch auch Torte, Deko und die ganze Feier.</span></p>
+    <div class="act rise">
+      <a class="btn" href="#angebote"><span data-de="Angebote ansehen" data-en="See the packages" data-pl="Zobacz pakiety">Angebote ansehen</span></a>
+      <span class="where"><span data-de="ab 140 € · 8 bis 30 Kinder · Berlin &amp; Märkisch-Oderland" data-en="from €140 · 8 to 30 children · Berlin &amp; Märkisch-Oderland" data-pl="od 140 € · 8 do 30 dzieci · Berlin i Märkisch-Oderland">ab 140 € · 8 bis 30 Kinder · Berlin &amp; Märkisch-Oderland</span></span>
+    </div>
+  </div>
+  <div class="stage rise">
+    <div class="arch"><img src="images/v3/grazing.webp" width="1000" height="1332" fetchpriority="high" alt="Ein gedeckter Geburtstagstisch mit Kuchen, Muffins, Waffeln, Melone und Schleierkraut" data-alt-en="A birthday table laid with cake, muffins, waffles, melon and baby’s breath" data-alt-pl="Nakryty stół urodzinowy z ciastem, babeczkami, goframi, arbuzem i gipsówką"></div>
+    <div class="seal" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><defs><path id="ring" d="M100 100m-74 0a74 74 0 1 1 148 0a74 74 0 1 1-148 0"/></defs><circle cx="100" cy="100" r="98" fill="#fbf8f2"/><text font-family="Jost,sans-serif" font-weight="500" font-size="17.5" letter-spacing="4.6" fill="#ab2a40"><textPath href="#ring">ALLES GUTE · ZUM GEBURTSTAG ·</textPath></text><image href="images/mark.svg" x="66" y="68" width="68" height="64"/></svg>
+    </div>
+  </div>
+</section>
+
+<section class="pk" id="angebote" aria-labelledby="h-pk">
+  <div class="wrap">
+    <div class="pk-head">
+      <h2 id="h-pk" class="rise"><span data-de="Drei Wege zu eurer Feier" data-en="Three ways to your party" data-pl="Trzy sposoby na wasze przyjęcie">Drei Wege zu eurer Feier</span></h2>
+      <p class="lede rise"><span data-de="Wählt, wie viel ihr abgeben wollt. Die Preise gelten für 8 Kinder. Den Endpreis mit Anfahrt bekommt ihr vor der Buchung." data-en="Choose how much you’d like to hand over. Prices are for 8 children. You get the final price, travel included, before you book." data-pl="Wybierzcie, ile chcecie mi oddać. Ceny dotyczą 8 dzieci. Ostateczną cenę z dojazdem dostaniecie przed rezerwacją.">Wählt, wie viel ihr abgeben wollt. Die Preise gelten für 8 Kinder. Den Endpreis mit Anfahrt bekommt ihr vor der Buchung.</span></p>
+    </div>
+    <div class="cards">
+      <article class="card rise" data-level="1">
+        <div class="pic"><img src="images/v3/flatlay.webp" width="1200" height="900" loading="lazy" alt="Der gedeckte Tisch von oben: Apfelkuchen, Muffins, Herzwaffeln, Marmeladen" data-alt-en="The laid table from above: apple cake, muffins, heart waffles, jams" data-alt-pl="Nakryty stół z góry: szarlotka, babeczki, gofry serduszka, dżemy"></div>
+        <span class="no"><small data-de="ab" data-en="from" data-pl="od">ab</small>140&nbsp;€</span>
+        <div class="body">
+          <h3 data-de="Der Tisch" data-en="The Table" data-pl="Stół">Der Tisch</h3>
+          <p class="what"><span data-de="Ein gedeckter Tisch voller frischer Sachen, schön wie im Café." data-en="A table laid with fresh things, as pretty as a café." data-pl="Stół pełen świeżych rzeczy, piękny jak w kawiarni.">Ein gedeckter Tisch voller frischer Sachen, schön wie im Café.</span></p>
+          <ul>
+            <li><span data-de="Obst, Gemüse, Waffeln, Kuchen" data-en="Fruit, vegetables, waffles, cake" data-pl="Owoce, warzywa, gofry, ciasto">Obst, Gemüse, Waffeln, Kuchen</span></li>
+            <li><span data-de="Saft und Wasser" data-en="Juice and water" data-pl="Sok i woda">Saft und Wasser</span></li>
+            <li><span data-de="Aufbau und Abbau" data-en="Set-up and clear-away" data-pl="Rozstawienie i sprzątanie stołu">Aufbau und Abbau</span></li>
+          </ul>
+          <p class="fit"><span data-de="Passt, wenn ihr zu Hause feiert und nur das Essen abgeben wollt." data-en="Right for you if you’re celebrating at home and just want the food handled." data-pl="Dla was, jeśli świętujecie w domu i chcecie oddać tylko jedzenie.">Passt, wenn ihr zu Hause feiert und nur das Essen abgeben wollt.</span></p>
+          <div class="pick"><button class="btn" type="button" aria-pressed="false"><span data-de="Diesen anfragen" data-en="Ask for this one" data-pl="Pytam o ten">Diesen anfragen</span></button></div>
+        </div>
+      </article>
+      <article class="card rise on" data-level="2">
+        <div class="pic"><img src="images/v3/theme-cake.webp" width="1400" height="1259" loading="lazy" alt="Geburtstagstorte mit Blütenblättern, Wimpelkette und goldener Eins" data-alt-en="Birthday cake with petals, bunting and a golden number one" data-alt-pl="Tort urodzinowy z płatkami kwiatów, girlandą i złotą jedynką"></div>
+        <span class="no"><small data-de="ab" data-en="from" data-pl="od">ab</small>270&nbsp;€</span>
+        <div class="body">
+          <h3 data-de="Die Feier" data-en="The Party" data-pl="Przyjęcie">Die Feier</h3>
+          <p class="what"><span data-de="Der Tisch, dazu Torte, Deko und eine Runde, die ich mit den Kindern mache." data-en="The table, plus cake, decorations and an activity I lead with the children." data-pl="Stół, a do tego tort, dekoracje i zabawa, którą prowadzę z dziećmi.">Der Tisch, dazu Torte, Deko und eine Runde, die ich mit den Kindern mache.</span></p>
+          <ul>
+            <li><span data-de="Torte im Lieblingsthema" data-en="Cake in their favourite theme" data-pl="Tort w ulubionym temacie">Torte im Lieblingsthema</span></li>
+            <li><span data-de="Deko für Tisch und Raum" data-en="Decorations for table and room" data-pl="Dekoracja stołu i sali">Deko für Tisch und Raum</span></li>
+            <li><span data-de="Back- oder Spielrunde" data-en="A baking or play session" data-pl="Wspólne pieczenie lub zabawa">Back- oder Spielrunde</span></li>
+          </ul>
+          <p class="fit"><span data-de="Passt, wenn ihr eine schöne Feier wollt, ohne selbst zu planen." data-en="Right for you if you want a beautiful party without planning it yourself." data-pl="Dla was, jeśli chcecie pięknego przyjęcia bez planowania.">Passt, wenn ihr eine schöne Feier wollt, ohne selbst zu planen.</span></p>
+          <div class="pick"><button class="btn" type="button" aria-pressed="true"><span data-de="Diesen anfragen" data-en="Ask for this one" data-pl="Pytam o ten">Diesen anfragen</span></button></div>
+        </div>
+      </article>
+      <article class="card rise" data-level="3">
+        <div class="pic"><img src="images/v3/cutting.webp" width="1000" height="1200" loading="lazy" alt="Paulina schneidet die Torte an, die Gäste halten schon die Teller" data-alt-en="Paulina cuts the cake while the guests hold their plates" data-alt-pl="Paulina kroi tort, a goście trzymają już talerzyki"></div>
+        <span class="no"><small data-de="ab" data-en="from" data-pl="od">ab</small>350&nbsp;€</span>
+        <div class="body">
+          <h3 data-de="Ihr seid Gäste" data-en="You’re Guests" data-pl="Jesteście gośćmi">Ihr seid Gäste</h3>
+          <p class="what"><span data-de="Alles aus der Feier. Ihr kommt mit eurem Kind an wie alle anderen auch." data-en="Everything from the party. You arrive with your child like everyone else." data-pl="Wszystko z przyjęcia. Przychodzicie z dzieckiem jak wszyscy inni.">Alles aus der Feier. Ihr kommt mit eurem Kind an wie alle anderen auch.</span></p>
+          <ul>
+            <li><span data-de="Mitgebsel für jedes Kind" data-en="A take-home bag for every child" data-pl="Upominek dla każdego dziecka">Mitgebsel für jedes Kind</span></li>
+            <li><span data-de="Ich führe durch die Feier" data-en="I host the party from start to end" data-pl="Prowadzę całe przyjęcie">Ich führe durch die Feier</span></li>
+            <li><span data-de="Aufräumen bis zum letzten Teller" data-en="Tidying up to the last plate" data-pl="Sprzątanie do ostatniego talerza">Aufräumen bis zum letzten Teller</span></li>
+          </ul>
+          <p class="fit"><span data-de="Passt, wenn ihr selbst einfach nur mitfeiern wollt." data-en="Right for you if you simply want to celebrate along." data-pl="Dla was, jeśli po prostu chcecie świętować razem z innymi.">Passt, wenn ihr selbst einfach nur mitfeiern wollt.</span></p>
+          <div class="pick"><button class="btn" type="button" aria-pressed="false"><span data-de="Diesen anfragen" data-en="Ask for this one" data-pl="Pytam o ten">Diesen anfragen</span></button></div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="list scallop-t scallop-b" aria-labelledby="h-list">
+    <div class="list-in wrap">
+      <div>
+        <h2 id="h-list"><span data-de="Was ihr abgebt" data-en="What you hand over" data-pl="Co oddajecie mnie">Was ihr abgebt</span></h2>
+        <p class="note lede" id="tally" aria-live="polite">Mit „Die Feier“ übernehme ich 7 von 9 Dingen.</p>
+        <p class="legend"><span class="k on" aria-hidden="true"></span><span data-de="mache ich" data-en="I do it" data-pl="robię ja">mache ich</span><span class="k" aria-hidden="true"></span><span data-de="macht ihr" data-en="you do it" data-pl="robicie wy">macht ihr</span></p>
+      </div>
+      <ul class="chores" id="chores">
+        <li data-from="1"><i aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2.5 7.4l3 2.8 6-6.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span data-de="Einkaufen" data-en="Shopping" data-pl="Zakupy">Einkaufen</span></li>
+        <li data-from="1"><i aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2.5 7.4l3 2.8 6-6.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span data-de="Kochen und Backen" data-en="Cooking and baking" data-pl="Gotowanie i pieczenie">Kochen und Backen</span></li>
+        <li data-from="1"><i aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2.5 7.4l3 2.8 6-6.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span data-de="Tisch decken" data-en="Setting the table" data-pl="Nakrywanie stołu">Tisch decken</span></li>
+        <li data-from="1"><i aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2.5 7.4l3 2.8 6-6.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span data-de="Abwaschen" data-en="Washing up" data-pl="Zmywanie">Abwaschen</span></li>
+        <li data-from="2"><i aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2.5 7.4l3 2.8 6-6.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span data-de="Torte bestellen" data-en="Ordering the cake" data-pl="Zamawianie tortu">Torte bestellen</span></li>
+        <li data-from="2"><i aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2.5 7.4l3 2.8 6-6.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span data-de="Deko besorgen" data-en="Buying decorations" data-pl="Kupowanie dekoracji">Deko besorgen</span></li>
+        <li data-from="2"><i aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2.5 7.4l3 2.8 6-6.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span data-de="Kinder beschäftigen" data-en="Keeping the children busy" data-pl="Zajmowanie dzieci">Kinder beschäftigen</span></li>
+        <li data-from="3" class="yours"><i aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2.5 7.4l3 2.8 6-6.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span data-de="Mitgebsel packen" data-en="Packing party bags" data-pl="Pakowanie upominków">Mitgebsel packen</span></li>
+        <li data-from="3" class="yours"><i aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2.5 7.4l3 2.8 6-6.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span data-de="Aufräumen danach" data-en="Tidying up afterwards" data-pl="Sprzątanie po wszystkim">Aufräumen danach</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="food wrap" id="essen" aria-labelledby="h-essen">
+  <div class="arch rise"><img src="images/v3/berries.webp" width="1065" height="1100" loading="lazy" alt="Erdbeeren, Himbeeren, Heidelbeeren und Kirschen auf Sahne" data-alt-en="Strawberries, raspberries, blueberries and cherries on cream" data-alt-pl="Truskawki, maliny, borówki i czereśnie na bitej śmietanie"></div>
+  <div class="side">
+    <div class="rise">
+      <h2 id="h-essen"><span data-de="Obst zuerst." data-en="Fruit first." data-pl="Najpierw owoce.">Obst zuerst.</span></h2>
+      <p class="lede"><span data-de="Bunt, frisch und selbst gemacht: viel Obst und Gemüse, wenig Zucker, und trotzdem greifen alle zu. Eine Torte gibt es natürlich auch. Es ist ja ein Geburtstag." data-en="Colourful, fresh and homemade: lots of fruit and vegetables, little sugar, and everyone still reaches for more. There’s a cake too, of course. It’s a birthday." data-pl="Kolorowo, świeżo i domowo: dużo owoców i warzyw, mało cukru, a i tak wszyscy sięgają po więcej. Tort oczywiście też jest. To przecież urodziny.">Bunt, frisch und selbst gemacht: viel Obst und Gemüse, wenig Zucker, und trotzdem greifen alle zu. Eine Torte gibt es natürlich auch. Es ist ja ein Geburtstag.</span></p>
+    </div>
+    <ul class="facts3 rise">
+      <li><span class="dot"><img src="images/v2/band-1.webp" width="660" height="1100" loading="lazy" alt="Handgeschriebene Schilder an Waffeln und Apfelkuchen" data-alt-en="Handwritten labels on waffles and apple cake" data-alt-pl="Odręczne tabliczki przy gofrach i szarlotce"></span><span><b data-de="Jedes Essen hat sein Schild" data-en="Every dish has its label" data-pl="Każde danie ma swoją tabliczkę">Jedes Essen hat sein Schild</b><small data-de="Handgeschrieben, damit alle sehen, was drin ist." data-en="Handwritten, so everyone can see what’s in it." data-pl="Odręcznie, żeby każdy wiedział, co jest w środku.">Handgeschrieben, damit alle sehen, was drin ist.</small></span></li>
+      <li><span class="dot"><img src="images/v3/table.webp" width="1000" height="750" loading="lazy" alt="Muffins zwischen Schleierkraut" data-alt-en="Muffins among baby’s breath" data-alt-pl="Babeczki wśród gipsówki"></span><span><b data-de="Allergien vorher besprochen" data-en="Allergies talked through first" data-pl="Alergie omówione wcześniej">Allergien vorher besprochen</b><small data-de="Zutaten, Zubereitung und Kreuzkontakt, vor der Buchung." data-en="Ingredients, preparation and cross-contact, before you book." data-pl="Składniki, przygotowanie i kontakt z alergenami, przed rezerwacją.">Zutaten, Zubereitung und Kreuzkontakt, vor der Buchung.</small></span></li>
+      <li><span class="dot"><img src="images/v2/m-5.webp" width="900" height="840" loading="lazy" alt="Herzwaffeln mit Erdbeeren" data-alt-en="Heart waffles with strawberries" data-alt-pl="Gofry serduszka z truskawkami"></span><span><b data-de="Alles selbst gemacht" data-en="All homemade" data-pl="Wszystko domowe">Alles selbst gemacht</b><small data-de="In meiner Küche, für euren Tag." data-en="In my kitchen, for your day." data-pl="W mojej kuchni, na wasz dzień.">In meiner Küche, für euren Tag.</small></span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="about" id="paulina" aria-labelledby="h-paulina">
+  <div class="about-in">
+    <div class="arch rise"><img src="images/v3/cake-hands.webp" width="780" height="1150" loading="lazy" alt="Paulina stellt eine weiße Torte mit Beeren auf den Tisch" data-alt-en="Paulina placing a white cake with berries on the table" data-alt-pl="Paulina stawia biały tort z owocami na stole"></div>
+    <div class="rise">
+      <h2 id="h-paulina"><span data-de="Wer hier kocht" data-en="Who’s cooking" data-pl="Kto tu gotuje">Wer hier kocht</span></h2>
+      <p class="lede"><span data-de="Den ersten Geburtstag meiner großen Tochter habe ich in der Küche verbracht. Draußen wurde gefeiert, ohne mich. Heute koche ich für andere Familien, damit ihr dabei seid." data-en="I spent my eldest daughter’s first birthday in the kitchen. The party happened outside, without me. Now I cook for other families, so you can be there." data-pl="Pierwsze urodziny mojej starszej córki spędziłam w kuchni. Przyjęcie trwało na zewnątrz, beze mnie. Dziś gotuję dla innych rodzin, żebyście wy byli przy tym.">Den ersten Geburtstag meiner großen Tochter habe ich in der Küche verbracht. Draußen wurde gefeiert, ohne mich. Heute koche ich für andere Familien, damit ihr dabei seid.</span></p>
+      <p class="sign" aria-hidden="true">Paulina</p>
+      <div class="daughters"><img src="images/mark.svg" width="66" height="62" alt=""><p><span data-de="Die zwei Erdbeeren sind meine Töchter: die große Laura und die kleine Laia, die sich an sie lehnt." data-en="The two strawberries are my daughters: Laura, the big one, and little Laia leaning on her." data-pl="Dwie truskawki to moje córki: starsza Laura i mała Laia, która się do niej przytula.">Die zwei Erdbeeren sind meine Töchter: die große Laura und die kleine Laia, die sich an sie lehnt.</span></p></div>
+      <dl class="facts">
+        <div><dt><span data-de="Wo" data-en="Where" data-pl="Gdzie">Wo</span></dt><dd><span data-de="Berlin &amp; Märkisch-Oderland" data-en="Berlin &amp; Märkisch-Oderland" data-pl="Berlin i Märkisch-Oderland">Berlin &amp; Märkisch-Oderland</span></dd></div>
+        <div><dt><span data-de="Sprachen" data-en="Languages" data-pl="Języki">Sprachen</span></dt><dd>Deutsch · English · polski</dd></div>
+        <div><dt><span data-de="Gäste" data-en="Guests" data-pl="Goście">Gäste</span></dt><dd><span data-de="8 bis 30 Kinder" data-en="8 to 30 children" data-pl="8 do 30 dzieci">8 bis 30 Kinder</span></dd></div>
+        <div><dt><span data-de="Vorlauf" data-en="Notice" data-pl="Z wyprzedzeniem">Vorlauf</span></dt><dd><span data-de="5 bis 6 Wochen" data-en="5 to 6 weeks" data-pl="5 do 6 tygodni">5 bis 6 Wochen</span></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="how wrap" aria-labelledby="h-how">
+  <div class="how-head">
+    <h2 id="h-how" class="rise"><span data-de="Eine Nachricht genügt" data-en="One message is enough" data-pl="Wystarczy jedna wiadomość">Eine Nachricht genügt</span></h2>
+    <img class="rise" src="images/v2/panorama.webp" width="1600" height="528" loading="lazy" alt="Bananenwaffeln mit Vanillepudding" data-alt-en="Banana waffles with vanilla pudding" data-alt-pl="Gofry bananowe z budyniem waniliowym">
+  </div>
+  <ol>
+    <li class="rise"><h3><span data-de="Ihr schreibt mir" data-en="You write to me" data-pl="Piszecie do mnie">Ihr schreibt mir</span></h3><p><span data-de="Datum, Ort und ungefähr wie viele Kinder. Eine WhatsApp reicht." data-en="Date, place and roughly how many children. One WhatsApp is enough." data-pl="Data, miejsce i mniej więcej ile dzieci. Wystarczy jeden WhatsApp.">Datum, Ort und ungefähr wie viele Kinder. Eine WhatsApp reicht.</span></p></li>
+    <li class="rise"><h3><span data-de="Ich plane alles" data-en="I plan everything" data-pl="Planuję wszystko">Ich plane alles</span></h3><p><span data-de="Essen, Thema und Allergien in einem kurzen Gespräch. Danach bekommt ihr ein festes Angebot." data-en="Food, theme and allergies in one short call. Then you get a fixed quote." data-pl="Jedzenie, motyw i alergie w jednej krótkiej rozmowie. Potem dostajecie stałą wycenę.">Essen, Thema und Allergien in einem kurzen Gespräch. Danach bekommt ihr ein festes Angebot.</span></p></li>
+    <li class="rise"><h3><span data-de="Ihr feiert" data-en="You celebrate" data-pl="Świętujecie">Ihr feiert</span></h3><p><span data-de="Ich komme vor den Gästen, baue auf und räume danach ab. Ihr müsst nur da sein." data-en="I arrive before the guests, set up and clear away afterwards. You only need to be there." data-pl="Przyjeżdżam przed gośćmi, rozstawiam wszystko i potem sprzątam. Wy musicie tylko być.">Ich komme vor den Gästen, baue auf und räume danach ab. Ihr müsst nur da sein.</span></p></li>
+  </ol>
+</section>
+
+<section class="faq wrap" id="fragen" aria-labelledby="h-fragen">
+  <div class="rise">
+    <h2 id="h-fragen"><span data-de="Vor der Buchung" data-en="Before you book" data-pl="Przed rezerwacją">Vor der Buchung</span></h2>
+    <p class="lede"><span data-de="Noch etwas offen? Schreibt mir, ich antworte am selben Tag." data-en="Something else? Write to me, I reply the same day." data-pl="Coś jeszcze? Napiszcie, odpowiem tego samego dnia.">Noch etwas offen? Schreibt mir, ich antworte am selben Tag.</span></p>
+  </div>
+  <div class="rise">
+    <details><summary><span data-de="Wie früh sollten wir anfragen?" data-en="How early should we get in touch?" data-pl="Jak wcześnie napisać?">Wie früh sollten wir anfragen?</span></summary><p><span data-de="Am besten fünf bis sechs Wochen vorher. Für kurzfristige Termine schreibt mir einfach, ich sage euch schnell, ob es klappt." data-en="Ideally five to six weeks ahead. For shorter notice, just write and I’ll tell you quickly if it works." data-pl="Najlepiej pięć lub sześć tygodni wcześniej. Jeśli czasu jest mniej, po prostu napiszcie, szybko odpowiem, czy się uda.">Am besten fünf bis sechs Wochen vorher. Für kurzfristige Termine schreibt mir einfach, ich sage euch schnell, ob es klappt.</span></p></details>
+    <details><summary><span data-de="Was ist bei Allergien wichtig?" data-en="What if a child has an allergy?" data-pl="Co z alergiami?">Was ist bei Allergien wichtig?</span></summary><p><span data-de="Sagt mir vor der Buchung, welche Allergien es gibt. Wir besprechen Zutaten, Zubereitung und möglichen Kreuzkontakt, und auf dem Tisch steht bei jedem Essen, was drin ist." data-en="Tell me about allergies before booking. We go through ingredients, preparation and possible cross-contact, and every dish on the table is labelled." data-pl="Przed rezerwacją powiedzcie mi o alergiach. Omówimy składniki, przygotowanie i ryzyko kontaktu z alergenami, a każde danie na stole będzie podpisane.">Sagt mir vor der Buchung, welche Allergien es gibt. Wir besprechen Zutaten, Zubereitung und möglichen Kreuzkontakt, und auf dem Tisch steht bei jedem Essen, was drin ist.</span></p></details>
+    <details><summary><span data-de="Kommst du auch ins Umland?" data-en="Do you travel outside Berlin?" data-pl="Czy dojeżdżasz poza Berlin?">Kommst du auch ins Umland?</span></summary><p><span data-de="Ja, ich wohne in Neuenhagen und komme gern überall nach Märkisch-Oderland. Nennt mir euren Ort, dann rechne ich die Anfahrt ins Angebot ein." data-en="Yes, I live in Neuenhagen and happily travel across Märkisch-Oderland. Tell me where you’re celebrating and I’ll include travel in the quote." data-pl="Tak, mieszkam w Neuenhagen i chętnie dojeżdżam w całym Märkisch-Oderland. Podajcie miejscowość, a uwzględnię dojazd w wycenie.">Ja, ich wohne in Neuenhagen und komme gern überall nach Märkisch-Oderland. Nennt mir euren Ort, dann rechne ich die Anfahrt ins Angebot ein.</span></p></details>
+    <details><summary><span data-de="Können wir ein Paket anpassen?" data-en="Can we adjust a package?" data-pl="Czy można dopasować pakiet?">Können wir ein Paket anpassen?</span></summary><p><span data-de="Ja. Die drei Wege sind ein Anfang. Erzählt mir, was ihr braucht, und ich schicke euch ein Angebot, das genau dazu passt." data-en="Yes. The three ways are a starting point. Tell me what you need and I’ll send a quote that fits it exactly." data-pl="Tak. Trzy pakiety to punkt wyjścia. Napiszcie, czego potrzebujecie, a wyślę wycenę dokładnie dopasowaną.">Ja. Die drei Wege sind ein Anfang. Erzählt mir, was ihr braucht, und ich schicke euch ein Angebot, das genau dazu passt.</span></p></details>
+    <details><summary><span data-de="Was gilt bei einer Absage?" data-en="What if we need to cancel?" data-pl="Co w razie odwołania?">Was gilt bei einer Absage?</span></summary><p><span data-de="Bis 14 Tage vor der Feier könnt ihr kostenlos absagen. Wenn es später passiert, finden wir gemeinsam eine faire Lösung." data-en="You can cancel free of charge up to 14 days before the party. If it happens later, we’ll find a fair solution together." data-pl="Do 14 dni przed przyjęciem możecie odwołać bezpłatnie. Jeśli później, razem znajdziemy uczciwe rozwiązanie.">Bis 14 Tage vor der Feier könnt ihr kostenlos absagen. Wenn es später passiert, finden wir gemeinsam eine faire Lösung.</span></p></details>
+    <details><summary><span data-de="In welcher Sprache läuft die Feier?" data-en="Which language is the party in?" data-pl="W jakim języku jest przyjęcie?">In welcher Sprache läuft die Feier?</span></summary><p><span data-de="Auf Deutsch, Englisch oder Polnisch, auch gemischt, wenn die Gäste aus verschiedenen Familien kommen." data-en="German, English or Polish, or a mix when guests come from different families." data-pl="Po niemiecku, angielsku lub po polsku, także mieszanie, jeśli goście pochodzą z różnych rodzin.">Auf Deutsch, Englisch oder Polnisch, auch gemischt, wenn die Gäste aus verschiedenen Familien kommen.</span></p></details>
+  </div>
+</section>
+
+<section class="contact scallop-t" id="anfrage" aria-labelledby="h-anfrage">
+  <div class="contact-in wrap">
+    <div class="rise">
+      <h2 id="h-anfrage"><span data-de="Wann feiert ihr?" data-en="When’s the party?" data-pl="Kiedy świętujecie?">Wann feiert ihr?</span></h2>
+      <p class="lede"><span data-de="Füllt aus, was ihr schon wisst. Für jedes Jahr zündet die Torte eine Kerze an. Den Rest besprechen wir zusammen." data-en="Fill in what you already know. The cake lights a candle for every year. We’ll work out the rest together." data-pl="Wpiszcie to, co już wiecie. Tort zapala świeczkę za każdy rok. Resztę ustalimy razem.">Füllt aus, was ihr schon wisst. Für jedes Jahr zündet die Torte eine Kerze an. Den Rest besprechen wir zusammen.</span></p>
+      <p class="alt"><span data-de="Keine Zeit für Felder?" data-en="No time for fields?" data-pl="Nie macie czasu na formularz?">Keine Zeit für Felder?</span> <a href="https://wa.me/491783129500"><span data-de="Direkt auf WhatsApp schreiben" data-en="Message me on WhatsApp" data-pl="Napiszcie od razu na WhatsAppie">Direkt auf WhatsApp schreiben</span></a> · <a href="mailto:hello@allesgute.ai">hello@allesgute.ai</a></p>
+    </div>
+    <form id="request" class="rise" novalidate>
+      <label class="wide"><span data-de="Welcher Weg?" data-en="Which way?" data-pl="Który pakiet?">Welcher Weg?</span>
+        <select id="choice">
+          <option value="1" data-de="Der Tisch" data-en="The Table" data-pl="Stół">Der Tisch</option>
+          <option value="2" selected data-de="Die Feier" data-en="The Party" data-pl="Przyjęcie">Die Feier</option>
+          <option value="3" data-de="Ihr seid Gäste" data-en="You’re Guests" data-pl="Jesteście gośćmi">Ihr seid Gäste</option>
+          <option value="0" data-de="Weiß ich noch nicht" data-en="Not sure yet" data-pl="Jeszcze nie wiem">Weiß ich noch nicht</option>
+        </select></label>
+      <label><span data-de="Name eures Kindes" data-en="Your child’s name" data-pl="Imię dziecka">Name eures Kindes</span><input id="kid" autocomplete="off"></label>
+      <label><span data-de="Wird wie alt?" data-en="Turning how old?" data-pl="Ile lat kończy?">Wird wie alt?</span><select id="age"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select></label>
+      <label><span data-de="Wunschdatum" data-en="Preferred date" data-pl="Termin">Wunschdatum</span><input type="date" id="date"></label>
+      <label><span data-de="Anzahl Kinder" data-en="Number of children" data-pl="Liczba dzieci">Anzahl Kinder</span><input type="number" id="guests" min="1" max="60" inputmode="numeric"></label>
+      <label class="wide"><span data-de="Ort oder Stadtteil" data-en="Town or district" data-pl="Miejscowość lub dzielnica">Ort oder Stadtteil</span><input id="place" autocomplete="address-level2"></label>
+      <label class="wide"><span data-de="Was mag euer Kind?" data-en="What does your child love?" data-pl="Co lubi wasze dziecko?">Was mag euer Kind?</span><textarea id="notes" rows="3"></textarea></label>
+      <div class="preview" aria-live="polite"><svg class="cake" viewBox="0 0 160 110" aria-hidden="true"><g id="candles"></g><rect x="20" y="58" width="120" height="44" rx="12" fill="#fbf8f2"/><path d="M20 70c10 0 10 10 20 10s10-10 20-10 10 10 20 10 10-10 20-10 10 10 20 10 10-10 20-10V70a12 12 0 0 0-12-12H32a12 12 0 0 0-12 12Z" fill="#f1d8cf"/><rect x="8" y="100" width="144" height="7" rx="3.5" fill="#d8dfcd"/><circle cx="48" cy="56" r="5" fill="#ab2a40"/><circle cx="80" cy="55" r="5" fill="#ab2a40"/><circle cx="112" cy="56" r="5" fill="#ab2a40"/></svg><div><p class="who"><span data-de="Eure Nachricht an Paulina" data-en="Your message to Paulina" data-pl="Wasza wiadomość do Pauliny">Eure Nachricht an Paulina</span></p><p id="msg">Hallo Paulina!</p></div></div>
+      <div class="send"><button class="btn" type="submit"><span data-de="In WhatsApp öffnen" data-en="Open in WhatsApp" data-pl="Otwórz w WhatsAppie">In WhatsApp öffnen</span></button><small><span data-de="Ihr seht die Nachricht in WhatsApp, bevor ihr sie abschickt." data-en="You’ll see the message in WhatsApp before you send it." data-pl="Zobaczycie wiadomość w WhatsAppie, zanim ją wyślecie.">Ihr seht die Nachricht in WhatsApp, bevor ihr sie abschickt.</span></small></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <div class="foot">
+    <img class="foot-mark" src="images/mark.svg" width="132" height="124" alt="">
+    <p class="big" aria-hidden="true">AllesGute</p>
+    <ul>
+      <li><a href="#angebote"><span data-de="Angebote" data-en="Packages" data-pl="Pakiety">Angebote</span></a></li>
+      <li><a href="https://wa.me/491783129500">WhatsApp</a></li>
+      <li><a href="mailto:hello@allesgute.ai">hello@allesgute.ai</a></li>
+    </ul>
+  </div>
+  <p class="legal"><span>© 2026 Paulina Salahov · Berlin &amp; Märkisch-Oderland</span><a href="impressum.html">Impressum</a><a href="datenschutz.html"><span data-de="Datenschutz" data-en="Privacy" data-pl="Prywatność">Datenschutz</span></a></p>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+const $ = id => document.getElementById(id);
+const language = $('language');
+const fields = ['choice','kid','age','date','guests','place','notes'];
+const T = {
+  de:{turn:(n,a)=>(n||'Unser Kind')+' wird '+a+'.',hi:'Hallo Paulina!',kids:'Kinder',home:'AllesGute, zur Startseite',
+      tally:(p,n,t)=>`Mit „${p}“ übernehme ich ${n} von ${t} Dingen.`},
+  en:{turn:(n,a)=>(n||'Our child')+' is turning '+a+'.',hi:'Hi Paulina!',kids:'children',home:'AllesGute, home',
+      tally:(p,n,t)=>`With “${p}”, I take ${n} of ${t} jobs off your list.`},
+  pl:{turn:(n,a)=>(n||'Nasze dziecko')+' kończy '+a+' '+(a==1?'rok':([2,3,4].includes(a%10)&&!(a>11&&a<15)?'lata':'lat'))+'.',hi:'Cześć Paulino!',kids:'dzieci',home:'AllesGute, strona główna',
+      tally:(p,n,t)=>`W pakiecie „${p}” biorę na siebie ${n} z ${t} rzeczy.`}
 };
-for (let n = 8; n <= 30; n++) count.add(new Option(n, n));
-count.value = 12;
-function updatePrices() {
-  const lang = language.value;
-  const prefix = {de:'ab',en:'from',pl:'od'}[lang];
-  const suffix = {de:'gesamt',en:'total',pl:'łącznie'}[lang];
-  const currency = new Intl.NumberFormat(lang, {style:'currency',currency:'EUR',maximumFractionDigits:0});
-  document.querySelectorAll('[data-rate]').forEach(el => {
-    el.textContent = [prefix, currency.format(Number(el.dataset.rate) * Number(count.value)), suffix].join(' ');
+const cards = [...document.querySelectorAll('.card')];
+const chores = [...document.querySelectorAll('#chores li')];
+let level = 2;
+
+function setLevel(n, fromForm){
+  level = n;
+  cards.forEach(c => {
+    const on = +c.dataset.level === n;
+    c.classList.toggle('on', on);
+    c.querySelector('.pick button').setAttribute('aria-pressed', on);
   });
+  chores.forEach(li => li.classList.toggle('yours', !n || +li.dataset.from > n));
+  if (!fromForm) $('choice').value = String(n);
+  renderTally(); renderMessage();
 }
-function applyLanguage(lang) {
+function renderTally(){
+  const t = T[language.value];
+  if (!level){ $('tally').textContent = ''; return; }
+  const name = cards[level-1].querySelector('h3').textContent;
+  const n = chores.filter(li => +li.dataset.from <= level).length;
+  $('tally').textContent = t.tally(name, n, chores.length);
+}
+cards.forEach(c => c.querySelector('.pick button').addEventListener('click', () => { setLevel(+c.dataset.level); $('anfrage').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); setTimeout(() => $('kid').focus({preventScroll:true}), 600); }));
+$('choice').addEventListener('change', e => setLevel(+e.target.value, true));
+
+function message(){
+  const lang = language.value, t = T[lang], lines = [t.hi];
+  const choice = $('choice');
+  const kid = $('kid').value.trim(), age = +$('age').value;
+  if (age) lines.push(t.turn(kid, age)); else if (kid) lines.push($('kid').labels[0].textContent.trim() + ': ' + kid);
+  if (choice.value !== '0') lines.push(choice.selectedOptions[0].textContent);
+  const d = $('date').value;
+  if (d) lines.push(new Intl.DateTimeFormat(lang,{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(new Date(d+'T12:00')));
+  const g = $('guests').value.trim(); if (g) lines.push(g + ' ' + t.kids);
+  const p = $('place').value.trim(); if (p) lines.push(p);
+  const n = $('notes').value.trim(); if (n) lines.push(n);
+  return lines.join('\n');
+}
+function renderCandles(){
+  const n = +$('age').value || 0, g = $('candles'); g.innerHTML = '';
+  const w = 100 / Math.max(n,1);
+  for (let i = 0; i < n; i++){
+    const x = 30 + w*i + w/2 - 2.5, h = 22 + (i%2)*4;
+    g.insertAdjacentHTML('beforeend', `<rect x="${x}" y="${58-h}" width="5" height="${h}" rx="1.5" fill="${i%2?'#f1d8cf':'#d8dfcd'}"/><path class="flame" style="animation-delay:${i*0.13}s" d="M${x+2.5} ${58-h-14}c4 5 5 8 0 11-5-3-4-6 0-11Z" fill="#f0a23a"/>`);
+  }
+}
+function renderMessage(){ $('msg').textContent = message(); renderCandles(); }
+
+function applyLanguage(lang){
   document.documentElement.lang = lang;
   language.value = lang;
   document.querySelectorAll('[data-de]').forEach(el => el.textContent = el.dataset[lang]);
   document.querySelectorAll('img[data-alt-en]').forEach(img => {
     img.dataset.altDe ??= img.alt;
-    img.alt = img.getAttribute('data-alt-' + lang);
+    img.alt = img.dataset['alt' + lang[0].toUpperCase() + lang[1]];
   });
-  packageNames[lang].forEach((name, index) => choice.options[index + 2].textContent = name);
-  updatePrices();
+  document.querySelector('.brand').setAttribute('aria-label', T[lang].home);
+  renderTally(); renderMessage();
 }
-let initialLanguage = 'de';
-try {
-  const saved = localStorage.getItem('ag-lang');
-  if (Object.hasOwn(packageNames, saved)) initialLanguage = saved;
-} catch {}
-applyLanguage(initialLanguage);
+let initial = (navigator.language || 'de').slice(0,2);
+try { const s = localStorage.getItem('ag-lang'); if (s) initial = s; } catch {}
+if (!(initial in T)) initial = 'de';
+applyLanguage(initial);
 language.addEventListener('change', () => {
   applyLanguage(language.value);
-  try { localStorage.setItem('ag-lang',language.value); } catch {}
+  try { localStorage.setItem('ag-lang', language.value); } catch {}
 });
-count.addEventListener('change', updatePrices);
-document.querySelectorAll('[data-choice]').forEach(link => link.addEventListener('click', () => {
-  choice.value = link.dataset.choice;
-  if (choice.value !== 'full') guests.value = count.value;
-}));
-get('request').addEventListener('submit', event => {
-  event.preventDefault();
-  const lang = language.value;
-  const greeting = {de:'Hallo Paulina!',en:'Hi Paulina!',pl:'Cześć Paulino!'}[lang];
-  const lines = [greeting];
-  for (const id of ['choice','date','guests','place','notes']) {
-    const field = get(id);
-    const value = id === 'choice' ? field.selectedOptions[0].textContent : field.value.trim();
-    if (value) lines.push(field.labels[0].querySelector('span').textContent + ': ' + value);
-  }
-  location.href = 'https://wa.me/491783129500?text=' + encodeURIComponent(lines.join('\n'));
+
+fields.forEach(id => $(id).addEventListener('input', renderMessage));
+$('request').addEventListener('submit', e => {
+  e.preventDefault();
+  window.location.href = 'https://wa.me/491783129500?text=' + encodeURIComponent(message());
 });
-// Laura and Laia, the two strawberry cursors from the original site.
-const cursorLaura = get('cd');
-const cursorLaia = get('cd2');
-if (matchMedia('(pointer:fine) and (prefers-reduced-motion:no-preference)').matches) {
-  let previous;
-  document.addEventListener('mousemove', event => {
-    for (const [berry, point] of [[cursorLaura,event],[cursorLaia,previous || event]]) {
-      berry.style.display = 'block';
-      berry.style.left = point.clientX + 'px';
-      berry.style.top = point.clientY + 'px';
-    }
-    previous = event;
-  });
-  document.addEventListener('mouseleave', () => {
-    cursorLaura.style.display = cursorLaia.style.display = 'none';
-  });
-}
-</script></body></html>
+
+const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io = new IntersectionObserver(entries => entries.forEach(en => {
+  if (!en.isIntersecting) return;
+  const el = en.target;
+  const sibs = [...el.parentElement.querySelectorAll(':scope > .rise')];
+  el.style.transitionDelay = Math.max(0, sibs.indexOf(el)) * 90 + 'ms';
+  el.classList.add('in');
+  io.unobserve(el);
+}), {rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rise').forEach(el => still ? el.classList.add('in') : io.observe(el));
+</script>
+</body>
+</html>

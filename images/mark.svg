@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 62" role="img" aria-label="AllesGute">
+  <title>AllesGute: zwei Erdbeeren, Laura und Laia</title>
+  <defs>
+    <g id="b">
+      <path d="M20 46C8 40 0 26 1.5 14 2.6 6.5 10 3 20 5.5 30 3 37.4 6.5 38.5 14 40 26 32 40 20 46Z"/>
+    </g>
+    <g id="seeds" fill="#f6efe6">
+      <ellipse cx="11" cy="16" rx="1.3" ry="2"/><ellipse cx="20" cy="14" rx="1.3" ry="2"/><ellipse cx="29" cy="16" rx="1.3" ry="2"/>
+      <ellipse cx="15" cy="25" rx="1.3" ry="2"/><ellipse cx="25" cy="25" rx="1.3" ry="2"/>
+      <ellipse cx="20" cy="34" rx="1.3" ry="2"/>
+    </g>
+    <path id="leaf" d="M20 9C15 9 9 7 7 3 12 2 16 4 20 7 24 4 28 2 33 3 31 7 25 9 20 9ZM19 7 18 0h3l-1 7Z"/>
+  </defs>
+  <g transform="translate(2 14)">
+    <use href="#b" fill="#a3263c"/><use href="#seeds"/><use href="#leaf" fill="#2f5552"/>
+  </g>
+  <g transform="translate(34 11) rotate(14 14 20) scale(.72)">
+    <use href="#b" fill="#c4485c"/><use href="#seeds"/><use href="#leaf" fill="#2f5552"/>
+  </g>
+</svg>

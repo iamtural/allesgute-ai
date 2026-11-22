@@ -33,83 +33,35 @@ No build step. No framework. No dependencies. Plain HTML file deployed to Netlif
 **Languages**: Trilingual — German (primary), English, Polish (language switcher in nav)  
 **WhatsApp booking**: +491783129500  
 
-### Key sections in `index.html`
+**Region**: Berlin and Märkisch-Oderland (Paulina lives in Neuenhagen). Not Havelland.
+
+### Brand (round 2, Nov 22 2026, branch `feature/brand-redesign`)
+
+- **Buyer**: a busy, posh millennial mother in Berlin or Märkisch-Oderland. She wants it beautiful and done for her. Brief, references and the 10-shot photo list: `docs/round-2-brief.md`.
+- **Register**: "Spielzimmer", a Nordic playroom (Konges Sløjd and Liewood): oat ground `#f4eee4`, sage `#d8dfcd`, blush `#f1d8cf`, butter `#f3e4b5`, ink `#35332d`, strawberry red `#ab2a40` for actions only.
+- **Type**: Fraunces 500 (`fonts/Fraunces-500.woff`) for headings and Jost 400/500 (`fonts/Jost-*.woff2`) for text. Caveat (`Hand`) is used only for "Hallo, ich bin Paulina." and her signature. All fonts are self-hosted, with no Google Fonts link (GDPR). EB Garamond stays for the legal pages only.
+- **Devices**: arch-shaped photo windows, scalloped section edges (tablecloth or bunting), a round "Alles Gute zum Geburtstag" seal around the strawberry mark, and price stickers on the package cards.
+- **Offer**: three named packages: No.1 Der Tisch (ab 140 €), No.2 Die Feier (ab 270 €), No.3 Ihr seid Gäste (ab 350 €). Prices set by Tural and Paulina, Nov 22 2026. Each card has a "Passt, wenn…" line, and its button selects the package and jumps to the WhatsApp form.
+- **Live thing**: "Was ihr abgebt", a chore list that ticks off as she picks a package. The enquiry-form cake still lights one candle per year.
+- **Mark**: `images/mark.svg`, two strawberries: big Laura and small Laia leaning on her. Never show ".ai" in the brand.
+- **Photos**: `images/v3/*.webp` are brightened crops of Paulina's own photos. Each package shows its own outcome: the laid table, the themed cake, and Paulina serving the guests. Never use licensed characters, stock, or AI food or people. A styled shoot (`docs/round-2-brief.md`) will replace these.
+
+### Sections in `index.html`
 
 | Section | Purpose |
 |---|---|
-| `#hero` | Headline + CTA + hero cake image |
-| `#packages` | 3 packages: Starter (199€), Standard (299€), Premium (449€) |
-| `#ablauf` | 4-step "how it works" process |
-| `#ueber-uns` | Paulina's personal story + portrait |
-| `#faq` | 8 FAQ accordion items |
-| `#anfragen` | Contact/booking form (Formspree integration, see below) |
+| `.hero` | "Kommt einfach als Gäste." What it is, from 140 €, 8 to 30 children, region. Whole-table photo in an arch, plus the seal |
+| `#angebote` | Three package cards, then "Was ihr abgebt" (the chore list) |
+| `#essen` | "Obst zuerst." Healthy-but-beautiful hook, with three proof lines |
+| `#paulina` | Who cooks: her story, signature, Laura & Laia, facts |
+| `.how` | Three steps: one message is enough |
+| `#fragen` | Six questions |
+| `#anfrage` | Live WhatsApp message builder (+491783129500), with the package pre-selected |
+| `impressum.html`, `datenschutz.html` | Legal pages. Filled Nov 22 2026: Kantstr. 17, 15366 Neuenhagen bei Berlin; Kleinunternehmerin (§ 19 UStG). |
 
-### Design system (inline in `<style>` tag)
+### Checks
 
-```css
---color-primary: #C8375A      /* berry red — brand accent */
---color-bg: #FAF8F5           /* warm off-white */
---font-heading: 'Playfair Display', serif
---font-body: 'Inter', sans-serif
-```
-
-Strawberry cursor system: Laura (big 🍓 follows mouse) + Laia (small 🍓 trails with delay). Do not remove — it's intentional branding.
-
----
-
-## Pending tasks (priority order)
-
-### 1. Formspree — REQUIRED before site is usable for bookings
-
-The contact form at `#anfragen` has a placeholder form ID. Find this in `index.html`:
-
-```html
-<form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-```
-
-Replace `YOUR_FORMSPREE_ID` with Paulina's actual Formspree form ID once she provides it.  
-Paulina signs up at https://formspree.io — free tier handles up to 50 submissions/month.
-
-### 2. Payment links — booking buttons need real URLs
-
-The "Paket buchen" buttons in the packages section currently link to `#anfragen` (the contact form). Once Paulina creates Stripe or PayPal payment links for each package, update:
-
-- Starter (199€): replace `href="#anfragen"` with the payment link
-- Standard (299€): same
-- Premium (449€): same
-
-### 3. Impressum + Datenschutz — LEGALLY REQUIRED in Germany
-
-Currently both footer links point to `href="#"`. German law (Telemediengesetz) requires a real Impressum and Datenschutzerklärung on every commercial website.
-
-**Impressum must include**: full name, address, phone, email of the responsible person.  
-**Datenschutz**: GDPR-compliant privacy policy covering contact form data, cookies, analytics.
-
-Options:
-- Create `/impressum.html` and `/datenschutz.html` as separate pages
-- Or add `id="impressum"` / `id="datenschutz"` sections at the bottom of index.html
-- Update the footer `<a href="#">` links accordingly
-
-### 4. Performance: image optimization
-
-Images in `images/` are unoptimized originals (total ~87MB folder). Before production traffic scales:
-- Convert to WebP format
-- Resize to max 1200px width for hero images, 800px for gallery
-- Add `loading="lazy"` to all `<img>` tags below the fold (most already have it; verify)
-
-### 5. Analytics (optional)
-
-Add Google Analytics 4 or Plausible (privacy-first, recommended for EU) tracking snippet in `<head>`.
-
----
-
-## What NOT to change
-
-- The trilingual content system (DE/EN/PL switcher in nav). Translations are stored in `data-de`, `data-en`, `data-pl` attributes on each element.
-- The strawberry cursor JS (bottom of `<body>`) — intentional branding
-- The two-strawberry system variable names: `cursorLaura` and `cursorLaia`
-- WhatsApp number: `+491783129500`
-- The existing photo filenames — they are referenced directly in `index.html`
+Design checks used the tasteskill inspector: `node ~/.claude/skills/design-taste-frontend/scripts/inspect.mjs index.html` (0 FAIL is the floor). Working files land in `.taste-skill/` (gitignored).
 
 ---
 
