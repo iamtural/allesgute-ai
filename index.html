@@ -98,113 +98,70 @@ footer {font-size:.9rem}
  footer.bar {flex-wrap:wrap}.btn {padding:.8rem 1rem}
 }
 
-/* The birthday invitation. Bottle green follows the fabric backdrop of the party. */
-:root {--paper:#fcf6e9;--ink:#243b32;--berry:#782838;--line:#cac6b3;--peach:#f1d7cc}
+@font-face {font-family:Fraunces;src:url('fonts/Fraunces.ttf') format('truetype');font-display:swap}
+:root {--paper:#fffdf7;--ink:#28372e;--berry:#923847;--line:#d5d7c8;--peach:#e8ecdf;--serif:Fraunces,Georgia,serif}
 header {background:var(--paper)}
-.brand {font-style:italic;font-size:clamp(2.1rem,3vw,3rem);letter-spacing:-.075em}
-.brand img {margin-right:.12em}
-.brand .dot {color:#a34646}
-.bar {min-height:86px}
-.smallbtn,.btn {border-radius:2px}
-.edition {width:100%;gap:0;padding:0;grid-template-columns:46% 54%;background:#203e36;color:var(--paper);align-items:stretch}
-.edition .intro {padding:clamp(44px,5.4vw,96px) clamp(25px,3.6vw,65px) clamp(40px,5vw,80px) max(5vw,calc((100vw - 1320px)/2));align-self:center}
-.edition .eyebrow {font-size:clamp(.68rem,.85vw,.8rem);letter-spacing:.125em;color:#f2d4c1}
-.edition h1 {font-size:clamp(3.45rem,5.9vw,6.7rem);letter-spacing:-.058em;margin:.34em 0 .29em;max-width:11ch}
-.edition h1 em {color:#f6d6c2;white-space:nowrap}
-.edition .lead {font-size:clamp(1rem,1.2vw,1.2rem);line-height:1.55;max-width:43ch}
-.edition .btn {background:#f6d6c2;border-color:#f6d6c2;color:#203e36}
-.edition .hero-actions {gap:1rem 1.5rem}
-.edition .cover {margin:0;display:grid;min-height:clamp(420px,40vw,680px)}
-.edition .cover img {position:absolute;inset:0;height:100%;width:100%;border-radius:0;object-position:center 55%}
-.edition .cover:before {display:none}
-.edition .cover:after {content:"";position:absolute;left:-1px;top:0;bottom:0;width:13px;background:radial-gradient(circle at 0 50%,#203e36 8px,transparent 8.8px) left top/13px 24px repeat-y}
-.folio {border-bottom:1px solid var(--line)}
-.folio .wrap {display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding-block:1rem}
-.folio p {font:italic 1.5rem var(--serif);letter-spacing:-.045em}
-.folio span {font-size:.88rem}
-.planning {background:#e5e8da}
-.planning img {max-height:350px;object-position:50% 50%}
-article {background:transparent;border-top:1px solid #68766a;border-bottom:1px solid var(--line);padding-left:0}
-.story {background:#e6e7d7}
-.contact {background:#f1d7cc}
-@media(min-width:761px) and (max-width:1100px){.edition {grid-template-columns:49% 51%}.edition h1 {font-size:6vw}.edition .intro {padding-right:1.4rem}}
+.wrap {width:min(90%,1380px)}
+.bar {min-height:84px}
+.brand {color:#5f2930;letter-spacing:-.065em;font-size:2.6rem;gap:.13em}
+.brand img {width:45px;height:47px;object-fit:contain;margin-right:.12em}
+.brand .dot {display:none}
+#language {width:3.6rem}
+.btn,.smallbtn {border-radius:3px}
+.opening {display:grid;grid-template-columns:1.08fr 1fr;gap:7%;align-items:center;padding-block:clamp(34px,4.1vw,68px)}
+.location {font-size:.98rem;font-weight:500;line-height:1.4;color:#52634f}
+.opening h1 {font-size:clamp(3.7rem,5.9vw,6.2rem);margin:.18em 0 0;line-height:.98;letter-spacing:-.069em}
+.opening h1 em {display:block;font-family:Georgia,serif;font-weight:400;color:var(--berry);line-height:1.06}
+.opening-copy>p {font-size:clamp(1rem,1.25vw,1.23rem);line-height:1.55;max-width:47ch}
+.opening-actions {display:flex;align-items:center;flex-wrap:wrap;gap:1rem 1.25rem;margin-top:1.45rem}
+.textlink {text-underline-offset:.28em}
+.feature {display:grid;grid-template-columns:1.65fr 1fr;align-items:stretch}
+.scene {position:relative;min-height:390px;margin:0}
+.scene img {position:absolute;inset:0;width:100%;height:100%;object-position:50% 55%}
+.scene figcaption {position:absolute;bottom:14px;left:14px;background:var(--paper);color:var(--ink);transform:none;padding:.46rem .8rem;font:normal .85rem/1.35 Arial,sans-serif}
+.quote-note {background:#e6ebdd;padding:clamp(1.5rem,2.9vw,3.2rem);color:#233d30}
+.quote-note h2 {font-size:clamp(2rem,2.55vw,2.9rem);line-height:1.05;max-width:16ch}
+.quote-note dl {margin:1.15rem 0 0}
+.quote-note dt {font-weight:650;margin-top:1rem;padding-top:.85rem;border-top:1px solid #bac6af}
+.quote-note dd {margin:.12rem 0 0;line-height:1.45;color:#394d3d}
+#pakete h2 {max-width:23ch}
+.planning {background:#f2e3dc;margin-top:1.9rem}
+.planning img {max-height:340px;object-position:50% 50%}
+article {background:#f4f2e8;border-top:2px solid #889981}
+.story {background:#e6ebdd}
+.story-grid {grid-template-columns:.8fr 1fr;gap:8%;padding-block:3rem}
+.story-grid img {height:330px;object-position:center 55%}
+.story .location {margin-bottom:.8rem}
+.contact {background:#ede3d7}
+@media(max-width:950px){.opening {gap:4%}.feature {grid-template-columns:1.35fr 1fr}.quote-note {font-size:.94rem}}
 @media(max-width:760px){
- .bar {min-height:66px}.brand {font-size:2rem}
- .edition {display:flex;flex-direction:column}
- .edition .intro {width:90%;padding:2rem 0 1.7rem}
- .edition h1 {font-size:clamp(3.35rem,10.1vw,4.85rem);max-width:15ch}
- .edition h1 em {display:inline;white-space:normal}
- .edition .eyebrow {margin-bottom:.5rem}
- .edition .lead {font-size:1rem}.edition .hero-actions {gap:.75rem 1rem}
- .edition .cover {width:100%;min-height:clamp(245px,69vw,380px)}
- .edition .cover img {object-position:center 56%}
- .edition .cover:after {inset:-1px 0 auto;width:100%;height:9px;background:radial-gradient(circle at 50% 0,#203e36 6px,transparent 6.8px) left top/18px 9px repeat-x}
- .folio .wrap {display:grid;gap:.18rem;padding-block:.8rem}.folio p {font-size:1.18rem}
- .folio span {font-size:.84rem}
+ .bar {min-height:66px}.brand {font-size:1.95rem}.brand img {width:35px;height:37px}
+ #language {width:3rem}.actions {gap:.5rem}.smallbtn {padding:.46rem .65rem}
+ .opening,.feature,.story-grid {grid-template-columns:minmax(0,1fr)}
+ .opening {padding:1.6rem 0;gap:1rem}.opening h1 {font-size:clamp(3.2rem,10.8vw,5rem);line-height:1}
+ .location {font-size:.92rem}.opening h1 em {display:inline}.opening-actions {margin-top:1.1rem}
+ .scene {min-height:clamp(245px,68vw,390px)}.scene figcaption{bottom:8px;left:8px;font-size:.78rem}
+ .quote-note {padding:1.5rem}.quote-note h2 {max-width:18ch}
+ .story-grid img {order:2;height:260px}.story-grid {gap:1.5rem}
 }
-@media(max-width:360px){.actions{gap:.28rem}.brand{font-size:1.62rem}.edition .hero-actions{font-size:.9rem}}
-
-@font-face{font-family:Fraunces;src:url('fonts/Fraunces.ttf') format('truetype');font-display:swap}
-@font-face{font-family:Caveat;src:url('fonts/Caveat.ttf') format('truetype');font-display:swap}
-:root{--paper:#fffaf1;--ink:#273753;--berry:#9e302d;--line:#d0c5b7;--serif:Fraunces,Georgia,serif}
-header{background:var(--paper);border-color:#c0b8a9}
-.brand{font:500 clamp(2.6rem,4vw,4rem)/1 Caveat,cursive;letter-spacing:-.09em;gap:.06em;color:#9e302d}
-.brand img{width:63px;height:55px;margin-right:.1em}.dot{display:none}
-.bar{min-height:84px}.actions #language{width:3.5rem;flex:none}.smallbtn{color:var(--ink);background:transparent;border-color:var(--ink);border-radius:40px}.smallbtn:hover{background:#e9e0d4}
-.letter{background:#fffaef;border-bottom:1px solid #b4bebd;position:relative}
-.letter-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7%;align-items:center;padding-block:clamp(46px,4.4vw,76px)}
-.album{position:relative;isolation:isolate;min-height:clamp(415px,38.5vw,625px)}
-.album:before{content:'';position:absolute;left:0;top:5%;width:81%;height:86%;background-color:#e4e9e6;background-image:repeating-linear-gradient(90deg,#8398b34d 0 8px,transparent 8px 17px),repeating-linear-gradient(0deg,#8398b352 0 8px,transparent 8px 17px);transform:rotate(-4deg)}
-.largeprint,.smallprint{position:absolute;background:#fffef8;padding:9px 9px 0;box-shadow:0 2px 5px #503e3524;border:1px solid #d9d2c3}
-.largeprint{top:1%;left:6%;width:73%;height:94%;transform:rotate(-2deg)}
-.largeprint img,.smallprint img{width:100%;height:calc(100% - 39px);object-fit:cover}
-.largeprint img{object-position:center 50%}
-.album figcaption{position:static;transform:none;background:transparent;padding:0;text-align:center;font:500 1.55rem/38px Caveat,cursive;letter-spacing:0;color:var(--ink)}
-.smallprint{right:0;bottom:-1%;width:47%;height:38%;transform:rotate(6deg)}
-.album .smallprint figcaption{font-size:1.22rem}
-.service{font-size:1rem;font-weight:500;margin-bottom:1rem}
-.letter h1{font-size:clamp(3.65rem,5.25vw,6rem);max-width:13ch;letter-spacing:-.062em;line-height:1.03;margin:0 0 1.4rem;color:#253852}
-.letter h1 strong{display:block;color:#a03232;font:500 1.13em/.96 Caveat,cursive;letter-spacing:-.055em;margin:.07em 0 .12em}
-.letter .lead{font-size:clamp(1rem,1.21vw,1.22rem);line-height:1.55;max-width:45ch}
-.sign{font:500 2.15rem/1 Caveat,cursive;margin:.7rem 0 1.4rem;transform:rotate(-5deg);width:max-content}
-.hero-actions{gap:1rem 1.5rem;margin:0}
-.btn{border-radius:40px;background:#9e302d;border-color:#9e302d}
-.textlink{color:#293b56}
-#pakete{padding-top:clamp(3rem,4.8vw,5rem)}
-#pakete h2{max-width:23ch}
-.planning{background:#dfE8ec}.story{background:#e9e6cc}
-.contact{background:#f3dcd4}
-@media(min-width:761px) and (max-width:950px){.letter-inner{gap:5%}.letter h1{font-size:3.6rem}.service{font-size:.9rem}}
-@media(max-width:760px){
- .brand{font-size:2.7rem}.brand img{width:42px;height:42px}.bar{min-height:67px}
- .actions{gap:.15rem}.actions #language{width:3.1rem}
- .letter-inner{display:flex;flex-direction:column;gap:1.5rem;padding:1.6rem 0 2.2rem;align-items:stretch}
- .letter-copy{order:-1}.letter h1{font-size:clamp(3.2rem,10.5vw,5rem);max-width:15ch;margin-bottom:.8rem}
- .letter h1 strong{margin:0}.service{font-size:.91rem;margin-bottom:.6rem}
- .sign{font-size:1.75rem;margin:.5rem 0 1rem}.letter .lead{font-size:1rem}.hero-actions{gap:.55rem 1rem;font-size:.94rem}
- .album{min-height:0;height:clamp(280px,78vw,425px);margin:0 2%}.largeprint img{object-position:50% 57%}
- .album figcaption{font-size:1.2rem}.album .smallprint figcaption{font-size:1rem}
- .smallprint{height:46%}
-}
-.album .largeprint figcaption {width:65%;white-space:nowrap}
 </style></head>
 <body id="top"><a class="skip" href="#main"><span data-de="Zum Inhalt" data-en="Skip to content" data-pl="Przejdź do treści">Zum Inhalt</span></a>
 <header><div class="wrap bar"><a href="#top" aria-label="AllesGute"><span class="brand"><img src="images/berries.svg" width="43" height="42" alt="">AllesGute<span class="dot">.</span></span></a><nav><a href="#pakete"><span data-de="Angebot" data-en="Packages" data-pl="Oferta">Angebot</span></a><a href="#ueber">Paulina</a><a href="#faq"><span data-de="Fragen" data-en="Questions" data-pl="Pytania">Fragen</span></a></nav><div class="actions"><select id="language" aria-label="Sprache / Language / Język"><option value="de">DE</option><option value="en">EN</option><option value="pl">PL</option></select><a class="smallbtn" href="#anfrage"><span data-de="Anfragen" data-en="Enquire" data-pl="Zapytaj">Anfragen</span> ↗</a></div></div></header>
-<main id="main"><section class="letter"><div class="letter-inner wrap"><div class="album">
-<figure class="largeprint"><img src="images/paulina-cutting.jpg" width="1000" height="1748" fetchpriority="high" alt="Hände beim Anschneiden der zweistöckigen Geburtstagstorte" data-alt-en="Hands cutting a two-tier birthday cake" data-alt-pl="Dłonie krojące piętrowy tort urodzinowy"><figcaption><span data-de="Das erste Stück." data-en="The first slice." data-pl="Pierwszy kawałek.">Das erste Stück.</span></figcaption></figure>
-<figure class="smallprint"><img src="images/birthday-table.webp" width="1600" height="1200" alt="Ein fertiger Geburtstagstisch mit Papierlaternen und Bananenwaffeln" data-alt-en="A party table set with paper lanterns and banana waffles" data-alt-pl="Urodzinowy stół z papierowymi lampionami i goframi bananowymi"><figcaption><span data-de="Bevor es losgeht …" data-en="Before the guests arrive…" data-pl="Zanim przyjdą goście…">Bevor es losgeht …</span></figcaption></figure>
-</div><div class="letter-copy">
-<p class="service"><span data-de="Kindergeburtstage in Berlin &amp; Havelland" data-en="Children’s parties in Berlin &amp; Havelland" data-pl="Urodziny dzieci w Berlinie i Havellandzie">Kindergeburtstage in Berlin &amp; Havelland</span></p>
-<h1><span data-de="Heute seid ihr" data-en="Today, you’re" data-pl="Dziś wy też">Heute seid ihr</span> <strong><span data-de="auch Gäste." data-en="guests, too." data-pl="jesteście gośćmi.">auch Gäste.</span></strong></h1>
-<p class="lead"><span data-de="Am ersten Geburtstag meiner Tochter stand ich drei Stunden in der Küche. Heute übernehme ich für andere Eltern das Essen, die Spiele und den Ablauf. Oder einfach nur den Geburtstagstisch." data-en="I spent three hours in the kitchen on my daughter’s first birthday. Now I take care of the food, games and timing for other parents. Or just the birthday table, if that’s all you need." data-pl="W pierwsze urodziny mojej córki spędziłam trzy godziny w kuchni. Dziś pomagam innym rodzicom. Przygotuję jedzenie, wymyślę zabawy i poprowadzę przyjęcie. Mogę też po prostu zająć się urodzinowym stołem.">Am ersten Geburtstag meiner Tochter stand ich drei Stunden in der Küche. Heute übernehme ich für andere Eltern das Essen, die Spiele und den Ablauf. Oder einfach nur den Geburtstagstisch.</span></p>
-<p class="sign">Paulina</p><div class="hero-actions"><a class="btn" href="#anfrage" data-choice="full"><span data-de="Feier mit Paulina planen" data-en="Plan a party with Paulina" data-pl="Zaplanuj przyjęcie z Pauliną">Feier mit Paulina planen</span> ↗</a><a href="#catering" class="textlink"><span data-de="Catering &amp; Preise" data-en="Catering &amp; prices" data-pl="Catering i ceny">Catering &amp; Preise</span></a></div></div></div></section>
-<section class="wrap section" id="pakete"><h2><span data-de="Der Geburtstagstisch oder die ganze Feier?" data-en="The birthday table or the whole party?" data-pl="Urodzinowy stół czy całe przyjęcie?">Der Geburtstagstisch oder die ganze Feier?</span></h2>
+<main id="main"><section class="opening wrap">
+<div class="opening-title"><p class="location"><span data-de="Kindergeburtstage in Berlin und im Havelland" data-en="Children’s birthdays in Berlin and Havelland" data-pl="Urodziny dzieci w Berlinie i Havellandzie">Kindergeburtstage in Berlin und im Havelland</span></p><h1><span data-de="Heute seid ihr" data-en="Today, you’re" data-pl="Dziś wy też">Heute seid ihr</span> <em><span data-de="auch Gäste." data-en="guests, too." data-pl="jesteście gośćmi.">auch Gäste.</span></em></h1></div>
+<div class="opening-copy"><p><span data-de="Ich bin Paulina. Ich plane euren Kindergeburtstag, bereite das Essen vor und kümmere mich am Tag selbst um den Ablauf. Ihr könnt mir auch einfach den Geburtstagstisch überlassen." data-en="I’m Paulina. I plan your child’s birthday, prepare the food and keep things running on the day. If you already have the party in hand, I can take care of just the birthday table." data-pl="Jestem Paulina. Zaplanuję urodziny waszego dziecka, przygotuję jedzenie i zadbam o przebieg przyjęcia. Jeśli macie już plan, mogę po prostu zająć się urodzinowym stołem.">Ich bin Paulina. Ich plane euren Kindergeburtstag, bereite das Essen vor und kümmere mich am Tag selbst um den Ablauf. Ihr könnt mir auch einfach den Geburtstagstisch überlassen.</span></p>
+<div class="opening-actions"><a class="btn" href="#anfrage" data-choice="full"><span data-de="Termin mit Paulina klären" data-en="Ask Paulina about a date" data-pl="Zapytaj Paulinę o termin">Termin mit Paulina klären</span> ↗</a><a href="#catering" class="textlink"><span data-de="Catering ab 19 € pro Kind" data-en="Catering from €19 per child" data-pl="Catering od 19 € za dziecko">Catering ab 19 € pro Kind</span></a></div></div>
+</section>
+<section class="feature wrap"><figure class="scene"><img src="images/birthday-table.webp" fetchpriority="high" alt="Paulinas gedeckter Geburtstagstisch mit Papierlaternen, Obst und handbeschrifteten Speisen" data-alt-en="Paulina’s party table with paper lanterns, fruit and handwritten food labels" data-alt-pl="Urodzinowy stół Pauliny z lampionami, owocami i odręcznymi etykietami potraw"><figcaption><span data-de="Ein Geburtstag aus Paulinas Küche" data-en="A birthday from Paulina’s kitchen" data-pl="Urodziny z kuchni Pauliny">Ein Geburtstag aus Paulinas Küche</span></figcaption></figure>
+<aside class="quote-note"><h2><span data-de="Was ihr vor der Buchung wisst" data-en="What you’ll know before booking" data-pl="Co ustalimy przed rezerwacją">Was ihr vor der Buchung wisst</span></h2>
+<dl><dt><span data-de="Wer was übernimmt" data-en="Who takes care of what" data-pl="Kto za co odpowiada">Wer was übernimmt</span></dt><dd><span data-de="Vom Aufbau bis zum letzten Spiel legen wir die Aufgaben gemeinsam fest." data-en="From setup to the last game, we agree on who does what." data-pl="Od przygotowań po ostatnią zabawę wspólnie ustalimy podział zadań.">Vom Aufbau bis zum letzten Spiel legen wir die Aufgaben gemeinsam fest.</span></dd>
+<dt><span data-de="Was auf den Tisch kommt" data-en="What’s on the table" data-pl="Co trafi na stół">Was auf den Tisch kommt</span></dt><dd><span data-de="Wir besprechen das Menü und klären Fragen zu Zutaten und Allergien." data-en="We talk through the menu, ingredients and any allergy questions." data-pl="Omówimy menu, składniki i pytania dotyczące alergii.">Wir besprechen das Menü und klären Fragen zu Zutaten und Allergien.</span></dd>
+<dt><span data-de="Was eure Feier kostet" data-en="What the party will cost" data-pl="Ile będzie kosztować przyjęcie">Was eure Feier kostet</span></dt><dd><span data-de="Ihr bekommt ein Angebot für euren Ort und eure Gästezahl." data-en="You’ll get a quote for your location and guest count." data-pl="Dostaniecie wycenę dla waszej lokalizacji i liczby gości.">Ihr bekommt ein Angebot für euren Ort und eure Gästezahl.</span></dd></dl></aside></section><section class="wrap section" id="pakete"><h2><span data-de="Der Geburtstagstisch oder die ganze Feier?" data-en="The birthday table or the whole party?" data-pl="Urodzinowy stół czy całe przyjęcie?">Der Geburtstagstisch oder die ganze Feier?</span></h2>
 <div class="planning"><div><h3><span data-de="Die ganze Feier" data-en="The whole party" data-pl="Całe przyjęcie">Die ganze Feier</span></h3><p><span data-de="Wer kommt, was spielt ihr, wann gibt es Torte? Paulina plant den Ablauf mit euch. Was sie vor Ort übernimmt und was es kostet, steht in eurem persönlichen Angebot." data-en="Who’s coming, what will you play, and when is it time for cake? Paulina plans the day with you. Your quote sets out what she’ll handle on site and what it costs." data-pl="Kto przyjdzie, w co się pobawicie i kiedy podać tort? Paulina ułoży z wami plan dnia. W wycenie znajdziecie zakres jej pracy na miejscu i cenę.">Wer kommt, was spielt ihr, wann gibt es Torte? Paulina plant den Ablauf mit euch. Was sie vor Ort übernimmt und was es kostet, steht in eurem persönlichen Angebot.</span></p><a class="textlink" href="#anfrage" data-choice="full"><span data-de="Feier planen lassen" data-en="Ask about party planning" data-pl="Zapytaj o organizację">Feier planen lassen</span> ↗</a></div><img src="images/birthday-cake.webp" loading="lazy" alt="Geburtstagstorte mit Wimpelkette und kleinen Tieren" data-alt-en="Birthday cake with bunting and animal decorations" data-alt-pl="Tort urodzinowy z girlandą i figurkami zwierząt"></div>
 <div class="row" id="catering"><div><h3><span data-de="Catering für euren Tisch" data-en="Catering for your table" data-pl="Catering na wasz stół">Catering für euren Tisch</span></h3><p><span data-de="Vergleicht die Pakete für eure Gästezahl." data-en="Compare the packages for your guest count." data-pl="Porównajcie pakiety dla swojej liczby gości.">Vergleicht die Pakete für eure Gästezahl.</span></p></div><label class="count"><span data-de="Anzahl Kinder" data-en="Children attending" data-pl="Liczba dzieci">Anzahl Kinder</span> <select id="count"></select></label></div><div class="cards"><article><h3><span data-de="Basis" data-en="Basic" data-pl="Podstawowy">Basis</span></h3><p class="price">19 € <small><span data-de="/ Kind" data-en="/ child" data-pl="/ dziecko">/ Kind</span></small></p><p class="total" data-rate="19"></p><ul><li><span data-de="Themen-Snack-Buffet" data-en="Themed snack buffet" data-pl="Tematyczny bufet przekąskowy">Themen-Snack-Buffet</span></li><li><span data-de="Getränke &amp; Saftbar" data-en="Drinks &amp; juice bar" data-pl="Napoje i bar sokowy">Getränke &amp; Saftbar</span></li><li><span data-de="Kleine Überraschungstüten" data-en="Surprise goodie bags" data-pl="Niespodzianki na wynos">Kleine Überraschungstüten</span></li><li><span data-de="Themen-Dekoration (Basic)" data-en="Themed decoration (basic)" data-pl="Dekoracja tematyczna (podstawowa)">Themen-Dekoration (Basic)</span></li><li><span data-de="Auf- und Abbau inklusive" data-en="Setup &amp; cleanup included" data-pl="Montaż i demontaż w cenie">Auf- und Abbau inklusive</span></li></ul><a class="textlink" href="#anfrage" data-choice="1"><span data-de="Paket anfragen" data-en="Enquire about this package" data-pl="Zapytaj o ten pakiet">Paket anfragen</span> ↗</a></article>
 <article><h3><span data-de="Standard" data-en="Standard" data-pl="Standard">Standard</span></h3><p class="price">29 € <small><span data-de="/ Kind" data-en="/ child" data-pl="/ dziecko">/ Kind</span></small></p><p class="total" data-rate="29"></p><ul><li><span data-de="Alles aus Basis" data-en="Everything in Basic" data-pl="Wszystko z pakietu Podstawowego">Alles aus Basis</span></li><li><span data-de="Warme Gerichte &amp; Fingerfood" data-en="Hot dishes &amp; finger food" data-pl="Ciepłe dania i finger food">Warme Gerichte &amp; Fingerfood</span></li><li><span data-de="Geburtstagstorte (Slice)" data-en="Birthday cake (slice)" data-pl="Tort urodzinowy (porcja)">Geburtstagstorte (Slice)</span></li><li><span data-de="Spielprogramm-Koordination" data-en="Game programme coordination" data-pl="Koordynacja programu gier">Spielprogramm-Koordination</span></li><li><span data-de="Premium Themen-Dekoration" data-en="Premium themed decoration" data-pl="Premium dekoracja tematyczna">Premium Themen-Dekoration</span></li></ul><a class="textlink" href="#anfrage" data-choice="2"><span data-de="Paket anfragen" data-en="Enquire about this package" data-pl="Zapytaj o ten pakiet">Paket anfragen</span> ↗</a></article>
 <article><h3><span data-de="Premium" data-en="Premium" data-pl="Premium">Premium</span></h3><p class="price">45 € <small><span data-de="/ Kind" data-en="/ child" data-pl="/ dziecko">/ Kind</span></small></p><p class="total" data-rate="45"></p><ul><li><span data-de="Alles aus Standard" data-en="Everything in Standard" data-pl="Wszystko ze Standardu">Alles aus Standard</span></li><li><span data-de="Individuelle Motivtorte" data-en="Custom birthday cake" data-pl="Indywidualny tort urodzinowy">Individuelle Motivtorte</span></li><li><span data-de="Koch-/Back-Workshop für Kinder" data-en="Cooking/baking workshop" data-pl="Warsztaty kulinarne dla dzieci">Koch-/Back-Workshop für Kinder</span></li><li><span data-de="Exklusive Deko-Vollausstattung" data-en="Exclusive full decoration" data-pl="Ekskluzywna pełna dekoracja">Exklusive Deko-Vollausstattung</span></li><li><span data-de="Komplette Event-Moderation" data-en="Complete event hosting" data-pl="Kompletne prowadzenie imprezy">Komplette Event-Moderation</span></li></ul><a class="textlink" href="#anfrage" data-choice="3"><span data-de="Paket anfragen" data-en="Enquire about this package" data-pl="Zapytaj o ten pakiet">Paket anfragen</span> ↗</a></article></div><p class="note"><span data-de="Anfahrt kann hinzukommen. Paulina bestätigt den Endpreis für euren Ort vor der Buchung." data-en="Travel may cost extra. Paulina confirms the final price for your location before you book." data-pl="Dojazd może być dodatkowo płatny. Przed rezerwacją Paulina potwierdzi cenę dla waszej lokalizacji.">Anfahrt kann hinzukommen. Paulina bestätigt den Endpreis für euren Ort vor der Buchung.</span></p></section>
-<section class="story" id="ueber"><div class="wrap story-grid"><img src="images/banana-waffles.webp" loading="lazy" alt="Waffeln auf Paulinas Geburtstagstisch" data-alt-en="Waffles on Paulina’s birthday table" data-alt-pl="Gofry na urodzinowym stole Pauliny"><div><p class="eyebrow">Paulina Salahov</p><h2><span data-de="Paulinas Familie" data-en="Paulina’s family" data-pl="Rodzina Pauliny">Paulinas Familie</span></h2><p><span data-de="Heute kocht die Mutter von Laura und Laia für andere Familien, damit die Eltern beim Kerzenauspusten dabei sind." data-en="Today, Laura and Laia’s mum cooks for other families so parents can be there when the candles go out." data-pl="Dziś mama Laury i Lai gotuje dla innych rodzin, żeby rodzice byli przy dzieciach, gdy zdmuchują świeczki.">Heute kocht die Mutter von Laura und Laia für andere Familien, damit die Eltern beim Kerzenauspusten dabei sind.</span></p></div></div></section>
-<section class="wrap section split" id="ablauf"><h2><span data-de="Vom Datum zur Feier" data-en="From a date to a party" data-pl="Od daty do przyjęcia">Vom Datum zur Feier</span></h2><ol><li><span data-de="Nennt Paulina euren Wunschtermin, den Ort und die ungefähre Kinderzahl." data-en="Tell Paulina your date, location and approximate guest count." data-pl="Podajcie Paulinie datę, miejsce i przybliżoną liczbę dzieci.">Nennt Paulina euren Wunschtermin, den Ort und die ungefähre Kinderzahl.</span></li><li><span data-de="Ihr besprecht Essen, Spiele, Allergien und Budget. Paulina schickt euch ein Angebot." data-en="Discuss food, games, allergies and budget. Paulina sends you a quote." data-pl="Omówicie jedzenie, zabawy, alergie i budżet. Paulina prześle wycenę.">Ihr besprecht Essen, Spiele, Allergien und Budget. Paulina schickt euch ein Angebot.</span></li><li><span data-de="Vor der Feier stimmt ihr Aufbau, Zeiten und Aufgaben miteinander ab." data-en="Before the party, agree on setup, timing and who handles what." data-pl="Przed przyjęciem ustalicie przygotowania, godziny i podział zadań.">Vor der Feier stimmt ihr Aufbau, Zeiten und Aufgaben miteinander ab.</span></li></ol></section>
+<section class="story" id="ueber"><div class="wrap story-grid"><img src="images/paulina-cutting.jpg" loading="lazy" alt="Paulina beim Anschneiden der Geburtstagstorte" data-alt-en="Paulina cutting the birthday cake" data-alt-pl="Paulina kroi tort urodzinowy"><div><p class="location">Paulina Salahov</p><h2><span data-de="Drei Stunden in der Küche." data-en="Three hours in the kitchen." data-pl="Trzy godziny w kuchni.">Drei Stunden in der Küche.</span></h2><p><span data-de="So habe ich den ersten Geburtstag meiner großen Tochter verbracht. Draußen wurde gefeiert. Heute plane ich Geburtstage für andere Familien, damit ihr neben eurem Kind sitzen könnt, wenn es die Kerzen auspustet." data-en="That’s where I spent my eldest daughter’s first birthday. The party was happening outside. Today I plan birthdays for other families, so you can sit beside your child when it’s time to blow out the candles." data-pl="Tyle czasu spędziłam w kuchni w pierwsze urodziny mojej starszej córki. Przyjęcie trwało na dworze. Dziś organizuję urodziny dla innych rodzin, żebyście mogli być przy swoim dziecku, gdy zdmuchuje świeczki.">So habe ich den ersten Geburtstag meiner großen Tochter verbracht. Draußen wurde gefeiert. Heute plane ich Geburtstage für andere Familien, damit ihr neben eurem Kind sitzen könnt, wenn es die Kerzen auspustet.</span></p><a href="#anfrage" class="textlink"><span data-de="Paulina schreiben" data-en="Write to Paulina" data-pl="Napisz do Pauliny">Paulina schreiben</span> ↗</a></div></div></section><section class="wrap section split" id="ablauf"><h2><span data-de="Vom Datum zur Feier" data-en="From a date to a party" data-pl="Od daty do przyjęcia">Vom Datum zur Feier</span></h2><ol><li><span data-de="Nennt Paulina euren Wunschtermin, den Ort und die ungefähre Kinderzahl." data-en="Tell Paulina your date, location and approximate guest count." data-pl="Podajcie Paulinie datę, miejsce i przybliżoną liczbę dzieci.">Nennt Paulina euren Wunschtermin, den Ort und die ungefähre Kinderzahl.</span></li><li><span data-de="Ihr besprecht Essen, Spiele, Allergien und Budget. Paulina schickt euch ein Angebot." data-en="Discuss food, games, allergies and budget. Paulina sends you a quote." data-pl="Omówicie jedzenie, zabawy, alergie i budżet. Paulina prześle wycenę.">Ihr besprecht Essen, Spiele, Allergien und Budget. Paulina schickt euch ein Angebot.</span></li><li><span data-de="Vor der Feier stimmt ihr Aufbau, Zeiten und Aufgaben miteinander ab." data-en="Before the party, agree on setup, timing and who handles what." data-pl="Przed przyjęciem ustalicie przygotowania, godziny i podział zadań.">Vor der Feier stimmt ihr Aufbau, Zeiten und Aufgaben miteinander ab.</span></li></ol></section>
 <section class="wrap section split" id="faq"><h2><span data-de="Vor der Buchung" data-en="Before you book" data-pl="Przed rezerwacją">Vor der Buchung</span></h2><div><details><summary><span data-de="Wie früh sollten wir anfragen?" data-en="When should we get in touch?" data-pl="Kiedy najlepiej napisać?">Wie früh sollten wir anfragen?</span></summary><p><span data-de="Am besten fünf bis sechs Wochen vorher. Für kurzfristige Termine fragt direkt bei Paulina nach." data-en="Ideally five to six weeks ahead. For shorter notice, ask Paulina about your date." data-pl="Najlepiej pięć lub sześć tygodni wcześniej. Jeśli czasu jest mniej, zapytajcie Paulinę o termin.">Am besten fünf bis sechs Wochen vorher. Für kurzfristige Termine fragt direkt bei Paulina nach.</span></p></details>
 <details><summary><span data-de="Was ist bei Allergien wichtig?" data-en="What if a guest has an allergy?" data-pl="Co z alergiami pokarmowymi?">Was ist bei Allergien wichtig?</span></summary><p><span data-de="Besprecht Allergien vor der Buchung mit Paulina. Klärt gemeinsam Zutaten, Zubereitung und möglichen Kreuzkontakt." data-en="Discuss allergies with Paulina before booking. Ask about ingredients, preparation and possible cross-contact." data-pl="Przed rezerwacją omówcie z Pauliną alergie, składniki, sposób przygotowania i ryzyko kontaktu z alergenami.">Besprecht Allergien vor der Buchung mit Paulina. Klärt gemeinsam Zutaten, Zubereitung und möglichen Kreuzkontakt.</span></p></details>
 <details><summary><span data-de="Kommt ihr auch ins Umland?" data-en="Do you travel outside Berlin?" data-pl="Czy dojeżdżacie poza Berlin?">Kommt ihr auch ins Umland?</span></summary><p><span data-de="Ja, auch ins Havelland. Nennt euren Ort, damit Paulina die Anfahrt im Angebot berücksichtigen kann." data-en="Yes, including Havelland. Tell Paulina where you’re celebrating so she can include travel in your quote." data-pl="Tak, również do Havellandu. Podajcie miejscowość, żeby Paulina mogła uwzględnić dojazd w wycenie.">Ja, auch ins Havelland. Nennt euren Ort, damit Paulina die Anfahrt im Angebot berücksichtigen kann.</span></p></details>
