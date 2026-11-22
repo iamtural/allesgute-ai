@@ -70,7 +70,7 @@ select,input,textarea,button{font:inherit;color:inherit}
 .bar nav a{text-decoration:none;padding:6px 0;transition:color .2s}
 .bar nav a:hover{color:var(--red)}
 .tools{display:flex;align-items:center;gap:16px}
-#language{background:transparent;border:0;padding:8px 4px;font-size:15px;cursor:pointer}
+#language{background:transparent;border:0;padding:10px 4px;min-height:44px;font-size:16px;cursor:pointer}
 
 /* hero */
 .hero{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:center;padding-top:clamp(24px,4vw,56px)}
@@ -81,7 +81,7 @@ select,input,textarea,button{font:inherit;color:inherit}
 .facts-line{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:28px;padding-top:0;font-size:15px;color:var(--soft)}
 .facts-line b{font-weight:500;color:var(--ink)}
 .arch{border-radius:999px 999px 0 0;overflow:hidden;background:var(--shade);isolation:isolate}
-.hero-pic{grid-column:7/13}
+.hero-pic{grid-column:7/13;margin:0}
 .hero-pic img{width:100%;height:min(calc(100svh - 140px),860px);min-height:520px;object-fit:cover;object-position:50% 40%;animation:settle 2.8s var(--ease) both}
 @keyframes settle{from{transform:scale(1.06);opacity:.4}to{transform:none;opacity:1}}
 .cap{margin-top:14px;font-size:14px;color:var(--soft)}
@@ -130,11 +130,11 @@ select,input,textarea,button{font:inherit;color:inherit}
 .chores i{flex:none;width:22px;height:22px;border-radius:50%;background:var(--red);display:grid;place-items:center;transition:background .5s var(--ease),transform .5s var(--ease)}
 .chores i svg{width:13px;height:13px;transition:opacity .4s}
 .chores li.yours{background:transparent;color:#cdd8d3}
-.chores li.yours i{background:rgba(233,237,230,.16);transform:scale(.8)}
+.chores li.yours i{background:rgba(233,237,230,.3);transform:scale(.8)}
 .chores li.yours i svg{opacity:0}
 .legend{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:28px;font-size:15px;color:#cdd8d3}
 .legend i{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:8px;vertical-align:-2px;background:var(--red)}
-.legend i.off{background:rgba(233,237,230,.22)}
+.legend i.off{background:rgba(233,237,230,.38)}
 .list .note{margin-top:28px;font-size:15px;color:#b9c7c1;max-width:30em}
 
 /* the label strip */
@@ -197,13 +197,15 @@ details p{padding:0 26px 24px;font-size:17px;max-width:36em}
 /* contact */
 .contact{margin-top:var(--gap);background:var(--green);color:var(--on-green);padding-block:clamp(110px,11vw,170px) clamp(90px,10vw,150px);border-radius:50% 50% 0 0/clamp(60px,9vw,150px) clamp(60px,9vw,150px) 0 0}
 .contact-in{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:start}
-.contact-in > div:first-child{grid-column:1/6}
+.contact-in > div:first-child{grid-column:1/6;position:sticky;top:120px}
 .contact h2{font-size:clamp(48px,5.6vw,88px)}
 .contact .lede{margin-top:24px;font-size:17px;max-width:24em}
 .contact .alt{margin-top:28px;font-size:15px;color:#c3cfca}
 .contact .alt a{color:var(--on-green)}
 .wa{display:inline-flex;align-items:center;gap:10px;margin-top:32px;background:var(--on-green);color:var(--green);border-radius:999px;padding:15px 26px;font-weight:500;text-decoration:none;transition:transform .3s var(--ease),background .3s}
 .wa:hover{background:#fff}
+.reply{display:flex;align-items:center;gap:14px;margin-top:44px;font:italic 400 21px/1.3 var(--serif);color:var(--on-green)}
+.reply img{width:34px;flex:none}
 .wa:active{transform:scale(.98)}
 form{grid-column:7/13;display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;background:var(--stone);color:var(--ink);padding:clamp(24px,3vw,44px);border-radius:clamp(28px,3vw,44px)}
 form label{display:grid;gap:8px;font-size:14.5px;color:var(--soft)}
@@ -245,15 +247,19 @@ footer{padding-top:clamp(80px,9vw,130px);padding-bottom:36px}
   :root{--gap:96px}
   .hero,.head,.food,.letter-in,.faq,.contact-in,.list-in{grid-template-columns:1fr}
   .hero-copy,.hero-pic,.head h2,.head .lede,.food .pic,.food .side,.letter .pic,.letter .body,.faq > div:first-child,.faq .qs,.contact-in > div:first-child,form,.list-in > div,.chores{grid-column:1/-1}
-  .hero-pic{order:-1;margin-bottom:32px}
-  .hero-pic img{height:auto;min-height:0;aspect-ratio:1/1}
+  .hero-pic{order:-1;margin-bottom:24px}
+  .hero-pic img{height:auto;min-height:0;aspect-ratio:4/3}
+  .hero-copy{display:flex;flex-direction:column}
+  .hero .act{order:3;margin-top:28px}
+  .facts-line{order:4}
+  .hero .lede{margin-top:20px}
   .head .lede{margin-top:20px}
   .tags{grid-template-columns:1fr;gap:56px}
   .label dl{grid-template-columns:7em 1fr;gap:10px 14px}
   .label dd{margin-bottom:0}
   .chores{margin-top:40px}
   .food .side{margin-top:44px}
-  .letter .pic,.faq > div:first-child{position:static}
+  .letter .pic,.faq > div:first-child,.contact-in > div:first-child{position:static}
   .letter .body{margin-top:48px}
   .faq .qs{margin-top:36px}
   form{margin-top:40px}
@@ -313,7 +319,7 @@ footer{padding-top:clamp(80px,9vw,130px);padding-bottom:36px}
       <a class="link" href="#paulina"><span data-de="Ein Brief von Paulina" data-en="A letter from Paulina" data-pl="List od Pauliny">Ein Brief von Paulina</span></a>
     </div>
   </div>
-  <figure class="hero-pic arch" style="margin:0"><img src="images/v4/grazing.webp" width="1000" height="1250" fetchpriority="high" alt="Ein gedeckter Geburtstagstisch mit Kuchen, Muffins, Waffeln, Melone und Schleierkraut" data-alt-en="A birthday table laid with cake, muffins, waffles, melon and baby’s breath" data-alt-pl="Nakryty stół urodzinowy z ciastem, babeczkami, goframi, arbuzem i gipsówką"></figure>
+  <figure class="hero-pic arch"><img src="images/v4/grazing.webp" width="1000" height="1250" fetchpriority="high" alt="Ein gedeckter Geburtstagstisch mit Kuchen, Muffins, Waffeln, Melone und Schleierkraut" data-alt-en="A birthday table laid with cake, muffins, waffles, melon and baby’s breath" data-alt-pl="Nakryty stół urodzinowy z ciastem, babeczkami, goframi, arbuzem i gipsówką"></figure>
 </section>
 
 <section class="pk" id="angebote" aria-labelledby="h-pk">
@@ -331,7 +337,6 @@ footer{padding-top:clamp(80px,9vw,130px);padding-bottom:36px}
           <dl>
             <dt data-de="Enthält" data-en="Contains" data-pl="Zawiera">Enthält</dt><dd><span data-de="Gemüse mit Dip, Pizza-Muffins, Obst, Bananenwaffeln, Apfelkuchen, Saft und Wasser" data-en="Vegetables with dip, pizza muffins, fruit, banana waffles, apple cake, juice and water" data-pl="Warzywa z dipem, muffinki pizzowe, owoce, gofry bananowe, szarlotka, sok i woda">Gemüse mit Dip, Pizza-Muffins, Obst, Bananenwaffeln, Apfelkuchen, Saft und Wasser</span></dd>
             <dt data-de="Ich mache" data-en="I do" data-pl="Robię">Ich mache</dt><dd><span data-de="Aufbau und Abbau" data-en="Set-up and clear-away" data-pl="Rozstawienie i sprzątanie stołu">Aufbau und Abbau</span></dd>
-            <dt data-de="Für" data-en="For" data-pl="Dla">Für</dt><dd><span data-de="8 Kinder" data-en="8 children" data-pl="8 dzieci">8 Kinder</span></dd>
             <dt data-de="Passt, wenn" data-en="Right if" data-pl="Dla was, gdy">Passt, wenn</dt><dd><span data-de="ihr zu Hause feiert und nur das Essen abgeben wollt." data-en="you’re celebrating at home and just want the food handled." data-pl="świętujecie w domu i chcecie oddać tylko jedzenie.">ihr zu Hause feiert und nur das Essen abgeben wollt.</span></dd>
           </dl>
           <button class="btn pick" type="button" aria-pressed="false"><span class="ask" data-de="Diesen anfragen" data-en="Ask for this one" data-pl="Pytam o ten">Diesen anfragen</span><span class="chosen" data-de="Gewählt · weiter zur Anfrage" data-en="Chosen · on to the enquiry" data-pl="Wybrany · dalej do zapytania">Gewählt · weiter zur Anfrage</span></button>
@@ -345,7 +350,6 @@ footer{padding-top:clamp(80px,9vw,130px);padding-bottom:36px}
           <dl>
             <dt data-de="Enthält" data-en="Contains" data-pl="Zawiera">Enthält</dt><dd><span data-de="Den Tisch, Torte im Lieblingsthema, Deko für Tisch und Raum" data-en="The table, a cake in their favourite theme, decorations for table and room" data-pl="Stół, tort w ulubionym temacie, dekoracja stołu i sali">Den Tisch, Torte im Lieblingsthema, Deko für Tisch und Raum</span></dd>
             <dt data-de="Ich mache" data-en="I do" data-pl="Robię">Ich mache</dt><dd><span data-de="Eine Back- oder Spielrunde mit den Kindern" data-en="A baking or play session with the children" data-pl="Wspólne pieczenie lub zabawę z dziećmi">Eine Back- oder Spielrunde mit den Kindern</span></dd>
-            <dt data-de="Für" data-en="For" data-pl="Dla">Für</dt><dd><span data-de="8 Kinder" data-en="8 children" data-pl="8 dzieci">8 Kinder</span></dd>
             <dt data-de="Passt, wenn" data-en="Right if" data-pl="Dla was, gdy">Passt, wenn</dt><dd><span data-de="ihr eine schöne Feier wollt, ohne selbst zu planen." data-en="you want a beautiful party without planning it yourself." data-pl="chcecie pięknego przyjęcia bez planowania.">ihr eine schöne Feier wollt, ohne selbst zu planen.</span></dd>
           </dl>
           <button class="btn pick" type="button" aria-pressed="false"><span class="ask" data-de="Diesen anfragen" data-en="Ask for this one" data-pl="Pytam o ten">Diesen anfragen</span><span class="chosen" data-de="Gewählt · weiter zur Anfrage" data-en="Chosen · on to the enquiry" data-pl="Wybrany · dalej do zapytania">Gewählt · weiter zur Anfrage</span></button>
@@ -359,7 +363,6 @@ footer{padding-top:clamp(80px,9vw,130px);padding-bottom:36px}
           <dl>
             <dt data-de="Enthält" data-en="Contains" data-pl="Zawiera">Enthält</dt><dd><span data-de="Alles aus der Feier, dazu ein Mitgebsel für jedes Kind" data-en="Everything from the party, plus a take-home bag for every child" data-pl="Wszystko z przyjęcia oraz upominek dla każdego dziecka">Alles aus der Feier, dazu ein Mitgebsel für jedes Kind</span></dd>
             <dt data-de="Ich mache" data-en="I do" data-pl="Robię">Ich mache</dt><dd><span data-de="Ich führe durch die Feier und räume bis zum letzten Teller auf" data-en="I host the party and tidy up to the last plate" data-pl="Prowadzę przyjęcie i sprzątam do ostatniego talerza">Ich führe durch die Feier und räume bis zum letzten Teller auf</span></dd>
-            <dt data-de="Für" data-en="For" data-pl="Dla">Für</dt><dd><span data-de="8 Kinder" data-en="8 children" data-pl="8 dzieci">8 Kinder</span></dd>
             <dt data-de="Passt, wenn" data-en="Right if" data-pl="Dla was, gdy">Passt, wenn</dt><dd><span data-de="ihr selbst einfach nur mitfeiern wollt." data-en="you simply want to celebrate along." data-pl="po prostu chcecie świętować razem z innymi.">ihr selbst einfach nur mitfeiern wollt.</span></dd>
           </dl>
           <button class="btn pick" type="button" aria-pressed="false"><span class="ask" data-de="Diesen anfragen" data-en="Ask for this one" data-pl="Pytam o ten">Diesen anfragen</span><span class="chosen" data-de="Gewählt · weiter zur Anfrage" data-en="Chosen · on to the enquiry" data-pl="Wybrany · dalej do zapytania">Gewählt · weiter zur Anfrage</span></button>
@@ -466,6 +469,7 @@ footer{padding-top:clamp(80px,9vw,130px);padding-bottom:36px}
       <p class="lede"><span data-de="Füllt aus, was ihr schon wisst. Für jedes Jahr zündet die Torte eine Kerze an. Den Rest besprechen wir zusammen." data-en="Fill in what you already know. The cake lights a candle for every year. We’ll work out the rest together." data-pl="Wpiszcie to, co już wiecie. Tort zapala świeczkę za każdy rok. Resztę ustalimy razem.">Füllt aus, was ihr schon wisst. Für jedes Jahr zündet die Torte eine Kerze an. Den Rest besprechen wir zusammen.</span></p>
       <a class="wa" href="https://wa.me/491783129500"><span data-de="Ohne Formular: direkt auf WhatsApp" data-en="Skip the form: WhatsApp me" data-pl="Bez formularza: od razu na WhatsAppie">Ohne Formular: direkt auf WhatsApp</span><span aria-hidden="true">→</span></a>
       <p class="alt"><span data-de="Oder per E-Mail:" data-en="Or by email:" data-pl="Lub mailem:">Oder per E-Mail:</span> <a class="link" href="mailto:hello@allesgute.ai">hello@allesgute.ai</a></p>
+      <p class="reply"><img src="images/mark.svg" width="66" height="62" alt=""><span data-de="Ich antworte am selben Tag. Paulina" data-en="I reply the same day. Paulina" data-pl="Odpowiadam tego samego dnia. Paulina">Ich antworte am selben Tag. Paulina</span></p>
     </div>
     <form id="request" class="rise" novalidate>
       <label class="wide"><span data-de="Welches Angebot?" data-en="Which package?" data-pl="Który pakiet?">Welches Angebot?</span>
@@ -497,7 +501,7 @@ footer{padding-top:clamp(80px,9vw,130px);padding-bottom:36px}
       <li><a href="mailto:hello@allesgute.ai">hello@allesgute.ai</a></li>
     </ul>
   </div>
-  <p class="legal"><span>© 2026 Paulina Salahov · Berlin &amp; Märkisch-Oderland</span><a href="impressum.html">Impressum</a><a href="datenschutz.html"><span data-de="Datenschutz" data-en="Privacy" data-pl="Prywatność">Datenschutz</span></a></p>
+  <p class="legal"><span>© 2026 Paulina Zagorska Salahova · Berlin &amp; Märkisch-Oderland</span><a href="impressum.html">Impressum</a><a href="datenschutz.html"><span data-de="Datenschutz" data-en="Privacy" data-pl="Prywatność">Datenschutz</span></a></p>
 </footer>
 
 <script>
@@ -551,7 +555,7 @@ function message(){
   const choice = $('choice');
   const kid = $('kid').value.trim(), age = +$('age').value;
   if (age) lines.push(t.turn(kid, age)); else if (kid) lines.push($('kid').labels[0].textContent.trim() + ': ' + kid);
-  if (choice.value !== '0') lines.push(choice.selectedOptions[0].textContent);
+  if (choice.value !== '0') lines.push(t.pick + ': ' + choice.selectedOptions[0].textContent);
   const d = $('date').value;
   if (d) lines.push(new Intl.DateTimeFormat(lang,{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(new Date(d+'T12:00')));
   const g = $('guests').value.trim(); if (g) lines.push(g + ' ' + t.kids);
@@ -579,6 +583,7 @@ function applyLanguage(lang){
   });
   document.querySelector('.brand').setAttribute('aria-label', T[lang].home);
   document.querySelector('.switch').setAttribute('aria-label', T[lang].pick);
+  document.querySelectorAll('a.wa').forEach(a => a.href = 'https://wa.me/491783129500?text=' + encodeURIComponent(T[lang].hi));
   renderTally(); renderMessage();
 }
 let initial = (navigator.language || 'de').slice(0,2);
@@ -590,6 +595,7 @@ language.addEventListener('change', () => {
   try { localStorage.setItem('ag-lang', language.value); } catch {}
 });
 
+{ const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); $('date').min = d.toISOString().slice(0,10); }
 fields.forEach(id => $(id).addEventListener('input', renderMessage));
 $('request').addEventListener('submit', e => {
   e.preventDefault();

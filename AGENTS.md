@@ -1,6 +1,6 @@
 # AllesGute.AI — Agent Handoff
 
-You are working on **allesgute.ai**, a landing page for a Berlin-based kids' birthday catering business run by Paulina Salahov. The site is live at https://allesgute.ai.
+You are working on **allesgute.ai**, a landing page for a Berlin-based kids' birthday catering business run by Paulina Zagorska Salahova. The site is live at https://allesgute.ai.
 
 ---
 
@@ -29,7 +29,7 @@ No build step. No framework. No dependencies. Plain HTML file deployed to Netlif
 ## Site overview
 
 **Business**: AllesGute — birthday catering for children's parties in Berlin  
-**Owner**: Paulina Salahov (German/Polish background, two daughters: Laura 5, Laia 2)  
+**Owner**: Paulina Zagorska Salahova (German/Polish background, two daughters: Laura 5, Laia 2)  
 **Languages**: Trilingual — German (primary), English, Polish (language switcher in nav)  
 **WhatsApp booking**: +491783129500  
 
