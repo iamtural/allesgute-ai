@@ -35,36 +35,26 @@ No build step. No framework. No dependencies. Plain HTML file deployed to Netlif
 
 **Region**: Berlin and Märkisch-Oderland (Paulina lives in Neuenhagen). Not Havelland.
 
-### Brand (round 4, Nov 22 2026, branch `feature/round-4-clear`)
+### Brand (round 5, Nov 22 2026, branch `feature/round-5-chalk`)
 
-- **Name**: always **"Alles Gute"**, with a space (Tural, Nov 22). The domain and email stay `allesgute.ai`. Never show ".ai" in the brand.
-- **Buyer**: a busy, posh millennial mother in Berlin or Märkisch-Oderland. Everything must be unmistakably clear: what it is, the three offers, how to order, where to send.
-- **Colour**:
-  - Pale-sage ground `#dce5dc`.
-  - Strawberry red `#ab2a40` for actions and for one field, Paulina's letter.
-  - Curtain green `#2d514c` for two fields: the hand-over list and the enquiry.
-  - Each offer card has its own tone: blush `#f3dbd3`, butter `#f2e5b9`, sky `#d6e1ef`.
-  - No cream or warm white.
-- **Type**: EB Garamond 400 for headings, the letter and prices; Jost 400/500 for text. Self-hosted only, no Google Fonts link (GDPR).
-- **Shapes are round**:
-  - Photos sit in arches or domes.
-  - The coloured fields have a dome top.
-  - Buttons, toggles, fields and step numbers are pills or circles.
-- **Offer**: three cards, always called "Angebot": Der Tisch (ab 140 €), Die Feier (ab 270 €), Ihr seid Gäste (ab 350 €), each for 8 children. Each card has a whole photo, Enthält / Ich mache / Passt, wenn, and a button. Nothing is preselected. A button selects its card (raised, outlined) and jumps to the WhatsApp form.
-- **Copy is specific**: name the real dishes. Every snack and dessert is a healthy choice. Never invent facts.
-- **Photos**: Paulina's own.
-  - Hero: `images/v4/table.webp`, the real table in front of the green curtain. Used unretouched on Tural's call: the Frozen canvas and napkins were official decorations. A version without them is in `docs/table-without-disney.webp` if ever needed.
-  - Offers: `images/v3/flatlay|theme-cake|cutting.webp`.
-  - Never use stock or AI-made food or people.
+- **Name**: always **"Alles Gute"**, with a space. Domain/email stay `allesgute.ai`; never show ".ai" in the brand.
+- **Buyer**: a busy, posh millennial mother in Berlin or Märkisch-Oderland. Unmistakably clear: what it is, three offers, how to order.
+- **The one idea**: Paulina's own black chalk dish labels ("Banana Waffeln", "Apfel Kuchen", "Pizza Muffins"). The hero photo is her real label; prices are black label shapes standing in front of the food; the food section is her labels as they stood on the table. Never fake her handwriting in a font.
+- **Colour** (from her table): pale-sage ground `#dce5dc`; chalkboard black `#1a1c1a` (ink, price labels, the food field); chalk `#eeefe9` on black; strawberry red `#ab2a40` for actions and Paulina's letter; curtain green `#2d514c` for the hand-over list and the enquiry. Offer cards keep blush `#f0d9d1`, butter `#efe2b8`, sky `#d4dfec` (Tural's call). No cream or warm white.
+- **Type**: EB Garamond 400 set large (hero up to 144px, tracking -0.04em) for headings, letter, prices; Jost 400/500 for text. Self-hosted only.
+- **Shapes**: photos are square-cornered editorial crops (round-3 arches retired). Labels and fields use a 9px radius like her real label holders; buttons stay pills.
+- **Motion**: hero crossfade of three of her photos (dots to choose, stops on choice), a slow filmstrip of ten of her photos (pauses on hover/focus), section entrances. All off under reduced motion.
+- **Photos**: Paulina's own, cropped tight so no licensed characters (Frozen, Paw Patrol, character toppers) are visible. Crops live in `images/v5/`. Never alter her photos beyond cropping without asking. Never use stock or AI-made food or people.
 
 ### Sections in `index.html`
 
 | Section | Purpose |
 |---|---|
-| `.hero` | "Kommt einfach als Gäste." The real dishes, from 140 €, 8 to 30 children, region. Paulina's curtain table, captioned |
+| `.hero` | "Kommt einfach als Gäste." The real dishes, three chalk price labels, region. Crossfade of her label, table and waffles |
+| `.film` | "Von Paulinas Tischen": moving strip of ten of her photos |
 | `#angebote` | Three coloured offer cards, then "Was ihr abgebt" (the chore list, green) |
 | `#ablauf` | "So bestellt ihr": three numbered steps and an enquiry button |
-| `#essen` | "Gesund bis zum Nachtisch." Snacks, sweets, cake, labels and allergies, named specifically |
+| `#essen` | Black chalk field. "Gesund bis zum Nachtisch." Her real labels, plus snacks, sweets, cake, allergies |
 | `#paulina` | "Ein Brief von Paulina" on the strawberry-red field (Paulina to confirm wording) |
 | `#fragen` | Six questions |
 | `#anfrage` | Live WhatsApp message builder (+491783129500), with the package pre-selected (green) |
