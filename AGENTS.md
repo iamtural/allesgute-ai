@@ -41,7 +41,7 @@ No build step. No framework. No dependencies. Plain HTML file deployed to Netlif
 - **Register**: "Spielzimmer", a Nordic playroom (Konges Sløjd and Liewood): oat ground `#f4eee4`, sage `#d8dfcd`, blush `#f1d8cf`, butter `#f3e4b5`, ink `#35332d`, strawberry red `#ab2a40` for actions only.
 - **Type**: Fraunces 500 (`fonts/Fraunces-500.woff`) for headings and Jost 400/500 (`fonts/Jost-*.woff2`) for text. Caveat (`Hand`) is used only for "Hallo, ich bin Paulina." and her signature. All fonts are self-hosted, with no Google Fonts link (GDPR). EB Garamond stays for the legal pages only.
 - **Devices**: arch-shaped photo windows, scalloped section edges (tablecloth or bunting), a round "Alles Gute zum Geburtstag" seal around the strawberry mark, and price stickers on the package cards.
-- **Offer**: three named packages: No.1 Der Tisch (ab 150 €), No.2 Die Feier (ab 320 €), No.3 Ihr seid Gäste (ab 490 €). The prices are proposals that **Paulina must confirm**. Each card has a "Passt, wenn…" line, and its button selects the package and jumps to the WhatsApp form.
+- **Offer**: three named packages: No.1 Der Tisch (ab 140 €), No.2 Die Feier (ab 270 €), No.3 Ihr seid Gäste (ab 350 €). Prices set by Tural and Paulina, Nov 22 2026. Each card has a "Passt, wenn…" line, and its button selects the package and jumps to the WhatsApp form.
 - **Live thing**: "Was ihr abgebt", a chore list that ticks off as she picks a package. The enquiry-form cake still lights one candle per year.
 - **Mark**: `images/mark.svg`, two strawberries: big Laura and small Laia leaning on her. Never show ".ai" in the brand.
 - **Photos**: `images/v3/*.webp` are brightened crops of Paulina's own photos. Each package shows its own outcome: the laid table, the themed cake, and Paulina serving the guests. Never use licensed characters, stock, or AI food or people. A styled shoot (`docs/round-2-brief.md`) will replace these.
@@ -50,14 +50,14 @@ No build step. No framework. No dependencies. Plain HTML file deployed to Netlif
 
 | Section | Purpose |
 |---|---|
-| `.hero` | "Kommt einfach als Gäste." What it is, from 150 €, 8 to 30 children, region. Whole-table photo in an arch, plus the seal |
+| `.hero` | "Kommt einfach als Gäste." What it is, from 140 €, 8 to 30 children, region. Whole-table photo in an arch, plus the seal |
 | `#angebote` | Three package cards, then "Was ihr abgebt" (the chore list) |
 | `#essen` | "Obst zuerst." Healthy-but-beautiful hook, with three proof lines |
 | `#paulina` | Who cooks: her story, signature, Laura & Laia, facts |
 | `.how` | Three steps: one message is enough |
 | `#fragen` | Six questions |
 | `#anfrage` | Live WhatsApp message builder (+491783129500), with the package pre-selected |
-| `impressum.html`, `datenschutz.html` | Legal pages. **Fill the [placeholders] (address, tax status) before merging to main.** |
+| `impressum.html`, `datenschutz.html` | Legal pages. Filled Nov 22 2026: Kantstr. 17, 15366 Neuenhagen bei Berlin; Kleinunternehmerin (§ 19 UStG). |
 
 ### Checks
 

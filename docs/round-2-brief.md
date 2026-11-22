@@ -27,13 +27,13 @@ What they share:
 
 ## The offering
 
-Proposed prices. Paulina confirms them.
+Prices set Nov 22, 2026.
 
 | Package | ab | She gets |
 |---|---|---|
-| **Der Tisch** | 150 € | A styled, healthy-and-beautiful table: fruit, vegetables, waffles, cake, with labels. Paulina sets it up and clears it away. |
-| **Die Feier** | 320 € | The table, plus a cake and room decoration in the child's favourite theme, plus one baking or play round that Paulina leads. |
-| **Ihr seid Gäste** | 490 € | Everything above, plus take-home bags and tidying up to the last plate. The parents arrive with their child like every other guest. |
+| **Der Tisch** | 140 € | A styled, healthy-and-beautiful table: fruit, vegetables, waffles, cake, with labels. Paulina sets it up and clears it away. |
+| **Die Feier** | 270 € | The table, plus a cake and room decoration in the child's favourite theme, plus one baking or play round that Paulina leads. |
+| **Ihr seid Gäste** | 350 € | Everything above, plus take-home bags and tidying up to the last plate. The parents arrive with their child like every other guest. |
 
 What she no longer has to do: shopping, baking, buying decorations, setting the table, keeping the children busy, washing up.
 
