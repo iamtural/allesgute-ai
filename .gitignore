@@ -11,3 +11,9 @@ Paulina Photos (AllesGute)/
 
 # Node (if ever added)
 node_modules/
+.taste-skill/
+
+# Secrets
+.env*
+*.pem
+*.key

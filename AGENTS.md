@@ -33,83 +33,35 @@ No build step. No framework. No dependencies. Plain HTML file deployed to Netlif
 **Languages**: Trilingual — German (primary), English, Polish (language switcher in nav)  
 **WhatsApp booking**: +491783129500  
 
-### Key sections in `index.html`
+**Region**: Berlin and Märkisch-Oderland (Paulina lives in Neuenhagen). Not Havelland.
+
+### Brand (Nov 2026 redesign, branch `feature/brand-redesign`)
+
+- **Idea**: Paulina labels every dish on her tables with a black chalk card ("Banana Waffeln", "Apfel Kuchen"). Those chalk labels are the page's device: dark `.label` cards in the `Chalk` hand face (Caveat subset), soft rounded photos, Paulina's handwritten greeting, and a live cake that lights one candle per year in the enquiry form.
+- **Mark**: `images/mark.svg`, two flat strawberries: big Laura, small Laia leaning on her. Wordmark "AllesGute" in EB Garamond. Never show ".ai" in the brand; the domain is only an address.
+- **Colour, taken from Paulina's own photos**: linen ground `#f7f1ea`, curtain green `#2f5552` (prices, footer, the mark's leaves), strawberry red `#b02a42` / `#a3263c` (actions, booking section, the berries), waffle honey `#efc483` (prices on green, candle flames), berry blush `#f4dcd4` (how it works), chalk `#231f1c` (her labels). Photos share one white-balance grade so they sit in the same light.
+- **Type**: EB Garamond (self-hosted woff2, latin + latin-ext for Polish) for everything; Chalk only on labels and the message preview. No Google Fonts link (GDPR).
+- **Photos**: `images/v2/*.webp` are crops of Paulina's own photos with one shared grade. Never use licensed characters (Paw Patrol, Frozen) in frame, never stock or AI-generated food or people. Originals stay in `images/`.
+- **Prices**: quoted per party. "Geburtstagstisch ab 150 €" (= 8 children x 19 €, the old base rate) and "Die ganze Feier nach Absprache". Paulina must confirm these numbers.
+- **Removed on purpose**: the emoji strawberry cursor (read as cheap on a premium page; the daughters now live in the mark and the "Laura & Laia" tile).
+
+### Sections in `index.html`
 
 | Section | Purpose |
 |---|---|
-| `#hero` | Headline + CTA + hero cake image |
-| `#packages` | 3 packages: Starter (199€), Standard (299€), Premium (449€) |
-| `#ablauf` | 4-step "how it works" process |
-| `#ueber-uns` | Paulina's personal story + portrait |
-| `#faq` | 8 FAQ accordion items |
-| `#anfragen` | Contact/booking form (Formspree integration, see below) |
+| `.hero` | "Heute seid ihr auch Gäste." + slow crossfade of three real party photos |
+| `.intro` | "Drei Stunden in der Küche." Paulina's reason for doing this |
+| `#tisch` | Band of four food photos with chalk labels |
+| `#preise` | Prices set like a menu, two groups |
+| `#paulina` | Who cooks, the mark's story, facts |
+| `.moments` | Five moments from first message to singing along (drag row) |
+| `#fragen` | Six questions |
+| `#anfrage` | Live WhatsApp message builder with preview (+491783129500) |
+| `impressum.html`, `datenschutz.html` | Legal pages. **Fill the [placeholders] (address, tax status) before merging to main.** |
 
-### Design system (inline in `<style>` tag)
+### Checks
 
-```css
---color-primary: #C8375A      /* berry red — brand accent */
---color-bg: #FAF8F5           /* warm off-white */
---font-heading: 'Playfair Display', serif
---font-body: 'Inter', sans-serif
-```
-
-Strawberry cursor system: Laura (big 🍓 follows mouse) + Laia (small 🍓 trails with delay). Do not remove — it's intentional branding.
-
----
-
-## Pending tasks (priority order)
-
-### 1. Formspree — REQUIRED before site is usable for bookings
-
-The contact form at `#anfragen` has a placeholder form ID. Find this in `index.html`:
-
-```html
-<form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-```
-
-Replace `YOUR_FORMSPREE_ID` with Paulina's actual Formspree form ID once she provides it.  
-Paulina signs up at https://formspree.io — free tier handles up to 50 submissions/month.
-
-### 2. Payment links — booking buttons need real URLs
-
-The "Paket buchen" buttons in the packages section currently link to `#anfragen` (the contact form). Once Paulina creates Stripe or PayPal payment links for each package, update:
-
-- Starter (199€): replace `href="#anfragen"` with the payment link
-- Standard (299€): same
-- Premium (449€): same
-
-### 3. Impressum + Datenschutz — LEGALLY REQUIRED in Germany
-
-Currently both footer links point to `href="#"`. German law (Telemediengesetz) requires a real Impressum and Datenschutzerklärung on every commercial website.
-
-**Impressum must include**: full name, address, phone, email of the responsible person.  
-**Datenschutz**: GDPR-compliant privacy policy covering contact form data, cookies, analytics.
-
-Options:
-- Create `/impressum.html` and `/datenschutz.html` as separate pages
-- Or add `id="impressum"` / `id="datenschutz"` sections at the bottom of index.html
-- Update the footer `<a href="#">` links accordingly
-
-### 4. Performance: image optimization
-
-Images in `images/` are unoptimized originals (total ~87MB folder). Before production traffic scales:
-- Convert to WebP format
-- Resize to max 1200px width for hero images, 800px for gallery
-- Add `loading="lazy"` to all `<img>` tags below the fold (most already have it; verify)
-
-### 5. Analytics (optional)
-
-Add Google Analytics 4 or Plausible (privacy-first, recommended for EU) tracking snippet in `<head>`.
-
----
-
-## What NOT to change
-
-- The trilingual content system (DE/EN/PL switcher in nav). Translations are stored in `data-de`, `data-en`, `data-pl` attributes on each element.
-- The strawberry cursor JS (bottom of `<body>`) — intentional branding
-- The two-strawberry system variable names: `cursorLaura` and `cursorLaia`
-- WhatsApp number: `+491783129500`
-- The existing photo filenames — they are referenced directly in `index.html`
+Design checks used the tasteskill inspector: `node ~/.claude/skills/design-taste-frontend/scripts/inspect.mjs index.html` (0 FAIL is the floor). Working files land in `.taste-skill/` (gitignored).
 
 ---
 
