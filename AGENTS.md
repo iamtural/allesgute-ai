@@ -1,6 +1,6 @@
 # AllesGute.AI — Agent Handoff
 
-You are working on **allesgute.ai**, a landing page for a Berlin-based kids' birthday catering business run by Paulina Salahov. The site is live at https://allesgute.ai.
+You are working on **allesgute.ai**, a landing page for a Berlin-based kids' birthday catering business run by Paulina Zagorska Salahova. The site is live at https://allesgute.ai.
 
 ---
 
@@ -29,31 +29,32 @@ No build step. No framework. No dependencies. Plain HTML file deployed to Netlif
 ## Site overview
 
 **Business**: AllesGute — birthday catering for children's parties in Berlin  
-**Owner**: Paulina Salahov (German/Polish background, two daughters: Laura 5, Laia 2)  
+**Owner**: Paulina Zagorska Salahova (German/Polish background, two daughters: Laura 5, Laia 2)  
 **Languages**: Trilingual — German (primary), English, Polish (language switcher in nav)  
 **WhatsApp booking**: +491783129500  
 
 **Region**: Berlin and Märkisch-Oderland (Paulina lives in Neuenhagen). Not Havelland.
 
-### Brand (round 2, Nov 22 2026, branch `feature/brand-redesign`)
+### Brand (round 3, Nov 22 2026, branch `feature/round-3-soul`)
 
-- **Buyer**: a busy, posh millennial mother in Berlin or Märkisch-Oderland. She wants it beautiful and done for her. Brief, references and the 10-shot photo list: `docs/round-2-brief.md`.
-- **Register**: "Spielzimmer", a Nordic playroom (Konges Sløjd and Liewood): oat ground `#f4eee4`, sage `#d8dfcd`, blush `#f1d8cf`, butter `#f3e4b5`, ink `#35332d`, strawberry red `#ab2a40` for actions only.
-- **Type**: Fraunces 500 (`fonts/Fraunces-500.woff`) for headings and Jost 400/500 (`fonts/Jost-*.woff2`) for text. Caveat (`Hand`) is used only for "Hallo, ich bin Paulina." and her signature. All fonts are self-hosted, with no Google Fonts link (GDPR). EB Garamond stays for the legal pages only.
-- **Devices**: arch-shaped photo windows, scalloped section edges (tablecloth or bunting), a round "Alles Gute zum Geburtstag" seal around the strawberry mark, and price stickers on the package cards.
-- **Offer**: three named packages: No.1 Der Tisch (ab 140 €), No.2 Die Feier (ab 270 €), No.3 Ihr seid Gäste (ab 350 €). Prices set by Tural and Paulina, Nov 22 2026. Each card has a "Passt, wenn…" line, and its button selects the package and jumps to the WhatsApp form.
-- **Live thing**: "Was ihr abgebt", a chore list that ticks off as she picks a package. The enquiry-form cake still lights one candle per year.
+- **Buyer**: a busy, posh millennial mother in Berlin or Märkisch-Oderland. She wants it beautiful and done for her. Brief for round 3: soul from restraint, honest product tags and Paulina's own voice (Cucinelli/Muji register). Photo shoot list: `docs/round-2-brief.md`.
+- **Colour**: one pale-sage ground `#dce5dc` everywhere (Tural's pick), ink `#1c2826`, Paulina's curtain green `#2d514c` for the two big fields (hand-over list, enquiry), strawberry red `#ab2a40` for actions only. No cream or warm white, no boxed grey panels.
+- **Type**: EB Garamond 400 (`fonts/EBGaramond-*.woff2`) for headings, the letter and prices; Jost 400/500 for text. Self-hosted only, no Google Fonts link (GDPR).
+- **One shape: the arch.** Every photo sits in an arch window, the two green fields have a curtain-dome top, buttons, toggles, chore rows and form fields are pills or round. No scallops, seal or stickers.
+- **Offer**: three packages, always called "Angebot": Der Tisch (ab 140 €), Die Feier (ab 270 €), Ihr seid Gäste (ab 350 €), each for 8 children. Each is a product tag: Enthält / Ich mache / Für / Passt, wenn. No package is preselected; its button selects it (red ring on the photo) and jumps to the WhatsApp form.
+- **Copy is specific**: name the real dishes (Gemüse mit Dip, Pizza-Muffins, Bananenwaffeln, Apfelkuchen, Beeren auf Sahne). Every snack and dessert is a healthy choice. Never invent facts.
+- **Live thing**: "Was ihr abgebt", a chore list with package toggles. The enquiry-form cake lights one candle per year.
 - **Mark**: `images/mark.svg`, two strawberries: big Laura and small Laia leaning on her. Never show ".ai" in the brand.
-- **Photos**: `images/v3/*.webp` are brightened crops of Paulina's own photos. Each package shows its own outcome: the laid table, the themed cake, and Paulina serving the guests. Never use licensed characters, stock, or AI food or people. A styled shoot (`docs/round-2-brief.md`) will replace these.
+- **Photos**: `images/v4/*.webp`, Paulina's own photos re-cropped to 4:5 and graded cooler and calmer. Each package shows its own outcome: the labelled banana waffles, the themed cake, Paulina serving the guests. Never use licensed characters, stock, or AI food or people. Several sources are soft video stills; the styled shoot will replace them.
 
 ### Sections in `index.html`
 
 | Section | Purpose |
 |---|---|
-| `.hero` | "Kommt einfach als Gäste." What it is, from 140 €, 8 to 30 children, region. Whole-table photo in an arch, plus the seal |
+| `.hero` | "Kommt einfach als Gäste." The real dishes, from 140 €, 8 to 30 children, region. Whole-table photo in an arch |
 | `#angebote` | Three package cards, then "Was ihr abgebt" (the chore list) |
-| `#essen` | "Obst zuerst." Healthy-but-beautiful hook, with three proof lines |
-| `#paulina` | Who cooks: her story, signature, Laura & Laia, facts |
+| `#essen` | "Gesund bis zum Nachtisch." Snacks, sweets, cake, labels and allergies, named specifically |
+| `#paulina` | "Ein Brief von Paulina": her letter (Paulina to confirm wording), signature, Laura & Laia, facts |
 | `.how` | Three steps: one message is enough |
 | `#fragen` | Six questions |
 | `#anfrage` | Live WhatsApp message builder (+491783129500), with the package pre-selected |
