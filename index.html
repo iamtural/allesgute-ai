@@ -118,10 +118,10 @@ select,input,textarea,button{font:inherit;color:inherit}
 /* section heads */
 .head{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:end;margin-bottom:clamp(40px,5vw,72px)}
 .head h2{grid-column:1/8;font-size:clamp(44px,5.6vw,92px)}
-.head .lede{grid-column:9/13;font-size:17px;line-height:1.6}
+.head .lede{grid-column:8/12;font-size:17px;line-height:1.6}
 
 /* offers: each card its own tone, a black label standing in front of the food */
-.pk{padding-top:var(--gap)}
+.pk{padding-top:clamp(80px,8vw,128px)}
 .tags{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,24px);align-items:stretch}
 .tag{display:flex;flex-direction:column;background:var(--tone);border-radius:clamp(28px,3vw,40px);padding:clamp(12px,1vw,16px) clamp(12px,1vw,16px) 28px;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
 .tag:nth-child(1){--tone:var(--blush)}.tag:nth-child(2){--tone:var(--butter)}.tag:nth-child(3){--tone:var(--sky)}
@@ -156,7 +156,7 @@ select,input,textarea,button{font:inherit;color:inherit}
 .chores li{display:flex;align-items:center;gap:14px;padding:16px 22px;border-radius:9px;background:rgba(233,237,230,.16);color:var(--on-green);font-size:17px;transition:background .5s var(--ease),color .5s var(--ease)}
 .chores i{flex:none;width:22px;height:22px;border-radius:50%;background:var(--red);display:grid;place-items:center;transition:background .5s var(--ease),transform .5s var(--ease)}
 .chores i svg{width:13px;height:13px;transition:opacity .4s}
-.chores li.yours{background:transparent;color:#b9c7c1}
+.chores li.yours{background:rgba(233,237,230,.06);color:#b9c7c1}
 .chores li.yours i{background:rgba(233,237,230,.3);transform:scale(.8)}
 .chores li.yours i svg{opacity:0}
 .legend{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:28px;font-size:15px;color:#cdd8d3}
@@ -241,7 +241,7 @@ details p{padding:0 28px 26px;font-size:17px;max-width:36em}
 form{grid-column:7/13;display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;background:var(--stone);color:var(--ink);padding:clamp(24px,3vw,44px);border-radius:clamp(28px,3vw,44px)}
 form label{display:grid;gap:8px;font-size:14.5px;color:var(--soft)}
 form .wide{grid-column:1/-1}
-input,select:not(#language),textarea{width:100%;background:var(--paper);border:1.5px solid transparent;border-radius:9px;padding:14px 16px;font-size:16px;color:var(--ink);transition:border-color .2s}
+input,select:not(#language),textarea{width:100%;background:#f4f7f3;border:1.5px solid transparent;border-radius:9px;padding:14px 16px;font-size:16px;color:var(--ink);transition:border-color .2s}
 input:focus,select:focus,textarea:focus{border-color:var(--ink);outline:none}
 textarea{resize:vertical}
 .preview{grid-column:1/-1;display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:center;background:var(--ink);color:var(--chalk);padding:20px 24px;border-radius:9px}
@@ -357,11 +357,11 @@ footer{padding-top:clamp(80px,9vw,130px);padding-bottom:36px}
   </div>
   <figure class="hero-pic rise">
     <div class="show" id="show">
-      <img class="on" src="images/v4/table.webp" width="1600" height="1200" fetchpriority="high" data-cap-de="Ein echter Tisch von Paulina, vor dem grünen Vorhang. Jedes Essen hat sein Schild." data-cap-en="A real table by Paulina, in front of the green curtain. Every dish has its label." data-cap-pl="Prawdziwy stół Pauliny przed zieloną zasłoną. Każde danie ma swoją tabliczkę." alt="Paulinas gedeckter Geburtstagstisch vor dem grünen Vorhang: Apfelkuchen, Bananenwaffeln, Pizza-Muffins, Obst und Wasser, jedes Essen mit Kreideschild" data-alt-en="Paulina’s birthday table in front of the green curtain: apple cake, banana waffles, pizza muffins, fruit and water, every dish with a chalk label" data-alt-pl="Stół urodzinowy Pauliny przed zieloną zasłoną: szarlotka, gofry bananowe, muffinki pizzowe, owoce i woda, każde danie z kredową tabliczką">
+      <img class="on" src="images/v4/table.webp" width="1600" height="1200" fetchpriority="high" data-cap-de="Ein Geburtstagstisch von Paulina. Jedes Essen hat sein Schild, damit alle wissen, was drin ist." data-cap-en="A birthday table by Paulina. Every dish has its label, so everyone knows what’s in it." data-cap-pl="Stół urodzinowy Pauliny. Każde danie ma swoją tabliczkę, żeby każdy wiedział, co jest w środku." alt="Paulinas gedeckter Geburtstagstisch vor dem grünen Vorhang: Apfelkuchen, Bananenwaffeln, Pizza-Muffins, Obst und Wasser, jedes Essen mit Kreideschild" data-alt-en="Paulina’s birthday table in front of the green curtain: apple cake, banana waffles, pizza muffins, fruit and water, every dish with a chalk label" data-alt-pl="Stół urodzinowy Pauliny przed zieloną zasłoną: szarlotka, gofry bananowe, muffinki pizzowe, owoce i woda, każde danie z kredową tabliczką">
       <img src="images/banana-waffles.webp" width="1600" height="1200" loading="lazy" data-cap-de="Bananenwaffeln mit Apfelmus. Jedes Schild schreibt Paulina mit der Hand." data-cap-en="Banana waffles with apple sauce. Paulina writes every label by hand." data-cap-pl="Gofry bananowe z musem jabłkowym. Każdą tabliczkę Paulina pisze ręcznie." alt="Bananenwaffeln und Apfelmus, davor Paulinas Kreideschild „Banana Waffeln“" data-alt-en="Banana waffles and apple sauce behind Paulina’s chalk label “Banana Waffeln”" data-alt-pl="Gofry bananowe i mus jabłkowy, przed nimi kredowa tabliczka Pauliny „Banana Waffeln”">
       <img src="images/food-table.jpg" width="1000" height="750" loading="lazy" data-cap-de="Schleierkraut, Schokomuffins und Apfelkuchen auf Glasetageren." data-cap-en="Gypsophila, chocolate muffins and apple cake on glass stands." data-cap-pl="Gipsówka, muffinki czekoladowe i szarlotka na szklanych paterach." alt="Schleierkraut, Schokomuffins auf einer Glasetagere und Apfelkuchen" data-alt-en="Gypsophila, chocolate muffins on a glass stand and apple cake" data-alt-pl="Gipsówka, muffinki czekoladowe na szklanej paterze i szarlotka">
     </div>
-    <figcaption><span id="showcap" aria-live="off">Ein echter Tisch von Paulina, vor dem grünen Vorhang. Jedes Essen hat sein Schild.</span>
+    <figcaption><span id="showcap" aria-live="off">Ein Geburtstagstisch von Paulina. Jedes Essen hat sein Schild, damit alle wissen, was drin ist.</span>
       <span class="dots" role="group" aria-label="Bilder">
         <button type="button" aria-current="true" aria-label="Der Tisch vor dem Vorhang"></button>
         <button type="button" aria-current="false" aria-label="Bananenwaffeln"></button>
