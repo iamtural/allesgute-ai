@@ -35,16 +35,19 @@ No build step. No framework. No dependencies. Plain HTML file deployed to Netlif
 
 **Region**: Berlin and Märkisch-Oderland (Paulina lives in Neuenhagen). Not Havelland.
 
-### Brand (round 5, Nov 22 2026, branch `feature/round-5-chalk`)
+### Brand (round 6, Nov 23 2026, branch `feature/round-6-arches`; round 5 chalk labels kept)
 
 - **Name**: always **"Alles Gute"**, with a space. Domain/email stay `allesgute.ai`; never show ".ai" in the brand.
 - **Buyer**: a busy, posh millennial mother in Berlin or Märkisch-Oderland. Unmistakably clear: what it is, three offers, how to order.
 - **The one idea**: Paulina's own black chalk dish labels ("Banana Waffeln", "Apfel Kuchen", "Pizza Muffins"). The hero photo is her real label; prices are black label shapes standing in front of the food; the food section is her labels as they stood on the table. Never fake her handwriting in a font.
 - **Colour** (from her table): pale-sage ground `#dce5dc`; chalkboard black `#1a1c1a` (ink, price labels, the food field); chalk `#eeefe9` on black; strawberry red `#ab2a40` for actions and Paulina's letter; curtain green `#2d514c` for the hand-over list and the enquiry. Offer cards keep blush `#f0d9d1`, butter `#efe2b8`, sky `#d4dfec` (Tural's call). No cream or warm white.
 - **Type**: EB Garamond 400 set large (hero up to 144px, tracking -0.04em) for headings, letter, prices; Jost 400/500 for text. Self-hosted only.
-- **Shapes**: photos are square-cornered editorial crops (round-3 arches retired). Labels and fields use a 9px radius like her real label holders; buttons stay pills.
+- **Shapes**: the arch is back (Tural, Nov 23: arches have soul, squares don't). Photos sit in arches, the hero and wide photos in domes, coloured fields have dome tops, cards are round. Only the chalk price labels keep the 9px radius of her real label holders. Buttons are pills.
+- **Hero photo**: the green-curtain table comes first (Tural's call), then the Banana Waffeln label, then muffins with gypsophila. All 4:3 in a dome.
+- **Offer photos tell the offer**: Der Tisch = the food from above, Die Feier = theme cake with bunting, Ihr seid Gäste = Paulina cutting the cake for guests holding plates.
+- **Language names** are capitalised and in the page language (PL: Niemiecki · Angielski · Polski).
 - **Motion**: hero crossfade of three of her photos (dots to choose, stops on choice), a slow filmstrip of ten of her photos (pauses on hover/focus), section entrances. All off under reduced motion.
-- **Photos**: Paulina's own, cropped tight so no licensed characters (Frozen, Paw Patrol, character toppers) are visible. Crops live in `images/v5/`. Never alter her photos beyond cropping without asking. Never use stock or AI-made food or people.
+- **Photos**: Paulina's own, cropped tight so no licensed characters are visible, except the curtain table, which Tural chose to use as is. Crops live in `images/v5/`. Never alter her photos beyond cropping without asking. Never use stock or AI-made food or people.
 
 ### Sections in `index.html`
 
