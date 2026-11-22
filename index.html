@@ -83,16 +83,16 @@ select,input,textarea,button{font:inherit;color:inherit}
 
 /* hero: big type left, Paulina's table turning on the right */
 .hero{display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(20px,2.6vw,44px);align-items:end;padding-top:clamp(28px,4vw,64px)}
-.hero-copy{grid-column:1/8;padding-bottom:clamp(4px,1vw,16px)}
-.hero h1{font-size:clamp(54px,8.6vw,144px);line-height:.9;letter-spacing:-.04em}
+.hero-copy{grid-column:1/6;padding-bottom:clamp(4px,1vw,16px)}
+.hero h1{font-size:clamp(52px,6.6vw,116px);line-height:.92;letter-spacing:-.035em}
 .hero .lede{margin-top:clamp(28px,2.6vw,40px);font-size:clamp(17.5px,1.4vw,21px);line-height:1.55;max-width:31em}
 .trio{list-style:none;padding:0;margin:32px 0 0;display:flex;flex-wrap:wrap;gap:10px}
 .trio a{transition:transform .3s var(--ease),background .3s}
 .trio a:hover{transform:translateY(-3px);background:#000}
 .hero .act{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;margin-top:32px}
 .facts-line{display:flex;flex-wrap:wrap;gap:6px 24px;margin-top:26px;font-size:15px;color:var(--soft)}
-.hero-pic{grid-column:8/13;margin:0}
-.show{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--shade);isolation:isolate}
+.hero-pic{grid-column:6/13;margin:0}
+.show{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--shade);isolation:isolate;border-radius:50% 50% 24px 24px/clamp(70px,9vw,150px) clamp(70px,9vw,150px) 24px 24px}
 .show img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 1.4s var(--ease),transform 7s linear}
 .show img.on{opacity:1;transform:scale(1)}
 .hero-pic figcaption{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:14px;font-size:15px;color:var(--soft);min-height:44px}
@@ -112,23 +112,23 @@ select,input,textarea,button{font:inherit;color:inherit}
 @keyframes roll{to{transform:translateX(-50%)}}
 .track li{flex:none;width:clamp(220px,22vw,340px)}
 .track figure{margin:0}
-.track img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--shade)}
+.track img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--shade);border-radius:999px 999px 14px 14px}
 .track figcaption{margin-top:10px;font:400 19px/1.2 var(--serif)}
 
 /* section heads */
 .head{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:end;margin-bottom:clamp(40px,5vw,72px)}
 .head h2{grid-column:1/8;font-size:clamp(44px,5.6vw,92px)}
-.head .lede{grid-column:9/13;font-size:17px;line-height:1.6}
+.head .lede{grid-column:8/12;font-size:17px;line-height:1.6}
 
 /* offers: each card its own tone, a black label standing in front of the food */
-.pk{padding-top:var(--gap)}
+.pk{padding-top:clamp(80px,8vw,128px)}
 .tags{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,24px);align-items:stretch}
-.tag{display:flex;flex-direction:column;background:var(--tone);padding:clamp(12px,1vw,16px) clamp(12px,1vw,16px) 28px;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.tag{display:flex;flex-direction:column;background:var(--tone);border-radius:clamp(28px,3vw,40px);padding:clamp(12px,1vw,16px) clamp(12px,1vw,16px) 28px;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
 .tag:nth-child(1){--tone:var(--blush)}.tag:nth-child(2){--tone:var(--butter)}.tag:nth-child(3){--tone:var(--sky)}
-.tag .pic{position:relative;overflow:hidden;background:var(--shade);isolation:isolate}
-.tag .pic img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform 1.4s var(--ease)}
+.tag .pic{position:relative;overflow:hidden;background:var(--shade);isolation:isolate;border-radius:999px 999px 22px 22px}
+.tag .pic img{width:100%;aspect-ratio:1/1.08;object-fit:cover;transition:transform 1.4s var(--ease)}
 .tag:hover .pic img{transform:scale(1.05)}
-.tag .pic .chalk{position:absolute;left:16px;bottom:16px;font-size:16px}
+.tag .pic .chalk{position:absolute;left:18px;bottom:18px;font-size:16px}
 .label{flex:1;display:flex;flex-direction:column;padding:24px 10px 0}
 .label h3{font-size:clamp(32px,2.6vw,42px)}
 .label .what{margin-top:12px;font-size:17px}
@@ -143,7 +143,7 @@ select,input,textarea,button{font:inherit;color:inherit}
 .tag.on .ask{display:none}
 
 /* hand-over list: the live thing */
-.list{margin-top:clamp(80px,8vw,120px);background:var(--green);color:var(--on-green);padding-block:clamp(96px,10vw,160px)}
+.list{border-radius:50% 50% 0 0/clamp(60px,9vw,150px) clamp(60px,9vw,150px) 0 0;margin-top:clamp(80px,8vw,120px);background:var(--green);color:var(--on-green);padding-block:clamp(120px,11vw,180px) clamp(96px,10vw,160px)}
 .list-in{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:start}
 .list-in > div{grid-column:1/6}
 .list h2{font-size:clamp(44px,5.6vw,92px)}
@@ -156,7 +156,7 @@ select,input,textarea,button{font:inherit;color:inherit}
 .chores li{display:flex;align-items:center;gap:14px;padding:16px 22px;border-radius:9px;background:rgba(233,237,230,.16);color:var(--on-green);font-size:17px;transition:background .5s var(--ease),color .5s var(--ease)}
 .chores i{flex:none;width:22px;height:22px;border-radius:50%;background:var(--red);display:grid;place-items:center;transition:background .5s var(--ease),transform .5s var(--ease)}
 .chores i svg{width:13px;height:13px;transition:opacity .4s}
-.chores li.yours{background:transparent;color:#b9c7c1}
+.chores li.yours{background:rgba(233,237,230,.06);color:#b9c7c1}
 .chores li.yours i{background:rgba(233,237,230,.3);transform:scale(.8)}
 .chores li.yours i svg{opacity:0}
 .legend{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:28px;font-size:15px;color:#cdd8d3}
@@ -169,14 +169,14 @@ select,input,textarea,button{font:inherit;color:inherit}
 .how h2{grid-column:1/8;font-size:clamp(44px,5.6vw,92px)}
 .how-head .lede{grid-column:9/13;font-size:17px}
 .how ol{list-style:none;padding:0;margin:clamp(44px,5vw,72px) 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,24px)}
-.how li{background:var(--paper);padding:clamp(24px,2.4vw,40px)}
+.how li{background:var(--paper);padding:clamp(24px,2.4vw,40px);border-radius:clamp(28px,3vw,40px)}
 .how .n{display:block;font:400 clamp(72px,7vw,120px)/.8 var(--serif);color:var(--red);letter-spacing:-.04em;margin-bottom:28px}
 .how h3{font-size:clamp(28px,2.4vw,38px)}
 .how p{margin-top:14px;font-size:17px;max-width:24em}
 .how-go{margin-top:40px}
 
 /* food: the chalk field, her labels as they stood on the table */
-.food-wrap{margin-top:var(--gap);background:var(--ink);color:var(--chalk);padding-block:clamp(96px,10vw,160px)}
+.food-wrap{border-radius:50% 50% 0 0/clamp(60px,9vw,150px) clamp(60px,9vw,150px) 0 0;margin-top:var(--gap);background:var(--ink);color:var(--chalk);padding-block:clamp(120px,11vw,180px) clamp(96px,10vw,160px)}
 .food{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;row-gap:clamp(48px,5vw,80px);align-items:start}
 .food .side{grid-column:1/6}
 .food h2{font-size:clamp(48px,6vw,100px)}
@@ -184,8 +184,8 @@ select,input,textarea,button{font:inherit;color:inherit}
 .plates{grid-column:7/13;display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.2vw,18px)}
 .plates figure{margin:0}
 .plates figure:first-child{grid-column:1/-1}
-.plates img{width:100%;aspect-ratio:1/1;object-fit:cover}
-.plates figure:first-child img{aspect-ratio:16/10}
+.plates img{width:100%;aspect-ratio:1/1.08;object-fit:cover;border-radius:999px 999px 14px 14px}
+.plates figure:first-child img{aspect-ratio:16/10;border-radius:50% 50% 14px 14px/clamp(60px,7vw,120px) clamp(60px,7vw,120px) 14px 14px}
 .plates figcaption{margin-top:10px;font-size:15px;color:var(--chalk-2)}
 .proof{list-style:none;padding:0;margin:clamp(44px,4vw,64px) 0 0;display:grid;grid-template-columns:1fr 1fr;gap:28px clamp(20px,2vw,32px)}
 .proof li{display:grid;gap:8px;align-content:start}
@@ -193,10 +193,10 @@ select,input,textarea,button{font:inherit;color:inherit}
 .proof span{font-size:16.5px;color:var(--chalk)}
 
 /* letter: the strawberry field */
-.letter{background:var(--red);color:#fbeff0;padding-block:clamp(96px,10vw,160px)}
+.letter{border-radius:50% 50% 0 0/clamp(60px,9vw,150px) clamp(60px,9vw,150px) 0 0;margin-top:var(--gap);background:var(--red);color:#fbeff0;padding-block:clamp(120px,11vw,180px) clamp(96px,10vw,160px)}
 .letter + .faq{padding-top:var(--gap)}
 .letter-in{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:start}
-.letter .pic{grid-column:1/6;position:sticky;top:100px;overflow:hidden}
+.letter .pic{grid-column:1/6;position:sticky;top:100px;overflow:hidden;border-radius:999px 999px 22px 22px}
 .letter .pic img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .letter .body{grid-column:7/12}
 .letter h2{font-size:clamp(44px,5.6vw,92px)}
@@ -216,7 +216,7 @@ select,input,textarea,button{font:inherit;color:inherit}
 .faq h2{font-size:clamp(44px,5.6vw,92px)}
 .faq .lede{margin-top:24px;font-size:17px;max-width:22em}
 .faq .qs{grid-column:7/13;display:grid;gap:6px}
-details{background:var(--paper);transition:background .3s}
+details{background:var(--paper);border-radius:22px;transition:background .3s}
 details[open]{background:#f0f3ef}
 summary{cursor:pointer;list-style:none;padding:22px 72px 22px 26px;position:relative;font:400 22px/1.3 var(--serif)}
 summary::-webkit-details-marker{display:none}
@@ -226,7 +226,7 @@ details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
 details p{padding:0 28px 26px;font-size:17px;max-width:36em}
 
 /* contact */
-.contact{margin-top:var(--gap);background:var(--green);color:var(--on-green);padding-block:clamp(96px,10vw,160px)}
+.contact{border-radius:50% 50% 0 0/clamp(60px,9vw,150px) clamp(60px,9vw,150px) 0 0;margin-top:var(--gap);background:var(--green);color:var(--on-green);padding-block:clamp(120px,11vw,180px) clamp(96px,10vw,160px)}
 .contact-in{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:start}
 .contact-in > div:first-child{grid-column:1/6;position:sticky;top:110px}
 .contact h2{font-size:clamp(52px,6.4vw,108px)}
@@ -238,10 +238,10 @@ details p{padding:0 28px 26px;font-size:17px;max-width:36em}
 .wa:active{transform:scale(.98)}
 .reply{display:flex;align-items:center;gap:14px;margin-top:44px;font:italic 400 22px/1.3 var(--serif);color:var(--on-green)}
 .reply img{width:34px;flex:none}
-form{grid-column:7/13;display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;background:var(--stone);color:var(--ink);padding:clamp(24px,3vw,44px)}
+form{grid-column:7/13;display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;background:var(--stone);color:var(--ink);padding:clamp(24px,3vw,44px);border-radius:clamp(28px,3vw,44px)}
 form label{display:grid;gap:8px;font-size:14.5px;color:var(--soft)}
 form .wide{grid-column:1/-1}
-input,select:not(#language),textarea{width:100%;background:var(--paper);border:1.5px solid transparent;border-radius:9px;padding:14px 16px;font-size:16px;color:var(--ink);transition:border-color .2s}
+input,select:not(#language),textarea{width:100%;background:#f4f7f3;border:1.5px solid transparent;border-radius:9px;padding:14px 16px;font-size:16px;color:var(--ink);transition:border-color .2s}
 input:focus,select:focus,textarea:focus{border-color:var(--ink);outline:none}
 textarea{resize:vertical}
 .preview{grid-column:1/-1;display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:center;background:var(--ink);color:var(--chalk);padding:20px 24px;border-radius:9px}
@@ -277,7 +277,10 @@ footer{padding-top:clamp(80px,9vw,130px);padding-bottom:36px}
   :root{--gap:104px}
   .hero,.head,.food,.letter-in,.faq,.contact-in,.list-in,.how-head{grid-template-columns:1fr}
   .hero-copy,.hero-pic,.head h2,.head .lede,.food .side,.plates,.letter .pic,.letter .body,.faq > div:first-child,.faq .qs,.contact-in > div:first-child,form,.list-in > div,.chores,.how h2,.how-head .lede{grid-column:1/-1}
-  .hero-pic{margin-top:36px}
+  .hero-pic{order:-1;margin:0 0 28px}
+  .hero-copy{order:0}
+  .film{margin-top:120px}
+  .show{border-radius:50% 50% 18px 18px/56px 56px 18px 18px}
   .head .lede,.how-head .lede{margin-top:20px}
   .tags{grid-template-columns:1fr;gap:18px}
   .label dl{grid-template-columns:7em 1fr;gap:10px 14px}
@@ -346,23 +349,23 @@ footer{padding-top:clamp(80px,9vw,130px);padding-bottom:36px}
       <li><a class="chalk" href="#angebote"><span data-de="Die Feier" data-en="The Party" data-pl="Przyjęcie">Die Feier</span><b><small data-de="ab" data-en="from" data-pl="od">ab</small> 270&nbsp;€</b></a></li>
       <li><a class="chalk" href="#angebote"><span data-de="Ihr seid Gäste" data-en="You’re Guests" data-pl="Jesteście gośćmi">Ihr seid Gäste</span><b><small data-de="ab" data-en="from" data-pl="od">ab</small> 350&nbsp;€</b></a></li>
     </ul>
+    <p class="facts-line rise"><span data-de="Für 8 bis 30 Kinder" data-en="For 8 to 30 children" data-pl="Dla 8 do 30 dzieci">Für 8 bis 30 Kinder</span><span data-de="Berlin &amp; Märkisch-Oderland" data-en="Berlin &amp; Märkisch-Oderland" data-pl="Berlin i Märkisch-Oderland">Berlin &amp; Märkisch-Oderland</span><span data-de="Antwort am selben Tag" data-en="Reply the same day" data-pl="Odpowiedź tego samego dnia">Antwort am selben Tag</span></p>
     <div class="act rise">
       <a class="btn" href="#anfrage"><span data-de="Termin anfragen" data-en="Ask for your date" data-pl="Zapytaj o termin">Termin anfragen</span><span class="arr" aria-hidden="true">→</span></a>
       <a class="link" href="#angebote"><span data-de="Die drei Angebote ansehen" data-en="See the three packages" data-pl="Zobacz trzy pakiety">Die drei Angebote ansehen</span></a>
     </div>
-    <p class="facts-line rise"><span data-de="Für 8 bis 30 Kinder" data-en="For 8 to 30 children" data-pl="Dla 8 do 30 dzieci">Für 8 bis 30 Kinder</span><span data-de="Berlin &amp; Märkisch-Oderland" data-en="Berlin &amp; Märkisch-Oderland" data-pl="Berlin i Märkisch-Oderland">Berlin &amp; Märkisch-Oderland</span><span data-de="Antwort am selben Tag" data-en="Reply the same day" data-pl="Odpowiedź tego samego dnia">Antwort am selben Tag</span></p>
   </div>
   <figure class="hero-pic rise">
     <div class="show" id="show">
-      <img class="on" src="images/v5/hero-label.webp" width="736" height="920" fetchpriority="high" data-cap-de="Bananenwaffeln mit Apfelmus. Jedes Schild schreibt Paulina mit der Hand." data-cap-en="Banana waffles with apple sauce. Paulina writes every label by hand." data-cap-pl="Gofry bananowe z musem jabłkowym. Każdą tabliczkę Paulina pisze ręcznie." alt="Bananenwaffeln und Apfelmus, davor Paulinas Kreideschild „Banana Waffeln“" data-alt-en="Banana waffles and apple sauce behind Paulina’s chalk label “Banana Waffeln”" data-alt-pl="Gofry bananowe i mus jabłkowy, przed nimi kredowa tabliczka Pauliny „Banana Waffeln”">
-      <img src="images/v4/grazing.webp" width="1000" height="1250" loading="lazy" data-cap-de="Der ganze Tisch von oben: Melone, Brezeln, Muffins, Herzwaffeln, Marmeladen." data-cap-en="The whole table from above: melon, pretzels, muffins, heart waffles, jams." data-cap-pl="Cały stół z góry: arbuz, precelki, muffinki, gofry serduszka, dżemy." alt="Der gedeckte Geburtstagstisch von oben mit Melone, Brezeln, Muffins und Herzwaffeln" data-alt-en="The laid birthday table from above with melon, pretzels, muffins and heart waffles" data-alt-pl="Nakryty stół urodzinowy z góry z arbuzem, precelkami, muffinkami i goframi">
-      <img src="images/v5/hero-waffles.webp" width="759" height="949" loading="lazy" data-cap-de="Herzwaffeln mit Erdbeeren, dahinter Marmeladen und Obst." data-cap-en="Heart waffles with strawberries, jams and fruit behind." data-cap-pl="Gofry serduszka z truskawkami, za nimi dżemy i owoce." alt="Herzwaffeln mit Erdbeeren auf einem Holzbrett" data-alt-en="Heart waffles with strawberries on a wooden board" data-alt-pl="Gofry serduszka z truskawkami na drewnianej desce">
+      <img class="on" src="images/v4/table.webp" width="1600" height="1200" fetchpriority="high" data-cap-de="Ein Geburtstagstisch von Paulina. Jedes Essen hat sein Schild, damit alle wissen, was drin ist." data-cap-en="A birthday table by Paulina. Every dish has its label, so everyone knows what’s in it." data-cap-pl="Stół urodzinowy Pauliny. Każde danie ma swoją tabliczkę, żeby każdy wiedział, co jest w środku." alt="Paulinas gedeckter Geburtstagstisch vor dem grünen Vorhang: Apfelkuchen, Bananenwaffeln, Pizza-Muffins, Obst und Wasser, jedes Essen mit Kreideschild" data-alt-en="Paulina’s birthday table in front of the green curtain: apple cake, banana waffles, pizza muffins, fruit and water, every dish with a chalk label" data-alt-pl="Stół urodzinowy Pauliny przed zieloną zasłoną: szarlotka, gofry bananowe, muffinki pizzowe, owoce i woda, każde danie z kredową tabliczką">
+      <img src="images/banana-waffles.webp" width="1600" height="1200" loading="lazy" data-cap-de="Bananenwaffeln mit Apfelmus. Jedes Schild schreibt Paulina mit der Hand." data-cap-en="Banana waffles with apple sauce. Paulina writes every label by hand." data-cap-pl="Gofry bananowe z musem jabłkowym. Każdą tabliczkę Paulina pisze ręcznie." alt="Bananenwaffeln und Apfelmus, davor Paulinas Kreideschild „Banana Waffeln“" data-alt-en="Banana waffles and apple sauce behind Paulina’s chalk label “Banana Waffeln”" data-alt-pl="Gofry bananowe i mus jabłkowy, przed nimi kredowa tabliczka Pauliny „Banana Waffeln”">
+      <img src="images/food-table.jpg" width="1000" height="750" loading="lazy" data-cap-de="Schleierkraut, Schokomuffins und Apfelkuchen auf Glasetageren." data-cap-en="Gypsophila, chocolate muffins and apple cake on glass stands." data-cap-pl="Gipsówka, muffinki czekoladowe i szarlotka na szklanych paterach." alt="Schleierkraut, Schokomuffins auf einer Glasetagere und Apfelkuchen" data-alt-en="Gypsophila, chocolate muffins on a glass stand and apple cake" data-alt-pl="Gipsówka, muffinki czekoladowe na szklanej paterze i szarlotka">
     </div>
-    <figcaption><span id="showcap" aria-live="off">Bananenwaffeln mit Apfelmus. Jedes Schild schreibt Paulina mit der Hand.</span>
+    <figcaption><span id="showcap" aria-live="off">Ein Geburtstagstisch von Paulina. Jedes Essen hat sein Schild, damit alle wissen, was drin ist.</span>
       <span class="dots" role="group" aria-label="Bilder">
-        <button type="button" aria-current="true" aria-label="Bananenwaffeln"></button>
-        <button type="button" aria-current="false" aria-label="Tisch von oben"></button>
-        <button type="button" aria-current="false" aria-label="Herzwaffeln"></button>
+        <button type="button" aria-current="true" aria-label="Der Tisch vor dem Vorhang"></button>
+        <button type="button" aria-current="false" aria-label="Bananenwaffeln"></button>
+        <button type="button" aria-current="false" aria-label="Muffins und Schleierkraut"></button>
       </span>
     </figcaption>
   </figure>
@@ -407,7 +410,7 @@ footer{padding-top:clamp(80px,9vw,130px);padding-bottom:36px}
         </div>
       </article>
       <article class="tag rise" data-level="2">
-        <div class="pic"><img src="images/v4/berries.webp" width="880" height="1100" loading="lazy" alt="Die Torte von oben: Erdbeeren, Himbeeren, Heidelbeeren und Kirschen auf Sahne" data-alt-en="The cake from above: strawberries, raspberries, blueberries and cherries on cream" data-alt-pl="Tort z góry: truskawki, maliny, borówki i czereśnie na bitej śmietanie"><span class="chalk" aria-hidden="true"><b><span data-de="ab" data-en="from" data-pl="od">ab</span> 270&nbsp;€</b></span></div>
+        <div class="pic"><img src="images/v3/theme-cake.webp" width="1400" height="1259" loading="lazy" alt="Geburtstagstorte mit Blütenblättern, Wimpelkette und goldener Eins" data-alt-en="Birthday cake with petals, bunting and a golden number one" data-alt-pl="Tort urodzinowy z płatkami kwiatów, girlandą i złotą jedynką"><span class="chalk" aria-hidden="true"><b><span data-de="ab" data-en="from" data-pl="od">ab</span> 270&nbsp;€</b></span></div>
         <div class="label">
           <h3 data-de="Die Feier" data-en="The Party" data-pl="Przyjęcie">Die Feier <span class="vh"><span data-de="ab" data-en="from" data-pl="od">ab</span> 270 €</span></h3>
           <p class="what"><span data-de="Der Tisch, dazu Torte, Deko und eine Runde, die ich mit den Kindern mache." data-en="The table, plus cake, decorations and an activity I lead with the children." data-pl="Stół, a do tego tort, dekoracje i zabawa, którą prowadzę z dziećmi.">Der Tisch, dazu Torte, Deko und eine Runde, die ich mit den Kindern mache.</span></p>
@@ -511,7 +514,7 @@ footer{padding-top:clamp(80px,9vw,130px);padding-bottom:36px}
       <p class="daughters rise"><span data-de="Die zwei Erdbeeren sind meine Töchter: die große Laura und die kleine Laia, die sich an sie lehnt." data-en="The two strawberries are my daughters: Laura, the big one, and little Laia leaning on her." data-pl="Dwie truskawki to moje córki: starsza Laura i mała Laia, która się do niej przytula.">Die zwei Erdbeeren sind meine Töchter: die große Laura und die kleine Laia, die sich an sie lehnt.</span></p>
       <dl class="facts rise">
         <div><dt><span data-de="Wo" data-en="Where" data-pl="Gdzie">Wo</span></dt><dd><span data-de="Berlin &amp; Märkisch-Oderland" data-en="Berlin &amp; Märkisch-Oderland" data-pl="Berlin i Märkisch-Oderland">Berlin &amp; Märkisch-Oderland</span></dd></div>
-        <div><dt><span data-de="Sprachen" data-en="Languages" data-pl="Języki">Sprachen</span></dt><dd>Deutsch · English · polski</dd></div>
+        <div><dt><span data-de="Sprachen" data-en="Languages" data-pl="Języki">Sprachen</span></dt><dd><span data-de="Deutsch · Englisch · Polnisch" data-en="German · English · Polish" data-pl="Niemiecki · Angielski · Polski">Deutsch · Englisch · Polnisch</span></dd></div>
         <div><dt><span data-de="Gäste" data-en="Guests" data-pl="Goście">Gäste</span></dt><dd><span data-de="8 bis 30 Kinder" data-en="8 to 30 children" data-pl="8 do 30 dzieci">8 bis 30 Kinder</span></dd></div>
         <div><dt><span data-de="Vorlauf" data-en="Notice" data-pl="Z wyprzedzeniem">Vorlauf</span></dt><dd><span data-de="5 bis 6 Wochen" data-en="5 to 6 weeks" data-pl="5 do 6 tygodni">5 bis 6 Wochen</span></dd></div>
       </dl>
