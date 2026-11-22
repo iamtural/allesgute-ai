@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Deploy artifacts
+*.zip
+
+# Large photo folders not needed in repo
+Paulina Photos (AllesGute)/
+
+# Node (if ever added)
+node_modules/
