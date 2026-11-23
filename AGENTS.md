@@ -46,7 +46,7 @@ No build step. No framework. No dependencies. Plain HTML file deployed to Netlif
 - **Hero photo**: the green-curtain table comes first (Tural's call), then the Banana Waffeln label, then muffins with gypsophila. All 4:3 in a dome.
 - **Offer photos tell the offer**: Der Tisch = the food from above, Die Feier = theme cake with bunting, Ihr seid Gäste = Paulina cutting the cake for guests holding plates.
 - **Language names** are capitalised and in the page language (PL: Niemiecki · Angielski · Polski).
-- **Motion**: hero crossfade of three of her photos (dots to choose, stops on choice), a slow filmstrip of ten of her photos (pauses on hover/focus), section entrances. All off under reduced motion.
+- **Motion**: three hero photos with a crossfade, pause button and direct selection. The lower filmstrip uses arrows and swipe. Reduced motion starts the slideshow paused and removes transitions.
 - **Photos**: Paulina's own, cropped tight so no licensed characters are visible, except the curtain table, which Tural chose to use as is. Crops live in `images/v5/`. Never alter her photos beyond cropping without asking. Never use stock or AI-made food or people.
 
 ### Sections in `index.html`
@@ -78,6 +78,14 @@ Design checks used the tasteskill inspector: `node ~/.claude/skills/design-taste
 - Language switching: JS reads `data-lang` attribute on `<html>` tag and sets each element's `textContent` from its `data-{lang}` attribute
 
 ---
+
+## Design rules
+
+- Set headings and labels in sentence case. Use EB Garamond for display text and Jost at 400 or 500 for body text and controls.
+- Use the semantic colours in `index.html`. Keep strawberry red for actions and brand accents. Use the three package colours on their price stubs.
+- Keep the arches on Paulina’s photographs. Use plain surfaces for the rest. Use icons only for controls that need them, such as gallery navigation and playback.
+- Use motion to switch or browse photos and to acknowledge input. Keep transitions at 250 ms or less, without staged page entrances. Retain pause and reduced-motion support.
+- Review desktop and phone screenshots. Cut copy, photos, and ornament when another element already does the same job.
 
 ## How to test locally
 
